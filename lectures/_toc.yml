@@ -1,0 +1,40 @@
+format: jb-book
+root: intro
+parts:
+- caption: Elementary Statistics
+  numbered: true
+  chapters:
+  - file: pandas_panel
+  - file: ols
+  - file: mle
+  - file: prob_matrix
+  - file: lln_clt
+  - file: multivariate_normal
+- caption: Information & Bayesian Statistics
+  numbered: true
+  chapters:
+  - file: prob_meaning
+  - file: bayes_nonconj
+  - file: ar1_bayes
+  - file: ar1_turningpts
+  - file: likelihood_ratio_process
+  - file: imp_sample
+  - file: wald_friedman
+  - file: exchangeable
+  - file: likelihood_bayes
+  - file: mix_model
+  - file: navy_captain
+- caption: Applications of Statistics
+  numbered: true
+  chapters:
+  - file: multi_hyper
+  - file: hoist_failure
+  - file: back_prop
+  - file: rand_resp
+  - file: util_rand_resp
+- caption: Other
+  numbered: true
+  chapters:
+  - file: troubleshooting
+  - file: zreferences
+  - file: status
