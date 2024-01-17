@@ -88,24 +88,24 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html/
-          cname: python.quantecon.org
-      - name: Prepare lecture-python.notebooks sync
+          cname: stats.quantecon.org
+      - name: Prepare lecture-stats.notebooks sync
         shell: bash -l {0}
         run: |
-          mkdir -p _build/lecture-python.notebooks
-          cp -a _notebook_repo/. _build/lecture-python.notebooks
-          cp _build/jupyter/*.ipynb _build/lecture-python.notebooks
-          ls -a _build/lecture-python.notebooks
-      - name: Commit notebooks to lecture-python.notebooks
+          mkdir -p _build/lecture-stats.notebooks
+          cp -a _notebook_repo/. _build/lecture-stats.notebooks
+          cp _build/jupyter/*.ipynb _build/lecture-stats.notebooks
+          ls -a _build/lecture-stats.notebooks
+      - name: Commit notebooks to lecture-stats.notebooks
         shell: bash -l {0}
         env:
           QE_SERVICES_PAT: ${{ secrets.QUANTECON_SERVICES_PAT }}
         run: |
-          git clone https://quantecon-services:$QE_SERVICES_PAT@github.com/quantecon/lecture-python.notebooks
+          git clone https://quantecon-services:$QE_SERVICES_PAT@github.com/quantecon/lecture-stats.notebooks
 
-          cp _build/lecture-python.notebooks/*.ipynb lecture-python.notebooks
+          cp _build/lecture-stats.notebooks/*.ipynb lecture-stats.notebooks
 
-          cd lecture-python.notebooks
+          cd lecture-stats.notebooks
           git config user.name "QuantEcon Services"
           git config user.email "admin@quantecon.org"
           git add *.ipynb
