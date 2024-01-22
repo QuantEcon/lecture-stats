@@ -463,7 +463,7 @@ class WaldFriedman:
         return π_new
 ```
 
-As in the {doc}`optimal growth lecture <optgrowth>`, to approximate a continuous value function
+As in the {doc}`optimal growth lecture <dynam:optgrowth>`, to approximate a continuous value function
 
 * We iterate at a finite grid of possible values of $\pi$.
 * When we evaluate $\mathbb E[J(\pi')]$ between grid points, we use linear interpolation.

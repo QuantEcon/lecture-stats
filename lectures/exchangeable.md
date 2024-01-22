@@ -34,14 +34,14 @@ We touch foundations of Bayesian statistical inference invented by Bruno DeFinet
 The relevance of DeFinetti's work for economists is presented forcefully
 in chapter 11 of {cite}`Kreps88` by David Kreps.
 
-An example  that we study in this lecture  is a key component of {doc}`this lecture <odu>` that augments the
-{doc}`classic <mccall_model>`  job search model of McCall
+An example  that we study in this lecture  is a key component of {doc}`this lecture <dynam:odu>` that augments the
+{doc}`classic <dynam:mccall_model>`  job search model of McCall
 {cite}`McCall1970` by presenting an unemployed worker with a statistical inference problem.
 
 Here we create  graphs that illustrate the role that  a  likelihood ratio
 plays in  Bayes' Law.
 
-We'll use such graphs to provide insights into  mechanics driving outcomes in {doc}`this lecture <odu>` about learning in an augmented McCall job
+We'll use such graphs to provide insights into  mechanics driving outcomes in {doc}`this lecture <dynam:odu>` about learning in an augmented McCall job
 search model.
 
 Among other things, this lecture discusses  connections between the statistical concepts of sequences of random variables that are

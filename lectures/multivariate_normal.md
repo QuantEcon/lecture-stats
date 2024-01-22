@@ -1964,7 +1964,7 @@ iterate(x0_hat, Σ0, A, C, G, R, [2.3, 1.2, 3.2])
 
 The iterative algorithm just described is a version of the celebrated **Kalman filter**.
 
-We describe the Kalman filter  and some applications of it in {doc}`A First Look at the Kalman Filter <kalman>`
+We describe the Kalman filter  and some applications of it in {doc}`A First Look at the Kalman Filter <dle:kalman>`
 
 
 ## Classic Factor Analysis Model
@@ -2130,7 +2130,7 @@ $\Lambda I^{-1} f = \Lambda f$.
 
 ## PCA and Factor Analysis
 
-To learn about Principal Components Analysis (PCA), please see this lecture {doc}`Singular Value Decompositions <svd_intro>`.
+To learn about Principal Components Analysis (PCA), please see this lecture {doc}`Singular Value Decompositions <tools:svd_intro>`.
 
 For fun, let’s apply a PCA decomposition
 to a covariance matrix $\Sigma_y$ that in fact is governed by our factor-analytic

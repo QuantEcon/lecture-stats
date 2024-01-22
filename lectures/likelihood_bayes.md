@@ -41,7 +41,7 @@ rests on the asymptotic behavior of likelihood ratio processes studied in {doc}`
 
 We'll also drill down into the psychology of our Bayesian learner and study dynamics  under his subjective beliefs.
 
-This lecture provides technical results that underly outcomes to be studied in {doc}`this lecture <odu>`
+This lecture provides technical results that underly outcomes to be studied in {doc}`this lecture <dynam:odu>`
 and {doc}`this lecture <wald_friedman>` and {doc}`this lecture <navy_captain>`.
 
 We'll begin by loading some Python modules.
@@ -814,4 +814,4 @@ The conditional variance is nearly zero only when the agent  is almost sure that
 ## Sequels
 
 This lecture has been devoted to building some useful infrastructure that will help us understand inferences that are the foundations of
-results described  in {doc}`this lecture <odu>` and {doc}`this lecture <wald_friedman>` and {doc}`this lecture <navy_captain>`.
+results described  in {doc}`this lecture <dynam:odu>` and {doc}`this lecture <wald_friedman>` and {doc}`this lecture <navy_captain>`.
