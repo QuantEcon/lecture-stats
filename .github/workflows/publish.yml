@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: iterative/setup-cml@v1
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Deploy runner on EC2
@@ -32,7 +32,7 @@ jobs:
       options: --gpus all
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Git (required to commit notebooks)
         shell: bash -l {0}
         run: apt-get install -y git
@@ -48,7 +48,7 @@ jobs:
         run: pip list
       # Download Build Cache from cache.yml
       - name: Download "build" folder (cache)
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v3
         with:
           workflow: cache.yml
           branch: main
@@ -88,7 +88,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: _build/html/
-          cname: stats.quantecon.org
+          # cname: stats.quantecon.org
       - name: Prepare lecture-stats.notebooks sync
         shell: bash -l {0}
         run: |

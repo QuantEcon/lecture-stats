@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: iterative/setup-cml@v1
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Deploy runner on EC2
@@ -27,7 +27,7 @@ jobs:
       image: docker://mmcky/quantecon-lecture-python:cuda-12.1.0-anaconda-2023-09-py311-c
       options: --gpus all
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       # Check nvidia drivers
@@ -55,7 +55,7 @@ jobs:
           mkdir -p _build/html/_notebooks
           cp -u _build/jupyter/*.ipynb _build/html/_notebooks
       - name: Upload Execution Reports (Download Notebooks)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: execution-reports
@@ -67,7 +67,7 @@ jobs:
           mkdir -p _build/html/_pdf
           cp -u _build/latex/*.pdf _build/html/_pdf
       - name: Upload Execution Reports (LaTeX)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: execution-reports
@@ -78,13 +78,13 @@ jobs:
         run: |
           jb build lectures --path-output ./ -n -W --keep-going
       - name: Upload Execution Reports (HTML)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: execution-reports
           path: _build/html/reports
       - name: Preview Deploy to Netlify
-        uses: nwtgck/actions-netlify@v1.1
+        uses: nwtgck/actions-netlify@v2
         with:
           publish-dir: '_build/html/'
           production-branch: main
