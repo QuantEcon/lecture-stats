@@ -15,7 +15,6 @@ parts:
   chapters:
   - file: prob_meaning
   - file: bayes_nonconj
-  - file: ar1_processes
   - file: ar1_bayes
   - file: ar1_turningpts
   - file: likelihood_ratio_process
