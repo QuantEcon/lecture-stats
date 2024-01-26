@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>19. Multivariate Hypergeometric Distribution &#8212; Statistics for Computational Economics</title>
+    <title>18. Multivariate Hypergeometric Distribution &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="20. Fault Tree Uncertainties" href="hoist_failure.html" />
-    <link rel="prev" title="18. Bayesian versus Frequentist Decision Rules" href="navy_captain.html" />
+    <link rel="next" title="19. Fault Tree Uncertainties" href="hoist_failure.html" />
+    <link rel="prev" title="17. Bayesian versus Frequentist Decision Rules" href="navy_captain.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -162,16 +162,16 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">19.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-administrators-problem">19.2. The Administrator’s Problem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details-of-the-awards-procedure-under-study">19.2.1. Details of the Awards Procedure Under Study</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">19.2.2. Multivariate Hypergeometric Distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">18.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-administrators-problem">18.2. The Administrator’s Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#details-of-the-awards-procedure-under-study">18.2.1. Details of the Awards Procedure Under Study</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">18.2.2. Multivariate Hypergeometric Distribution</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">19.3. Usage</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">19.3.1. First example</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-administrators-problem">19.3.2. Back to The Administrator’s Problem</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-of-normal-approximation">19.3.3. Quality of Normal Approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">18.3. Usage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#first-example">18.3.1. First example</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#back-to-the-administrators-problem">18.3.2. Back to The Administrator’s Problem</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-of-normal-approximation">18.3.3. Quality of Normal Approximation</a></li>
 </ul>
 </li>
 </ul>
@@ -235,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <img style="width:250px;display:inline;" width="250px" src="https://assets.quantecon.org/img/qe-menubar-logo.svg" alt="QuantEcon">
         </a>
 </div><section class="tex2jax_ignore mathjax_ignore" id="multivariate-hypergeometric-distribution">
-<h1><a class="toc-backref" href="#id2"><span class="section-number">19. </span>Multivariate Hypergeometric Distribution</a><a class="headerlink" href="#multivariate-hypergeometric-distribution" title="Permalink to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id2"><span class="section-number">18. </span>Multivariate Hypergeometric Distribution</a><a class="headerlink" href="#multivariate-hypergeometric-distribution" title="Permalink to this heading">#</a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -249,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <section id="overview">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">19.1. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3"><span class="section-number">18.1. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This lecture describes how an  administrator deployed a <strong>multivariate hypergeometric distribution</strong> in order to access the fairness of a procedure for awarding research grants.</p>
 <p>In the lecture we’ll learn about</p>
 <ul class="simple">
@@ -260,7 +260,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </section>
 <section id="the-administrators-problem">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">19.2. </span>The Administrator’s Problem</a><a class="headerlink" href="#the-administrators-problem" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4"><span class="section-number">18.2. </span>The Administrator’s Problem</a><a class="headerlink" href="#the-administrators-problem" title="Permalink to this heading">#</a></h2>
 <p>An administrator in charge of allocating research grants is in the following situation.</p>
 <p>To help us forget details that are none of our business here and to protect the anonymity of the administrator and the subjects, we call
 research proposals <strong>balls</strong> and continents of residence of authors of a proposal a <strong>color</strong>.</p>
@@ -275,7 +275,7 @@ research proposals <strong>balls</strong> and continents of residence of authors
 <p>The <span class="math notranslate nohighlight">\(n\)</span> balls drawn represent  successful proposals and are  awarded research funds.</p>
 <p>The remaining <span class="math notranslate nohighlight">\(N-n\)</span> balls receive no research funds.</p>
 <section id="details-of-the-awards-procedure-under-study">
-<h3><span class="section-number">19.2.1. </span>Details of the Awards Procedure Under Study<a class="headerlink" href="#details-of-the-awards-procedure-under-study" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.1. </span>Details of the Awards Procedure Under Study<a class="headerlink" href="#details-of-the-awards-procedure-under-study" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(k_i\)</span> be the number of balls of color <span class="math notranslate nohighlight">\(i\)</span> that are drawn.</p>
 <p>Things have to add up so <span class="math notranslate nohighlight">\(\sum_{i=1}^c k_i = n\)</span>.</p>
 <p>Under the hypothesis that the selection process judges proposals on their quality and that quality is independent of continent of the author’s continent of residence, the administrator views the outcome of the selection procedure as a random vector</p>
@@ -306,7 +306,7 @@ the population of <span class="math notranslate nohighlight">\(N\)</span> balls.
 <p>The right tool for the administrator’s job is the <strong>multivariate hypergeometric distribution</strong>.</p>
 </section>
 <section id="id1">
-<h3><span class="section-number">19.2.2. </span>Multivariate Hypergeometric Distribution<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.2.2. </span>Multivariate Hypergeometric Distribution<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <p>Let’s start with some imports.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -448,9 +448,9 @@ the total number of objects in the urn and <span class="math notranslate nohighl
 </section>
 </section>
 <section id="usage">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">19.3. </span>Usage</a><a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5"><span class="section-number">18.3. </span>Usage</a><a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
 <section id="first-example">
-<h3><span class="section-number">19.3.1. </span>First example<a class="headerlink" href="#first-example" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.3.1. </span>First example<a class="headerlink" href="#first-example" title="Permalink to this heading">#</a></h3>
 <p>Apply this to an example from
 <a class="reference external" href="https://en.wikipedia.org/wiki/Hypergeometric_distribution#Multivariate_hypergeometric_distribution">wiki</a>:</p>
 <p>Suppose there are 5 black, 10 white, and 15 red marbles in an urn. If
@@ -537,7 +537,7 @@ observing each case.</p>
 </div>
 </section>
 <section id="back-to-the-administrators-problem">
-<h3><span class="section-number">19.3.2. </span>Back to The Administrator’s Problem<a class="headerlink" href="#back-to-the-administrators-problem" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.3.2. </span>Back to The Administrator’s Problem<a class="headerlink" href="#back-to-the-administrators-problem" title="Permalink to this heading">#</a></h3>
 <p>Now let’s turn to the grant administrator’s problem.</p>
 <p>Here the array of
 numbers of <span class="math notranslate nohighlight">\(i\)</span> objects in the urn is
@@ -634,7 +634,7 @@ arrays <code class="docutils literal notranslate"><span class="pre">k_arr</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3.9572272, 0.2775432, 1.1599533, 0.6052763])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3.9573438, 0.2773919, 1.1597726, 0.6054917])
 </pre></div>
 </div>
 </div>
@@ -647,10 +647,10 @@ arrays <code class="docutils literal notranslate"><span class="pre">k_arr</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.31896222, -0.17898962, -0.74893122, -0.39104138],
-       [-0.17898962,  0.2591462 , -0.05274386, -0.02741272],
-       [-0.74893122, -0.05274386,  0.91630133, -0.11462625],
-       [-0.39104138, -0.02741272, -0.11462625,  0.53308035]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.31940498, -0.17935783, -0.74882188, -0.39122526],
+       [-0.17935783,  0.25896886, -0.05232443, -0.0272866 ],
+       [-0.74882188, -0.05232443,  0.91530181, -0.11415549],
+       [-0.39122526, -0.0272866 , -0.11415549,  0.53266735]])
 </pre></div>
 </div>
 </div>
@@ -658,7 +658,7 @@ arrays <code class="docutils literal notranslate"><span class="pre">k_arr</span>
 <p>Evidently, the sample means and covariances approximate their population counterparts well.</p>
 </section>
 <section id="quality-of-normal-approximation">
-<h3><span class="section-number">19.3.3. </span>Quality of Normal Approximation<a class="headerlink" href="#quality-of-normal-approximation" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">18.3.3. </span>Quality of Normal Approximation<a class="headerlink" href="#quality-of-normal-approximation" title="Permalink to this heading">#</a></h3>
 <p>To judge the quality of a multivariate normal approximation to the multivariate hypergeometric distribution, we draw a large sample from a multivariate normal distribution with the mean vector  and covariance matrix for the corresponding multivariate hypergeometric distribution and compare the simulated distribution with the population multivariate hypergeometric distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,7 +736,7 @@ arrays <code class="docutils literal notranslate"><span class="pre">k_arr</span>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8aea8c3931b0b18f1d1e537027a4c1524868a99dfd097f23ed6a11e2b3c3880e.png" src="_images/8aea8c3931b0b18f1d1e537027a4c1524868a99dfd097f23ed6a11e2b3c3880e.png" />
+<img alt="_images/cec4741775ee7fe04523e841dd1e8dd3d9cda711b3aa0e6ecdf14d40ede54932.png" src="_images/cec4741775ee7fe04523e841dd1e8dd3d9cda711b3aa0e6ecdf14d40ede54932.png" />
 </div>
 </div>
 <p>The diagonal graphs plot the marginal distributions of <span class="math notranslate nohighlight">\(k_i\)</span> for
@@ -775,7 +775,7 @@ test that combines skew and kurtosis to form an omnibus test of normality.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.45600822, 0.34189074, 0.42908637, 0.10202083])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3.62974711e-04, 5.38823513e-01, 2.94429715e-01, 1.38236939e-01])
 </pre></div>
 </div>
 </div>
@@ -888,53 +888,48 @@ test that combines skew and kurtosis to form an omnibus test of normality.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ar1_processes.html">
-   9. AR1 Processes
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   10. Posterior Distributions for  AR(1) Parameters
+   9. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   11. Forecasting  an AR(1) Process
+   10. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   12. Likelihood Ratio Processes
+   11. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   13. Computing Mean of a Likelihood Ratio Process
+   12. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   14. A Problem that Stumped Milton Friedman
+   13. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   15. Exchangeability and Bayesian Updating
+   14. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   16. Likelihood Ratio Processes and Bayesian Learning
+   15. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   17. Incorrect Models
+   16. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="navy_captain.html">
-   18. Bayesian versus Frequentist Decision Rules
+   17. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -946,27 +941,27 @@ test that combines skew and kurtosis to form an omnibus test of normality.</p>
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   19. Multivariate Hypergeometric Distribution
+   18. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hoist_failure.html">
-   20. Fault Tree Uncertainties
+   19. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="back_prop.html">
-   21. Introduction to Artificial Neural Networks
+   20. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rand_resp.html">
-   22. Randomized Response Surveys
+   21. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   23. Expected Utilities of Random Responses
+   22. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -978,17 +973,17 @@ test that combines skew and kurtosis to form an omnibus test of normality.</p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   24. Troubleshooting
+   23. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   25. References
+   24. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   26. Execution Statistics
+   25. Execution Statistics
   </a>
  </li>
 </ul>

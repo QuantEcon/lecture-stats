@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>18. Bayesian versus Frequentist Decision Rules &#8212; Statistics for Computational Economics</title>
+    <title>17. Bayesian versus Frequentist Decision Rules &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="19. Multivariate Hypergeometric Distribution" href="multi_hyper.html" />
-    <link rel="prev" title="17. Incorrect Models" href="mix_model.html" />
+    <link rel="next" title="18. Multivariate Hypergeometric Distribution" href="multi_hyper.html" />
+    <link rel="prev" title="16. Incorrect Models" href="mix_model.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -162,15 +162,15 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">18.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">18.2. Setup</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-decision-rule">18.3. Frequentist Decision Rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-decision-rule">18.4. Bayesian Decision Rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-navy-captains-hunch-correct">18.5. Was the Navy Captain’s Hunch Correct?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-details">18.6. More Details</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-bayesian-decision-rules-time-to-decide">18.7. Distribution of Bayesian Decision Rule’s Time to Decide</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-making-correct-decision">18.8. Probability of Making Correct Decision</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-likelihood-ratios-at-frequentists-t">18.9. Distribution of Likelihood Ratios at Frequentist’s <span class="math notranslate nohighlight">\(t\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">17.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">17.2. Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-decision-rule">17.3. Frequentist Decision Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-decision-rule">17.4. Bayesian Decision Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#was-the-navy-captains-hunch-correct">17.5. Was the Navy Captain’s Hunch Correct?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-details">17.6. More Details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-bayesian-decision-rules-time-to-decide">17.7. Distribution of Bayesian Decision Rule’s Time to Decide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#probability-of-making-correct-decision">17.8. Probability of Making Correct Decision</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-likelihood-ratios-at-frequentists-t">17.9. Distribution of Likelihood Ratios at Frequentist’s <span class="math notranslate nohighlight">\(t\)</span></a></li>
 </ul>
                             <p class="logo">
                                 
@@ -232,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
                 <img style="width:250px;display:inline;" width="250px" src="https://assets.quantecon.org/img/qe-menubar-logo.svg" alt="QuantEcon">
         </a>
 </div><section class="tex2jax_ignore mathjax_ignore" id="bayesian-versus-frequentist-decision-rules">
-<h1><a class="toc-backref" href="#id1"><span class="section-number">18. </span>Bayesian versus Frequentist Decision Rules</a><a class="headerlink" href="#bayesian-versus-frequentist-decision-rules" title="Permalink to this heading">#</a></h1>
+<h1><a class="toc-backref" href="#id1"><span class="section-number">17. </span>Bayesian versus Frequentist Decision Rules</a><a class="headerlink" href="#bayesian-versus-frequentist-decision-rules" title="Permalink to this heading">#</a></h1>
 <div class="contents topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
@@ -268,18 +268,8 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading interpolation-2.2.1-py3-none-any.whl (56 kB)
-?25l
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/56.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━ <span class=" -Color -Color-Green">51.2/56.6 kB</span> <span class=" -Color -Color-Red">4.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━ <span class=" -Color -Color-Green">51.2/56.6 kB</span> <span class=" -Color -Color-Red">4.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━ <span class=" -Color -Color-Green">51.2/56.6 kB</span> <span class=" -Color -Color-Red">4.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">56.6/56.6 kB</span> <span class=" -Color -Color-Red">395.2 kB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/56.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">56.6/56.6 kB</span> <span class=" -Color -Color-Red">3.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: numba&gt;=0.47 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from interpolation) (0.57.1)
 Requirement already satisfied: numpy&gt;=1.18.1 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from interpolation) (1.24.3)
 Requirement already satisfied: scipy&gt;=1.4.1 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from interpolation) (1.11.1)
@@ -322,7 +312,7 @@ Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /opt/conda/en
 </div>
 </div>
 <section id="overview">
-<h2><a class="toc-backref" href="#id2"><span class="section-number">18.1. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id2"><span class="section-number">17.1. </span>Overview</a><a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This lecture follows up on ideas presented in the following lectures:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="wald_friedman.html"><span class="doc">A Problem that Stumped Milton Friedman</span></a></p></li>
@@ -347,7 +337,7 @@ decision rules for an instance of the Navy Captain’s decision problem.</p>
 to use.</p>
 </section>
 <section id="setup">
-<h2><a class="toc-backref" href="#id3"><span class="section-number">18.2. </span>Setup</a><a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id3"><span class="section-number">17.2. </span>Setup</a><a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h2>
 <p>To formalize the problem of the Navy Captain whose questions posed the
 problem that Milton Friedman and Allan Wallis handed over to Abraham
 Wald, we consider a setting with the following parts.</p>
@@ -497,7 +487,7 @@ frequentist Navy Captains.</p>
 <span class="math notranslate nohighlight">\(f_1\)</span></p>
 </section>
 <section id="frequentist-decision-rule">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">18.3. </span>Frequentist Decision Rule</a><a class="headerlink" href="#frequentist-decision-rule" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id4"><span class="section-number">17.3. </span>Frequentist Decision Rule</a><a class="headerlink" href="#frequentist-decision-rule" title="Permalink to this heading">#</a></h2>
 <p>The Navy told the Captain to use a  frequentist decision rule.</p>
 <p>In particular, it gave him a decision rule that the Navy had designed  by using
 frequentist statistical theory to minimize an
@@ -522,7 +512,7 @@ hypotheses be</p>
 <p>Given sample size <span class="math notranslate nohighlight">\(t\)</span> and cutoff <span class="math notranslate nohighlight">\(d\)</span>, under the model
 described above, the mathematical expectation of total loss is</p>
 <div class="math notranslate nohighlight" id="equation-val1">
-<span class="eqno">(18.1)<a class="headerlink" href="#equation-val1" title="Permalink to this equation">#</a></span>\[\begin{aligned}
+<span class="eqno">(17.1)<a class="headerlink" href="#equation-val1" title="Permalink to this equation">#</a></span>\[\begin{aligned}
 \bar{V}_{fre}\left(t,d\right)=ct+\pi^{*}PFA\times \bar L_{1}+\left(1-\pi^{*}\right)\left(1-PD\right)\times \bar L_{0}
 \end{aligned}\]</div>
 <div class="math notranslate nohighlight">
@@ -573,7 +563,7 @@ generates data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a66ace424da94a407e76da8dbe472cc78e3413007b505ee9ebc5feb2fa5a837d.png" src="_images/a66ace424da94a407e76da8dbe472cc78e3413007b505ee9ebc5feb2fa5a837d.png" />
+<img alt="_images/606993421a9ccf87b170cba0c0e0848b7bbdc054cd2a945cf8c7e9e7739369c9.png" src="_images/606993421a9ccf87b170cba0c0e0848b7bbdc054cd2a945cf8c7e9e7739369c9.png" />
 </div>
 </div>
 <p>We can compute sequences of likelihood ratios using simulated samples.</p>
@@ -622,11 +612,11 @@ generates data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3d698df096b6068aa68868d37a557252e314043f54303cdf47dd897fd5f338e6.png" src="_images/3d698df096b6068aa68868d37a557252e314043f54303cdf47dd897fd5f338e6.png" />
+<img alt="_images/ca2c6657f2258315212bb937c50530896923d9d042dbc7c4e0a8980d71337d11.png" src="_images/ca2c6657f2258315212bb937c50530896923d9d042dbc7c4e0a8980d71337d11.png" />
 </div>
 </div>
 <p>Our frequentist minimizes the expected total loss presented in equation
-<a class="reference internal" href="#equation-val1">(18.1)</a> by choosing <span class="math notranslate nohighlight">\(\left(t,d\right)\)</span>.</p>
+<a class="reference internal" href="#equation-val1">(17.1)</a> by choosing <span class="math notranslate nohighlight">\(\left(t,d\right)\)</span>.</p>
 <p>Doing that delivers an expected loss</p>
 <div class="math notranslate nohighlight">
 \[
@@ -706,7 +696,7 @@ consequently the minimal <span class="math notranslate nohighlight">\(\bar{V}_{f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/017444f474a84f61c34b1f53e2c046681df2a7516348205d443f0a51d1c36012.png" src="_images/017444f474a84f61c34b1f53e2c046681df2a7516348205d443f0a51d1c36012.png" />
+<img alt="_images/7d78e343214e3fd6131a64c074be20824c31294c341e1dc9bd3341c365b25390.png" src="_images/7d78e343214e3fd6131a64c074be20824c31294c341e1dc9bd3341c365b25390.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -764,7 +754,7 @@ rule changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/64e169b7f75f45dfb3cc6b6f8600ecf9c5a105701dac598e8da4702842f00c4c.png" src="_images/64e169b7f75f45dfb3cc6b6f8600ecf9c5a105701dac598e8da4702842f00c4c.png" />
+<img alt="_images/0e6f253443af21a868ef97609a6a95c229e20950a6986dcfd4366200d0b87539.png" src="_images/0e6f253443af21a868ef97609a6a95c229e20950a6986dcfd4366200d0b87539.png" />
 </div>
 </div>
 <p>The following shows how optimal sample size <span class="math notranslate nohighlight">\(t\)</span> and targeted
@@ -788,12 +778,12 @@ rule changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/999bee1c1a7c92109b6c9b5806a058cca4f67dd5a9e8bd363710691d2e3bff8a.png" src="_images/999bee1c1a7c92109b6c9b5806a058cca4f67dd5a9e8bd363710691d2e3bff8a.png" />
+<img alt="_images/9138b81de77e6d94aea5b30b4ae7938bc6286acbded5036329ca7c8f6f1071a3.png" src="_images/9138b81de77e6d94aea5b30b4ae7938bc6286acbded5036329ca7c8f6f1071a3.png" />
 </div>
 </div>
 </section>
 <section id="bayesian-decision-rule">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">18.4. </span>Bayesian Decision Rule</a><a class="headerlink" href="#bayesian-decision-rule" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id5"><span class="section-number">17.4. </span>Bayesian Decision Rule</a><a class="headerlink" href="#bayesian-decision-rule" title="Permalink to this heading">#</a></h2>
 <p>In  <a class="reference internal" href="wald_friedman.html"><span class="doc">A Problem that Stumped Milton Friedman</span></a>,
 we learned how Abraham Wald confirmed the Navy
 Captain’s hunch that there is a better decision rule.</p>
@@ -935,7 +925,7 @@ that computes <span class="math notranslate nohighlight">\(\alpha\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4ba07ddb878f3d617eb1d25f8987ae7f08d6760b27489b7ce5ce0acbc1d627f2.png" src="_images/4ba07ddb878f3d617eb1d25f8987ae7f08d6760b27489b7ce5ce0acbc1d627f2.png" />
+<img alt="_images/358e01bf8f5cf783c504159ee56b53fcc886c607a8cfb1603b91b792b1d23051.png" src="_images/358e01bf8f5cf783c504159ee56b53fcc886c607a8cfb1603b91b792b1d23051.png" />
 </div>
 </div>
 <p>The above figure portrays the value function plotted against the decision
@@ -1041,7 +1031,7 @@ numerically.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9d89b815c92da558a281c2d2f221b077f959d5e43de9b98888bde36c77303770.png" src="_images/9d89b815c92da558a281c2d2f221b077f959d5e43de9b98888bde36c77303770.png" />
+<img alt="_images/b2646bce7db4148c64fff1efd7dd948dda5986a178fbbd8e517ba0a72bf1d642.png" src="_images/b2646bce7db4148c64fff1efd7dd948dda5986a178fbbd8e517ba0a72bf1d642.png" />
 </div>
 </div>
 <p>Given an assumed value for
@@ -1093,7 +1083,7 @@ minimizes this objective concept of expected loss.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e0bbc62540c4560334ab0ddf480e26a82bde76a35e692b202b62223b33bda6ef.png" src="_images/e0bbc62540c4560334ab0ddf480e26a82bde76a35e692b202b62223b33bda6ef.png" />
+<img alt="_images/73c7a7c60f336c244f931811606cf0d36f484d3b4452c74ea192b5b5b575989f.png" src="_images/73c7a7c60f336c244f931811606cf0d36f484d3b4452c74ea192b5b5b575989f.png" />
 </div>
 </div>
 <p>This pattern of outcomes holds more generally.</p>
@@ -1132,12 +1122,12 @@ for all <span class="math notranslate nohighlight">\(\pi^{*}\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/388188bbcfd9bf2c180c3166ca136c170e42874c2f13488f13a6068caa3fdf53.png" src="_images/388188bbcfd9bf2c180c3166ca136c170e42874c2f13488f13a6068caa3fdf53.png" />
+<img alt="_images/21ad38bacd3934c7799a202c61291067fa2697a7dff37bcadecb452f8fc7d842.png" src="_images/21ad38bacd3934c7799a202c61291067fa2697a7dff37bcadecb452f8fc7d842.png" />
 </div>
 </div>
 </section>
 <section id="was-the-navy-captains-hunch-correct">
-<h2><a class="toc-backref" href="#id6"><span class="section-number">18.5. </span>Was the Navy Captain’s Hunch Correct?</a><a class="headerlink" href="#was-the-navy-captains-hunch-correct" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id6"><span class="section-number">17.5. </span>Was the Navy Captain’s Hunch Correct?</a><a class="headerlink" href="#was-the-navy-captains-hunch-correct" title="Permalink to this heading">#</a></h2>
 <p>We now compare average (i.e., frequentist) losses obtained by the
 frequentist and Bayesian decision rules.</p>
 <p>As a starting point, let’s compare average loss functions when
@@ -1173,7 +1163,7 @@ frequentist and Bayesian decision rules.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2b992dfa114601894f4d266a20b8b7ba7898097f10acc5a501377657132ed854.png" src="_images/2b992dfa114601894f4d266a20b8b7ba7898097f10acc5a501377657132ed854.png" />
+<img alt="_images/6edf40b1b3509c6684df2de47caf6c6df3c265dbda927cf7cbeabe3237573852.png" src="_images/6edf40b1b3509c6684df2de47caf6c6df3c265dbda927cf7cbeabe3237573852.png" />
 </div>
 </div>
 <p>Evidently, there is no sample size <span class="math notranslate nohighlight">\(t\)</span> at which the frequentist
@@ -1198,7 +1188,7 @@ rule does better on average for all values of <span class="math notranslate nohi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c850822220874a4594a9e4c7e3b488ff192dbd6a287cd609f73552485a7f38e3.png" src="_images/c850822220874a4594a9e4c7e3b488ff192dbd6a287cd609f73552485a7f38e3.png" />
+<img alt="_images/92835edc4afa76b88b479ecd4cae5d64bc6b6276c1dc724bf4e83c0c463b905c.png" src="_images/92835edc4afa76b88b479ecd4cae5d64bc6b6276c1dc724bf4e83c0c463b905c.png" />
 </div>
 </div>
 <p>The right panel of the above graph plots the difference
@@ -1206,7 +1196,7 @@ rule does better on average for all values of <span class="math notranslate nohi
 <p>It is always positive.</p>
 </section>
 <section id="more-details">
-<h2><a class="toc-backref" href="#id7"><span class="section-number">18.6. </span>More Details</a><a class="headerlink" href="#more-details" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id7"><span class="section-number">17.6. </span>More Details</a><a class="headerlink" href="#more-details" title="Permalink to this heading">#</a></h2>
 <p>We can provide more insights by focusing on the case in which
 <span class="math notranslate nohighlight">\(\pi^{*}=0.5=\pi_{0}\)</span>.</p>
 <div class="cell docutils container">
@@ -1242,7 +1232,7 @@ corresponding to <code class="docutils literal notranslate"><span class="pre">t_
 </div>
 </section>
 <section id="distribution-of-bayesian-decision-rules-time-to-decide">
-<h2><a class="toc-backref" href="#id8"><span class="section-number">18.7. </span>Distribution of Bayesian Decision Rule’s Time to Decide</a><a class="headerlink" href="#distribution-of-bayesian-decision-rules-time-to-decide" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id8"><span class="section-number">17.7. </span>Distribution of Bayesian Decision Rule’s Time to Decide</a><a class="headerlink" href="#distribution-of-bayesian-decision-rules-time-to-decide" title="Permalink to this heading">#</a></h2>
 <p>By using simulations, we compute the frequency distribution of time to
 deciding for the Bayesian decision rule and compare that time to the
 frequentist rule’s fixed <span class="math notranslate nohighlight">\(t\)</span>.</p>
@@ -1311,7 +1301,7 @@ rule when <span class="math notranslate nohighlight">\(q= f_0\)</span> and <stro
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2ab1fcc11b6a4edc9dad3a5d8a6460454ba81c3e232ce6771cdc3b106692ccd.png" src="_images/e2ab1fcc11b6a4edc9dad3a5d8a6460454ba81c3e232ce6771cdc3b106692ccd.png" />
+<img alt="_images/a42a5a62beba27abea63968ae5b6502945ef402f787381aafe3d3babfc4576af.png" src="_images/a42a5a62beba27abea63968ae5b6502945ef402f787381aafe3d3babfc4576af.png" />
 </div>
 </div>
 <p>Later we’ll figure out how these distributions ultimately affect
@@ -1351,7 +1341,7 @@ the one-to-one mapping from <span class="math notranslate nohighlight">\(L_{t}\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d38954ee8f95427d34962d2c91898fc623f0595ebe47babfdac35f74f50b5173.png" src="_images/d38954ee8f95427d34962d2c91898fc623f0595ebe47babfdac35f74f50b5173.png" />
+<img alt="_images/852b19c54255f3f41dbaafcb451ac233b0b0a7ce3bf0a00e1aea17a978fdfb79.png" src="_images/852b19c54255f3f41dbaafcb451ac233b0b0a7ce3bf0a00e1aea17a978fdfb79.png" />
 </div>
 </div>
 <p>The above figures compare averages and variances of updated Bayesian
@@ -1387,12 +1377,12 @@ confirm the Navy Captain’s hunch.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/25fa7e4cd4a51b0fe5ab67fe7ed85d61ad49e73e59a0db796db615e255458d08.png" src="_images/25fa7e4cd4a51b0fe5ab67fe7ed85d61ad49e73e59a0db796db615e255458d08.png" />
+<img alt="_images/8a2a4bfd55228d8865ae6d206721058d561f0df06e030ccd5e707c974f1ba2f4.png" src="_images/8a2a4bfd55228d8865ae6d206721058d561f0df06e030ccd5e707c974f1ba2f4.png" />
 </div>
 </div>
 </section>
 <section id="probability-of-making-correct-decision">
-<h2><a class="toc-backref" href="#id9"><span class="section-number">18.8. </span>Probability of Making Correct Decision</a><a class="headerlink" href="#probability-of-making-correct-decision" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id9"><span class="section-number">17.8. </span>Probability of Making Correct Decision</a><a class="headerlink" href="#probability-of-making-correct-decision" title="Permalink to this heading">#</a></h2>
 <p>Now we use simulations to compute the fraction of samples in which the
 Bayesian and the frequentist decision rules decide correctly.</p>
 <p>For the frequentist rule, the probability of making the correct decision
@@ -1433,7 +1423,7 @@ with the conditional probabilities that the Bayesian rule decides before
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4f9c31f9aa12c8e47c4c2158588501c79e102729c860db416ff53178fcf2f97c.png" src="_images/4f9c31f9aa12c8e47c4c2158588501c79e102729c860db416ff53178fcf2f97c.png" />
+<img alt="_images/9088b57f62e60431008410840149675251e2a0ac598f74064d81b01e30257c22.png" src="_images/9088b57f62e60431008410840149675251e2a0ac598f74064d81b01e30257c22.png" />
 </div>
 </div>
 <p>By averaging using <span class="math notranslate nohighlight">\(\pi^{*}\)</span>, we also plot the unconditional
@@ -1458,12 +1448,12 @@ distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bd2a04914c0652593a30bedf5ddc115bc2a22b2e225766ca518fe68ce03a6f7b.png" src="_images/bd2a04914c0652593a30bedf5ddc115bc2a22b2e225766ca518fe68ce03a6f7b.png" />
+<img alt="_images/1b95da9fb3308a78dd295bc4195eec8315c9babebb3cf8109faea09fd1b64891.png" src="_images/1b95da9fb3308a78dd295bc4195eec8315c9babebb3cf8109faea09fd1b64891.png" />
 </div>
 </div>
 </section>
 <section id="distribution-of-likelihood-ratios-at-frequentists-t">
-<h2><a class="toc-backref" href="#id10"><span class="section-number">18.9. </span>Distribution of Likelihood Ratios at Frequentist’s <span class="math notranslate nohighlight">\(t\)</span></a><a class="headerlink" href="#distribution-of-likelihood-ratios-at-frequentists-t" title="Permalink to this heading">#</a></h2>
+<h2><a class="toc-backref" href="#id10"><span class="section-number">17.9. </span>Distribution of Likelihood Ratios at Frequentist’s <span class="math notranslate nohighlight">\(t\)</span></a><a class="headerlink" href="#distribution-of-likelihood-ratios-at-frequentists-t" title="Permalink to this heading">#</a></h2>
 <p>Next we use simulations to construct distributions of likelihood ratios
 after <span class="math notranslate nohighlight">\(t\)</span> draws.</p>
 <p>To serve as useful reference points, we also show likelihood ratios that
@@ -1502,7 +1492,7 @@ generating the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dd3f074173dc8f659650468608f5cb7abbb85e99cb1086710d4d71a9014860f6.png" src="_images/dd3f074173dc8f659650468608f5cb7abbb85e99cb1086710d4d71a9014860f6.png" />
+<img alt="_images/5b20862d3d338dcd8026945f7e6079556e8c1f1f66472c6dd1baad69347495d6.png" src="_images/5b20862d3d338dcd8026945f7e6079556e8c1f1f66472c6dd1baad69347495d6.png" />
 </div>
 </div>
 <p>The next graph plots the unconditional distribution of Bayesian times to
@@ -1525,7 +1515,7 @@ distributions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7321840c5e708a7570889bab1dd62b893249dd63d251ed594e361d523584fe59.png" src="_images/7321840c5e708a7570889bab1dd62b893249dd63d251ed594e361d523584fe59.png" />
+<img alt="_images/f6f14832d0d521729261d4f6ac8649cee3233b17d1c805bc469e762a8f23f2fe.png" src="_images/f6f14832d0d521729261d4f6ac8649cee3233b17d1c805bc469e762a8f23f2fe.png" />
 </div>
 </div>
 </section>
@@ -1634,53 +1624,48 @@ distributions.</p>
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ar1_processes.html">
-   9. AR1 Processes
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   10. Posterior Distributions for  AR(1) Parameters
+   9. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   11. Forecasting  an AR(1) Process
+   10. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   12. Likelihood Ratio Processes
+   11. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   13. Computing Mean of a Likelihood Ratio Process
+   12. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   14. A Problem that Stumped Milton Friedman
+   13. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   15. Exchangeability and Bayesian Updating
+   14. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   16. Likelihood Ratio Processes and Bayesian Learning
+   15. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   17. Incorrect Models
+   16. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   18. Bayesian versus Frequentist Decision Rules
+   17. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -1692,27 +1677,27 @@ distributions.</p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="multi_hyper.html">
-   19. Multivariate Hypergeometric Distribution
+   18. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hoist_failure.html">
-   20. Fault Tree Uncertainties
+   19. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="back_prop.html">
-   21. Introduction to Artificial Neural Networks
+   20. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rand_resp.html">
-   22. Randomized Response Surveys
+   21. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   23. Expected Utilities of Random Responses
+   22. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -1724,17 +1709,17 @@ distributions.</p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   24. Troubleshooting
+   23. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   25. References
+   24. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   26. Execution Statistics
+   25. Execution Statistics
   </a>
  </li>
 </ul>

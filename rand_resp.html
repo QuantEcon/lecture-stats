@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>22. Randomized Response Surveys &#8212; Statistics for Computational Economics</title>
+    <title>21. Randomized Response Surveys &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="23. Expected Utilities of Random Responses" href="util_rand_resp.html" />
-    <link rel="prev" title="21. Introduction to Artificial Neural Networks" href="back_prop.html" />
+    <link rel="next" title="22. Expected Utilities of Random Responses" href="util_rand_resp.html" />
+    <link rel="prev" title="20. Introduction to Artificial Neural Networks" href="back_prop.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -162,10 +162,10 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">22.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warners-strategy">22.2. Warner’s Strategy</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-two-survey-designs">22.3. Comparing Two Survey Designs</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remarks">22.4. Concluding Remarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">21.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warners-strategy">21.2. Warner’s Strategy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparing-two-survey-designs">21.3. Comparing Two Survey Designs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concluding-remarks">21.4. Concluding Remarks</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -223,9 +223,9 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="randomized-response-surveys">
-<h1><span class="section-number">22. </span>Randomized Response Surveys<a class="headerlink" href="#randomized-response-surveys" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">21. </span>Randomized Response Surveys<a class="headerlink" href="#randomized-response-surveys" title="Permalink to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">22.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>Social stigmas can inhibit people from confessing potentially embarrassing activities or opinions.</p>
 <p>When people are reluctant to participate a sample survey about personally  sensitive issues, they  might decline  to participate, and even if they do participate, they might choose to provide incorrect answers to  sensitive questions.</p>
 <p>These problems induce  <strong>selection</strong>  biases that present challenges to interpreting and designing surveys.</p>
@@ -238,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>(See <a class="reference external" href="https://en.wikipedia.org/wiki/Differential_privacy">https://en.wikipedia.org/wiki/Differential_privacy</a>)</p>
 </section>
 <section id="warners-strategy">
-<h2><span class="section-number">22.2. </span>Warner’s Strategy<a class="headerlink" href="#warners-strategy" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.2. </span>Warner’s Strategy<a class="headerlink" href="#warners-strategy" title="Permalink to this heading">#</a></h2>
 <p>As usual, let’s bring in the Python modules we’ll be using.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -270,12 +270,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Index the sample set so that  the first <span class="math notranslate nohighlight">\(n_1\)</span> report “yes”, while the second <span class="math notranslate nohighlight">\(n-n_1\)</span> report “no”.</p>
 <p>The likelihood function of a sample set is</p>
 <div class="math notranslate nohighlight" id="equation-eq-one">
-<span class="eqno">(22.1)<a class="headerlink" href="#equation-eq-one" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.1)<a class="headerlink" href="#equation-eq-one" title="Permalink to this equation">#</a></span>\[
 L=\left[\pi p + (1-\pi)(1-p)\right]^{n_{1}}\left[(1-\pi) p +\pi (1-p)\right]^{n-n_{1}} 
 \]</div>
 <p>The log of the likelihood function is:</p>
 <div class="math notranslate nohighlight" id="equation-eq-two">
-<span class="eqno">(22.2)<a class="headerlink" href="#equation-eq-two" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.2)<a class="headerlink" href="#equation-eq-two" title="Permalink to this equation">#</a></span>\[
 \log(L)= n_1 \log \left[\pi p + (1-\pi)(1-p)\right] + (n-n_{1}) \log \left[(1-\pi) p +\pi (1-p)\right]
 \]</div>
 <p>The first-order necessary condition for maximizing the log likelihood function with respect to  <span class="math notranslate nohighlight">\(\pi\)</span> is:</p>
@@ -285,17 +285,17 @@ L=\left[\pi p + (1-\pi)(1-p)\right]^{n_{1}}\left[(1-\pi) p +\pi (1-p)\right]^{n-
 \]</div>
 <p>or</p>
 <div class="math notranslate nohighlight" id="equation-eq-3">
-<span class="eqno">(22.3)<a class="headerlink" href="#equation-eq-3" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.3)<a class="headerlink" href="#equation-eq-3" title="Permalink to this equation">#</a></span>\[
 \pi p + (1-\pi)(1-p)=\frac{n_1}{n}
 \]</div>
 <p>If  <span class="math notranslate nohighlight">\(p \neq \frac{1}{2}\)</span>, then the maximum likelihood estimator (MLE) of <span class="math notranslate nohighlight">\(\pi\)</span> is:</p>
 <div class="math notranslate nohighlight" id="equation-eq-four">
-<span class="eqno">(22.4)<a class="headerlink" href="#equation-eq-four" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.4)<a class="headerlink" href="#equation-eq-four" title="Permalink to this equation">#</a></span>\[
 \hat{\pi}=\frac{p-1}{2p-1}+\frac{n_1}{(2p-1)n}
 \]</div>
 <p>We compute the mean and variance of the MLE estimator <span class="math notranslate nohighlight">\(\hat \pi\)</span> to be:</p>
 <div class="math notranslate nohighlight" id="equation-eq-five">
-<span class="eqno">(22.5)<a class="headerlink" href="#equation-eq-five" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(21.5)<a class="headerlink" href="#equation-eq-five" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \mathbb{E}(\hat{\pi})&amp;= \frac{1}{2 p-1}\left[p-1+\frac{1}{n} \sum_{i=1}^{n} \mathbb{E} X_i \right] \\
 &amp;=\frac{1}{2 p-1} \left[ p -1 + \pi p + (1-\pi)(1-p)\right] \\
@@ -304,7 +304,7 @@ L=\left[\pi p + (1-\pi)(1-p)\right]^{n_{1}}\left[(1-\pi) p +\pi (1-p)\right]^{n-
 \end{split}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight" id="equation-eq-six">
-<span class="eqno">(22.6)<a class="headerlink" href="#equation-eq-six" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(21.6)<a class="headerlink" href="#equation-eq-six" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 Var(\hat{\pi})&amp;=\frac{n Var(X_i)}{(2p - 1 )^2 n^2} \\
 &amp;= \frac{\left[\pi p + (1-\pi)(1-p)\right]\left[(1-\pi) p +\pi (1-p)\right]}{(2p - 1 )^2 n^2}\\
@@ -312,27 +312,27 @@ Var(\hat{\pi})&amp;=\frac{n Var(X_i)}{(2p - 1 )^2 n^2} \\
 &amp;=\frac{1}{n}\left[\frac{1}{16(p-\frac{1}{2})^2}-(\pi-\frac{1}{2})^2 \right]
 \end{aligned}
 \end{split}\]</div>
-<p>Equation <a class="reference internal" href="#equation-eq-five">(22.5)</a> indicates  that <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> is an <strong>unbiased estimator</strong> of <span class="math notranslate nohighlight">\(\pi\)</span> while equation <a class="reference internal" href="#equation-eq-six">(22.6)</a> tell us the variance of the estimator.</p>
-<p>To compute a  confidence interval, first  rewrite <a class="reference internal" href="#equation-eq-six">(22.6)</a> as:</p>
+<p>Equation <a class="reference internal" href="#equation-eq-five">(21.5)</a> indicates  that <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> is an <strong>unbiased estimator</strong> of <span class="math notranslate nohighlight">\(\pi\)</span> while equation <a class="reference internal" href="#equation-eq-six">(21.6)</a> tell us the variance of the estimator.</p>
+<p>To compute a  confidence interval, first  rewrite <a class="reference internal" href="#equation-eq-six">(21.6)</a> as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-seven">
-<span class="eqno">(22.7)<a class="headerlink" href="#equation-eq-seven" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.7)<a class="headerlink" href="#equation-eq-seven" title="Permalink to this equation">#</a></span>\[
 Var(\hat{\pi})=\frac{\frac{1}{4}-(\pi-\frac{1}{2})^2}{n}+\frac{\frac{1}{16(p-\frac{1}{2})^2}-\frac{1}{4}}{n}
 \]</div>
 <p>This equation indicates that the variance of <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> can be represented as a sum of the variance due to sampling plus the variance due to the random device.</p>
 <p>From the expressions above we can find that:</p>
 <ul class="simple">
-<li><p>When <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>, expression <a class="reference internal" href="#equation-eq-one">(22.1)</a> degenerates to a constant.</p></li>
+<li><p>When <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(\frac{1}{2}\)</span>, expression <a class="reference internal" href="#equation-eq-one">(21.1)</a> degenerates to a constant.</p></li>
 <li><p>When <span class="math notranslate nohighlight">\(p\)</span> is <span class="math notranslate nohighlight">\(1\)</span> or <span class="math notranslate nohighlight">\(0\)</span>, the randomized estimate degenerates to an estimator without randomized sampling.</p></li>
 </ul>
 <p>We shall only discuss  situations in which <span class="math notranslate nohighlight">\(p \in (\frac{1}{2},1)\)</span></p>
 <p>(a situation in which <span class="math notranslate nohighlight">\(p \in (0,\frac{1}{2})\)</span> is symmetric).</p>
-<p>From expressions <a class="reference internal" href="#equation-eq-five">(22.5)</a> and <a class="reference internal" href="#equation-eq-seven">(22.7)</a> we can deduce that:</p>
+<p>From expressions <a class="reference internal" href="#equation-eq-five">(21.5)</a> and <a class="reference internal" href="#equation-eq-seven">(21.7)</a> we can deduce that:</p>
 <ul class="simple">
 <li><p>The MSE of <span class="math notranslate nohighlight">\(\hat{\pi}\)</span>  decreases as <span class="math notranslate nohighlight">\(p\)</span> increases.</p></li>
 </ul>
 </section>
 <section id="comparing-two-survey-designs">
-<h2><span class="section-number">22.3. </span>Comparing Two Survey Designs<a class="headerlink" href="#comparing-two-survey-designs" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.3. </span>Comparing Two Survey Designs<a class="headerlink" href="#comparing-two-survey-designs" title="Permalink to this heading">#</a></h2>
 <p>Let’s compare the preceding randomized-response method with a stylized non-randomized response method.</p>
 <p>In our non-randomized response method, we suppose that:</p>
 <ul class="simple">
@@ -341,25 +341,25 @@ Var(\hat{\pi})=\frac{\frac{1}{4}-(\pi-\frac{1}{2})^2}{n}+\frac{\frac{1}{16(p-\fr
 </ul>
 <p>Then we can estimate <span class="math notranslate nohighlight">\(\pi\)</span> as:</p>
 <div class="math notranslate nohighlight" id="equation-eq-eight">
-<span class="eqno">(22.8)<a class="headerlink" href="#equation-eq-eight" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.8)<a class="headerlink" href="#equation-eq-eight" title="Permalink to this equation">#</a></span>\[
 \hat{\pi}=\frac{\sum_{i=1}^{n}Y_i}{n}
 \]</div>
 <p>We calculate the expectation, bias, and variance of the estimator to be:</p>
 <div class="math notranslate nohighlight" id="equation-eq-nine">
-<span class="eqno">(22.9)<a class="headerlink" href="#equation-eq-nine" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(21.9)<a class="headerlink" href="#equation-eq-nine" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \mathbb{E}(\hat{\pi})&amp;=\pi T_a + \left[ (1-\pi)(1-T_b)\right]\\
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-ten">
-<span class="eqno">(22.10)<a class="headerlink" href="#equation-eq-ten" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(21.10)<a class="headerlink" href="#equation-eq-ten" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 Bias(\hat{\pi})&amp;=\mathbb{E}(\hat{\pi}-\pi)\\
 &amp;=\pi [T_a + T_b -2 ] + [1- T_b] \\
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-eq-eleven">
-<span class="eqno">(22.11)<a class="headerlink" href="#equation-eq-eleven" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(21.11)<a class="headerlink" href="#equation-eq-eleven" title="Permalink to this equation">#</a></span>\[
 \begin{aligned}
 Var(\hat{\pi})&amp;=\frac{ \left[ \pi T_a + (1-\pi)(1-T_b)\right]  \left[1- \pi T_a -(1-\pi)(1-T_b)\right] }{n}
 \end{aligned}
@@ -1376,7 +1376,7 @@ under  different values of <span class="math notranslate nohighlight">\(\pi_A\)<
 <p>Evidently, as <span class="math notranslate nohighlight">\(n\)</span> increases, the randomized response method does  better performance in more situations.</p>
 </section>
 <section id="concluding-remarks">
-<h2><span class="section-number">22.4. </span>Concluding Remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">21.4. </span>Concluding Remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this heading">#</a></h2>
 <p><a class="reference internal" href="util_rand_resp.html"><span class="doc">This QuantEcon lecture</span></a>  describes some alternative randomized response surveys.</p>
 <p>That lecture presents a utilitarian analysis of those alternatives conducted by Lars Ljungqvist
 <span id="id5">[<a class="reference internal" href="zreferences.html#id248" title="Lars Ljungqvist. A unified approach to measures of privacy in randomized response models: a utilitarian perspective. Journal of the American Statistical Association, 88(421):97–103, 1993.">Lju93</a>]</span>.</p>
@@ -1486,53 +1486,48 @@ under  different values of <span class="math notranslate nohighlight">\(\pi_A\)<
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ar1_processes.html">
-   9. AR1 Processes
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   10. Posterior Distributions for  AR(1) Parameters
+   9. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   11. Forecasting  an AR(1) Process
+   10. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   12. Likelihood Ratio Processes
+   11. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   13. Computing Mean of a Likelihood Ratio Process
+   12. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   14. A Problem that Stumped Milton Friedman
+   13. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   15. Exchangeability and Bayesian Updating
+   14. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   16. Likelihood Ratio Processes and Bayesian Learning
+   15. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   17. Incorrect Models
+   16. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="navy_captain.html">
-   18. Bayesian versus Frequentist Decision Rules
+   17. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -1544,27 +1539,27 @@ under  different values of <span class="math notranslate nohighlight">\(\pi_A\)<
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="multi_hyper.html">
-   19. Multivariate Hypergeometric Distribution
+   18. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hoist_failure.html">
-   20. Fault Tree Uncertainties
+   19. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="back_prop.html">
-   21. Introduction to Artificial Neural Networks
+   20. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   22. Randomized Response Surveys
+   21. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   23. Expected Utilities of Random Responses
+   22. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -1576,17 +1571,17 @@ under  different values of <span class="math notranslate nohighlight">\(\pi_A\)<
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   24. Troubleshooting
+   23. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   25. References
+   24. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   26. Execution Statistics
+   25. Execution Statistics
   </a>
  </li>
 </ul>

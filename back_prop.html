@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>21. Introduction to Artificial Neural Networks &#8212; Statistics for Computational Economics</title>
+    <title>20. Introduction to Artificial Neural Networks &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -113,8 +113,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="22. Randomized Response Surveys" href="rand_resp.html" />
-    <link rel="prev" title="20. Fault Tree Uncertainties" href="hoist_failure.html" />
+    <link rel="next" title="21. Randomized Response Surveys" href="rand_resp.html" />
+    <link rel="prev" title="19. Fault Tree Uncertainties" href="hoist_failure.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -162,14 +162,14 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">21.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-deep-but-not-wide-artificial-neural-network">21.2. A Deep (but not Wide) Artificial Neural Network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibrating-parameters">21.3. Calibrating  Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-and-the-chain-rule">21.4. Back Propagation and the Chain Rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-set">21.5. Training Set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">21.6. Example 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep">21.7. How Deep?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">21.8. Example 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">20.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-deep-but-not-wide-artificial-neural-network">20.2. A Deep (but not Wide) Artificial Neural Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibrating-parameters">20.3. Calibrating  Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-and-the-chain-rule">20.4. Back Propagation and the Chain Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-set">20.5. Training Set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">20.6. Example 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep">20.7. How Deep?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">20.8. Example 2</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -227,7 +227,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-artificial-neural-networks">
-<h1><span class="section-number">21. </span>Introduction to Artificial Neural Networks<a class="headerlink" href="#introduction-to-artificial-neural-networks" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">20. </span>Introduction to Artificial Neural Networks<a class="headerlink" href="#introduction-to-artificial-neural-networks" title="Permalink to this heading">#</a></h1>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>jax<span class="w"> </span>jaxlib
@@ -366,26 +366,11 @@ Collecting package metadata (repodata.json): -
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+Solving environment: - 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Solving environment: \ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
@@ -427,8 +412,9 @@ The following packages will be UPDATED:
 
 
 Downloading and Extracting Packages:
-
-plotly-orca-1.3.1    | 56.6 MB   |                                       |   0% 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly-orca-1.3.1    | 56.6 MB   |                                       |   0% 
 
 plotly-5.18.0        | 7.2 MB    |                                       |   0% 
 
@@ -443,14 +429,14 @@ retrying-1.3.3       | 14 KB     |                                       |   0%
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>retrying-1.3.3       | 14 KB     | ##################################### | 100% 
 
 
-
-retrying-1.3.3       | 14 KB     | ##################################### | 100% 
-
-
 ca-certificates-2023 | 126 KB    | ####7                                 |  13% 
 
 
-ca-certificates-2023 | 126 KB    | ##################################### | 100% 
+
+retrying-1.3.3       | 14 KB     | ##################################### | 100% 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ca-certificates-2023 | 126 KB    | ##################################### | 100% 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly-5.18.0        | 7.2 MB    | ##################################### | 100% 
@@ -472,7 +458,10 @@ plotly-orca-1.3.1    | 56.6 MB   | ##################################### | 100%
 
                                                                                 
 
-Preparing transaction: - 
+Preparing transaction: / 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
@@ -488,22 +477,10 @@ Preparing transaction: -
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Verifying transaction: \ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+Verifying transaction: / 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
@@ -537,16 +514,16 @@ Verifying transaction: \
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Executing transaction: - 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+Executing transaction: | 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
@@ -811,9 +788,6 @@ Executing transaction: -
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
@@ -830,7 +804,7 @@ the Python packages. However this lecture will still execute as Google Colab
 has <code class="docutils literal notranslate"><span class="pre">plotly</span></code> installed.</p>
 </div>
 <section id="overview">
-<h2><span class="section-number">21.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>Substantial parts of <strong>machine learning</strong> and <strong>artificial intelligence</strong> are about</p>
 <ul class="simple">
 <li><p>approximating an unknown function with a known function</p></li>
@@ -849,7 +823,7 @@ approximate a function <span class="math notranslate nohighlight">\(f\)</span> t
 </ul>
 </section>
 <section id="a-deep-but-not-wide-artificial-neural-network">
-<h2><span class="section-number">21.2. </span>A Deep (but not Wide) Artificial Neural Network<a class="headerlink" href="#a-deep-but-not-wide-artificial-neural-network" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.2. </span>A Deep (but not Wide) Artificial Neural Network<a class="headerlink" href="#a-deep-but-not-wide-artificial-neural-network" title="Permalink to this heading">#</a></h2>
 <p>We describe a  “deep” neural network of “width” one.</p>
 <p><strong>Deep</strong> means that the network composes a large number of functions organized into nodes of a graph.</p>
 <p><strong>Width</strong> refers to the number of right hand  side variables on the right hand side of the function being approximated.</p>
@@ -899,7 +873,7 @@ f(x)\approx\hat{f}(x)=h_{N}\circ l_{N}\circ h_{N-1}\circ l_{1}\circ\cdots\circ h
 <p>Evidently,  if we know  the parameters <span class="math notranslate nohighlight">\(\{w_i, b_i\}_{i=1}^N\)</span>, then we can compute
 <span class="math notranslate nohighlight">\(\hat f(x)\)</span> for a given <span class="math notranslate nohighlight">\(x = \tilde x\)</span> by iterating on the recursion</p>
 <div class="math notranslate nohighlight" id="equation-eq-recursion">
-<span class="eqno">(21.1)<a class="headerlink" href="#equation-eq-recursion" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(20.1)<a class="headerlink" href="#equation-eq-recursion" title="Permalink to this equation">#</a></span>\[
 x_{i+1} = h_i \circ l_i(x_i) , \quad, i = 1, \ldots N
 \]</div>
 <p>starting from <span class="math notranslate nohighlight">\(x_1 = \tilde x\)</span>.</p>
@@ -907,7 +881,7 @@ x_{i+1} = h_i \circ l_i(x_i) , \quad, i = 1, \ldots N
 equals <span class="math notranslate nohighlight">\(\hat f(\tilde x)\)</span>.</p>
 </section>
 <section id="calibrating-parameters">
-<h2><span class="section-number">21.3. </span>Calibrating  Parameters<a class="headerlink" href="#calibrating-parameters" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.3. </span>Calibrating  Parameters<a class="headerlink" href="#calibrating-parameters" title="Permalink to this heading">#</a></h2>
 <p>We now consider a  neural network like the one describe above  with width 1, depth <span class="math notranslate nohighlight">\(N\)</span>,  and activation functions <span class="math notranslate nohighlight">\(h_{i}\)</span> for <span class="math notranslate nohighlight">\(1\leqslant i\leqslant N\)</span> that map <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> into itself.</p>
 <p>Let <span class="math notranslate nohighlight">\(\left\{ \left(w_{i},b_{i}\right)\right\} _{i=1}^{N}\)</span> denote a sequence of weights and biases.</p>
 <p>As mentioned above, for a given input <span class="math notranslate nohighlight">\(x_{1}\)</span>, our approximating function <span class="math notranslate nohighlight">\(\hat f\)</span> evaluated
@@ -940,7 +914,7 @@ p = \begin{bmatrix}
 \]</div>
 <p>Applying a “poor man’s version” of a <strong>stochastic gradient descent</strong> algorithm for finding a zero of a function leads to the following update rule for parameters:</p>
 <div class="math notranslate nohighlight" id="equation-eq-sgd">
-<span class="eqno">(21.2)<a class="headerlink" href="#equation-eq-sgd" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(20.2)<a class="headerlink" href="#equation-eq-sgd" title="Permalink to this equation">#</a></span>\[
 p_{k+1}=p_k-\alpha\frac{d \mathcal{L}}{dx_{N+1}}\frac{dx_{N+1}}{dp_k}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\frac{d {\mathcal L}}{dx_{N+1}}=-\left(x_{N+1}-y\right)\)</span> and <span class="math notranslate nohighlight">\(\alpha &gt; 0 \)</span> is a step size.</p>
@@ -950,7 +924,7 @@ relates to Newton’s method.)</p>
 <p>In the neural network literature, this step is accomplished by what is known as <strong>back propagation</strong>.</p>
 </section>
 <section id="back-propagation-and-the-chain-rule">
-<h2><span class="section-number">21.4. </span>Back Propagation and the Chain Rule<a class="headerlink" href="#back-propagation-and-the-chain-rule" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.4. </span>Back Propagation and the Chain Rule<a class="headerlink" href="#back-propagation-and-the-chain-rule" title="Permalink to this heading">#</a></h2>
 <p>Thanks to  properties of</p>
 <ul class="simple">
 <li><p>the chain and product rules for differentiation from differential calculus, and</p></li>
@@ -975,7 +949,7 @@ relates to Newton’s method.)</p>
 \[
 \delta_{i}=h'\left(w_{i}x_{i}+b_{i}\right). 
 \]</div>
-<p>Repeated application of the chain rule and product rule to our recursion <a class="reference internal" href="#equation-eq-recursion">(21.1)</a> allows us to obtain:</p>
+<p>Repeated application of the chain rule and product rule to our recursion <a class="reference internal" href="#equation-eq-recursion">(20.1)</a> allows us to obtain:</p>
 <div class="math notranslate nohighlight">
 \[
 dx_{i+1}=\delta_{i}\left(dw_{i}x_{i}+w_{i}dx_{i}+b_{i}\right)
@@ -1032,7 +1006,7 @@ dx_{N+1}/db_{N}
 <p>We can then solve the above problem by applying our update for <span class="math notranslate nohighlight">\(p\)</span> multiple times for a collection of input-output pairs <span class="math notranslate nohighlight">\(\left\{ \left(x_{1}^{i},y^{i}\right)\right\} _{i=1}^{M}\)</span> that we’ll call our “training set”.</p>
 </section>
 <section id="training-set">
-<h2><span class="section-number">21.5. </span>Training Set<a class="headerlink" href="#training-set" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.5. </span>Training Set<a class="headerlink" href="#training-set" title="Permalink to this heading">#</a></h2>
 <p>Choosing a  training set amounts to a choice of measure <span class="math notranslate nohighlight">\(\mu\)</span> in the above  formulation of our  function approximation problem as a minimization problem.</p>
 <p>In this spirit,  we shall use a uniform grid of, say, 50 or 200 points.</p>
 <p>There are many possible approaches to the minimization  problem posed above:</p>
@@ -1041,7 +1015,7 @@ dx_{N+1}/db_{N}
 <li><p>stochastic gradient descent in which you sample points randomly and use individual gradients</p></li>
 <li><p>something in-between (so-called “mini-batch gradient descent”)</p></li>
 </ul>
-<p>The update rule <a class="reference internal" href="#equation-eq-sgd">(21.2)</a> described above  amounts  to a stochastic gradient descent algorithm.</p>
+<p>The update rule <a class="reference internal" href="#equation-eq-sgd">(20.2)</a> described above  amounts  to a stochastic gradient descent algorithm.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -1260,7 +1234,7 @@ dx_{N+1}/db_{N}
 </div>
 </section>
 <section id="example-1">
-<h2><span class="section-number">21.6. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.6. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">#</a></h2>
 <p>Consider the function</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1317,8 +1291,8 @@ f\left(x\right)=-3x+2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 42.4 s, sys: 4.5 s, total: 46.9 s
-Wall time: 30.3 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 43 s, sys: 4.79 s, total: 47.8 s
+Wall time: 30.5 s
 </pre></div>
 </div>
 </div>
@@ -1349,7 +1323,7 @@ Wall time: 30.3 s
 </div>
 </section>
 <section id="how-deep">
-<h2><span class="section-number">21.7. </span>How Deep?<a class="headerlink" href="#how-deep" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.7. </span>How Deep?<a class="headerlink" href="#how-deep" title="Permalink to this heading">#</a></h2>
 <p>It  is  fun to think about how deepening the neural net for the above example affects the quality of  approximation</p>
 <ul class="simple">
 <li><p>If the network is too deep, you’ll run into the <a class="reference external" href="http://neuralnetworksanddeeplearning.com/chap5.html">vanishing gradient problem</a></p></li>
@@ -1358,7 +1332,7 @@ Wall time: 30.3 s
 </ul>
 </section>
 <section id="example-2">
-<h2><span class="section-number">21.8. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">20.8. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h2>
 <p>We use the same setup as for the previous example with</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1581,53 +1555,48 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ar1_processes.html">
-   9. AR1 Processes
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   10. Posterior Distributions for  AR(1) Parameters
+   9. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   11. Forecasting  an AR(1) Process
+   10. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   12. Likelihood Ratio Processes
+   11. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   13. Computing Mean of a Likelihood Ratio Process
+   12. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   14. A Problem that Stumped Milton Friedman
+   13. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   15. Exchangeability and Bayesian Updating
+   14. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   16. Likelihood Ratio Processes and Bayesian Learning
+   15. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   17. Incorrect Models
+   16. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="navy_captain.html">
-   18. Bayesian versus Frequentist Decision Rules
+   17. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -1639,27 +1608,27 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="multi_hyper.html">
-   19. Multivariate Hypergeometric Distribution
+   18. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hoist_failure.html">
-   20. Fault Tree Uncertainties
+   19. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   21. Introduction to Artificial Neural Networks
+   20. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rand_resp.html">
-   22. Randomized Response Surveys
+   21. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   23. Expected Utilities of Random Responses
+   22. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -1671,17 +1640,17 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   24. Troubleshooting
+   23. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   25. References
+   24. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   26. Execution Statistics
+   25. Execution Statistics
   </a>
  </li>
 </ul>
