@@ -25,7 +25,7 @@ bibtex_bibfiles:
    - _static/quant-econ.bib
 
 html:
-  baseurl: https://python.quantecon.org/
+  baseurl: https://stats.quantecon.org/
 
 latex:
    latex_documents:
