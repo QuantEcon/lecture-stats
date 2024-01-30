@@ -121,8 +121,8 @@ sphinx:
     rediraffe_redirects:
       index_toc.md: intro.md
     # Remote Redirects
-    redirects:
-      heavy_tails: https://intro.quantecon.org/heavy_tails.html
+    # redirects:
+    #   heavy_tails: https://intro.quantecon.org/heavy_tails.html
     tojupyter_static_file_path: ["source/_static", "_static"]
     tojupyter_target_html: true
     tojupyter_urlpath: "https://stats.quantecon.org/"
