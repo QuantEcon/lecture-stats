@@ -100,6 +100,13 @@
     <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NJV5XPRDFV"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-NJV5XPRDFV');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -109,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'ar1_bayes';</script>
-    <link rel="canonical" href="https://python.quantecon.org/ar1_bayes.html" />
+    <link rel="canonical" href="https://stats.quantecon.org/ar1_bayes.html" />
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -132,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Opengraph tags -->
 <meta property="og:title" content="Posterior Distributions for  AR(1) Parameters" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://python.quantecon.org/ar1_bayes.html" />
+<meta property="og:url" content="https://stats.quantecon.org/ar1_bayes.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a set of lectures on statistics for computational economics." />
 <meta property="og:site_name" content="Statistics for Computational Economics" />
@@ -243,7 +250,9 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading pymc-5.10.3-py3-none-any.whl.metadata (10 kB)
-Collecting numpyro
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting numpyro
   Obtaining dependency information for numpyro from https://files.pythonhosted.org/packages/f9/e1/545f037aa1d119d83bebb6816d9e01138bb2a2ee5878cdd1c1e76fe3a239/numpyro-0.13.2-py3-none-any.whl.metadata
 </pre></div>
 </div>
@@ -252,11 +261,11 @@ Requirement already satisfied: jax in /opt/conda/envs/quantecon/lib/python3.11/s
 Requirement already satisfied: setuptools&gt;=60.0.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (68.0.0)
 Requirement already satisfied: matplotlib&gt;=3.2 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (3.7.2)
 Requirement already satisfied: numpy&lt;2.0,&gt;=1.21.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (1.24.3)
-Requirement already satisfied: scipy&gt;=1.8.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (1.11.1)
-Requirement already satisfied: packaging in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (23.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pandas&gt;=1.3.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (2.0.3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy&gt;=1.8.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (1.11.1)
+Requirement already satisfied: packaging in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (23.1)
+Requirement already satisfied: pandas&gt;=1.3.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (2.0.3)
 Requirement already satisfied: xarray&gt;=0.21.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (2023.6.0)
 Requirement already satisfied: h5netcdf&gt;=1.0.2 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (1.3.0)
 Requirement already satisfied: typing-extensions&gt;=4.1.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from arviz) (4.7.1)
@@ -299,21 +308,25 @@ Requirement already satisfied: python-dateutil&gt;=2.7 in /opt/conda/envs/quante
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pytz&gt;=2020.1 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from pandas&gt;=1.3.0-&gt;arviz) (2023.3.post1)
 Requirement already satisfied: tzdata&gt;=2022.1 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from pandas&gt;=1.3.0-&gt;arviz) (2023.3)
-Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc) (3.9.0)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc) (3.9.0)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting etuples (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc)
-  Downloading etuples-0.3.9.tar.gz (30 kB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading etuples-0.3.9.tar.gz (30 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hCollecting logical-unification (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading logical-unification-0.4.6.tar.gz (31 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting logical-unification (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc)
+  Downloading logical-unification-0.4.6.tar.gz (31 kB)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Preparing metadata (setup.py) ... ?25l-
@@ -325,7 +338,7 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting miniKanren (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc)
   Downloading miniKanren-1.0.3.tar.gz (41 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/41.3 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">41.3/41.3 kB</span> <span class=" -Color -Color-Red">9.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">41.3/41.3 kB</span> <span class=" -Color -Color-Red">7.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25h
 </pre></div>
 </div>
@@ -333,7 +346,9 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25hCollecting cons (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>?25hCollecting cons (from pytensor&lt;2.19,&gt;=2.18.1-&gt;pymc)
   Downloading cons-0.4.6.tar.gz (26 kB)
 </pre></div>
 </div>
@@ -353,31 +368,18 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/472.4 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━ <span class=" -Color -Color-Green">409.6/472.4 kB</span> <span class=" -Color -Color-Red">12.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">472.4/472.4 kB</span> <span class=" -Color -Color-Red">10.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading numpyro-0.13.2-py3-none-any.whl (312 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">472.4/472.4 kB</span> <span class=" -Color -Color-Red">17.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hDownloading numpyro-0.13.2-py3-none-any.whl (312 kB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/312.7 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">312.7/312.7 kB</span> <span class=" -Color -Color-Red">10.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">312.7/312.7 kB</span> <span class=" -Color -Color-Red">40.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hDownloading cachetools-5.3.2-py3-none-any.whl (9.3 kB)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading pytensor-2.18.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
+Downloading pytensor-2.18.6-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.0 MB)
 ?25l   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/2.0 MB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.6/2.0 MB</span> <span class=" -Color -Color-Red">18.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.0/2.0 MB</span> <span class=" -Color -Color-Red">18.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━ <span class=" -Color -Color-Green">1.8/2.0 MB</span> <span class=" -Color -Color-Red">16.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">15.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.0/2.0 MB</span> <span class=" -Color -Color-Red">61.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hBuilding wheels for collected packages: cons, logical-unification, etuples, miniKanren
 </pre></div>
 </div>
@@ -388,7 +390,7 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for cons: filename=cons-0.4.6-py3-none-any.whl size=9100 sha256=810f9bde6b22562f544bf7d7c4f71f2a9a9a77274644b5e5ff0b4dc86209d05f
+?25h  Created wheel for cons: filename=cons-0.4.6-py3-none-any.whl size=9100 sha256=00f9e6a6686e52ff14ff25acead6d43bfee835a0d6656ff096582f9a2c660085
   Stored in directory: /github/home/.cache/pip/wheels/95/8f/45/fe0a5b5e232401da571d514eb545833fbe220993ac8336c94e
 </pre></div>
 </div>
@@ -399,7 +401,7 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for logical-unification: filename=logical_unification-0.4.6-py3-none-any.whl size=13911 sha256=89817dd107924d361691da546a43c7cec8de07846819b6bae08c4bf51b5f3311
+?25h  Created wheel for logical-unification: filename=logical_unification-0.4.6-py3-none-any.whl size=13911 sha256=c2bb9784c4e1b16ab59b66d219c4ae2682399d5146aceddd221242b7b5fc1c14
   Stored in directory: /github/home/.cache/pip/wheels/b8/34/a9/c11a21ef1f1b6d2e5ae518dd5d28c0bd2b131c5d6e5d4417c3
 </pre></div>
 </div>
@@ -410,7 +412,7 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for etuples: filename=etuples-0.3.9-py3-none-any.whl size=12617 sha256=d1eef0a6c7ea612ce3afe5a3f640352f0b29e5f4fd88462d1b30c88c6c0f9c87
+?25h  Created wheel for etuples: filename=etuples-0.3.9-py3-none-any.whl size=12617 sha256=751b8d1165e27671741c3035fcaa8507a15ce9f89a609a0f2a4deb90a0c74d98
   Stored in directory: /github/home/.cache/pip/wheels/11/5a/ad/ebef6395e95b1dfd742afb44db6d92bd5e8921a572b9ff8618
 </pre></div>
 </div>
@@ -421,11 +423,9 @@ Requirement already satisfied: filelock in /opt/conda/envs/quantecon/lib/python3
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> done
-?25h  Created wheel for miniKanren: filename=miniKanren-1.0.3-py3-none-any.whl size=23910 sha256=05600c8294b2b1a3e6dd5e9db5bb4a33b1363135664eefcadb441600d5040321
+?25h  Created wheel for miniKanren: filename=miniKanren-1.0.3-py3-none-any.whl size=23910 sha256=b3168b8b404c101fd327ecfec549b4c61b6f62f50d04a3120bb830972e4aeb61
   Stored in directory: /github/home/.cache/pip/wheels/8d/86/58/7da4a186a7bb721885e4fb811a54b5a0065b0c624a5deb1259
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successfully built cons logical-unification etuples miniKanren
+Successfully built cons logical-unification etuples miniKanren
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: fastprogress, cachetools, logical-unification, numpyro, cons, etuples, miniKanren, pytensor, pymc
@@ -611,7 +611,7 @@ so that  <span class="math notranslate nohighlight">\(y_0 \sim {\cal N} \left(0,
 </div><div class="output text_html">
     <div>
       <progress value='240000' class='' max='240000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-      100.00% [240000/240000 01:11&lt;00:00 Sampling 4 chains, 0 divergences]
+      100.00% [240000/240000 01:14&lt;00:00 Sampling 4 chains, 0 divergences]
     </div>
     </div></div>
 </div>
@@ -623,7 +623,7 @@ so that  <span class="math notranslate nohighlight">\(y_0 \sim {\cal N} \left(0,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/dffc9b951c10799013b93dd468464bdfe4fbca76cd94d44cd9700f33c376935a.png" src="_images/dffc9b951c10799013b93dd468464bdfe4fbca76cd94d44cd9700f33c376935a.png" />
+<img alt="_images/c5bcf6cb7bf2fdaf50e3960aa0cee97e59e9319909bbf459218f2aa8aa42830b.png" src="_images/c5bcf6cb7bf2fdaf50e3960aa0cee97e59e9319909bbf459218f2aa8aa42830b.png" />
 </div>
 </div>
 <p>Evidently, the posteriors aren’t centered on the true values of <span class="math notranslate nohighlight">\(.5, 1\)</span> that we used to generate the data.</p>
@@ -673,25 +673,25 @@ so that  <span class="math notranslate nohighlight">\(y_0 \sim {\cal N} \left(0,
     <tr>
       <th>rho</th>
       <td>0.5364</td>
-      <td>0.0713</td>
-      <td>0.4018</td>
-      <td>0.6701</td>
+      <td>0.0711</td>
+      <td>0.4022</td>
+      <td>0.6693</td>
       <td>0.0002</td>
       <td>0.0001</td>
-      <td>167452.0147</td>
-      <td>125942.2235</td>
+      <td>164468.9313</td>
+      <td>124344.5178</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>sigma</th>
-      <td>1.0101</td>
-      <td>0.1065</td>
-      <td>0.8201</td>
-      <td>1.2139</td>
+      <td>1.0105</td>
+      <td>0.1066</td>
+      <td>0.8172</td>
+      <td>1.2110</td>
       <td>0.0003</td>
       <td>0.0002</td>
-      <td>173514.0743</td>
-      <td>140014.5284</td>
+      <td>165822.3075</td>
+      <td>134860.0909</td>
       <td>1.0</td>
     </tr>
   </tbody>
@@ -755,7 +755,7 @@ y_0 \sim N \left(0, \frac{\sigma_x^{2}}{1 - \rho^{2}} \right)
 </div><div class="output text_html">
     <div>
       <progress value='240000' class='' max='240000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-      100.00% [240000/240000 01:22&lt;00:00 Sampling 4 chains, 12 divergences]
+      100.00% [240000/240000 01:16&lt;00:00 Sampling 4 chains, 40 divergences]
     </div>
     </div></div>
 </div>
@@ -767,7 +767,7 @@ y_0 \sim N \left(0, \frac{\sigma_x^{2}}{1 - \rho^{2}} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1557515f559648a864c8c2f820dfe86fae36693c3eb1430b779d4177158cecb9.png" src="_images/1557515f559648a864c8c2f820dfe86fae36693c3eb1430b779d4177158cecb9.png" />
+<img alt="_images/d90e82a38ba0d480676e60dd12123cd286ff2c4ececdeaaf639e6def4bd6dc78.png" src="_images/d90e82a38ba0d480676e60dd12123cd286ff2c4ececdeaaf639e6def4bd6dc78.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -812,26 +812,26 @@ y_0 \sim N \left(0, \frac{\sigma_x^{2}}{1 - \rho^{2}} \right)
   <tbody>
     <tr>
       <th>rho</th>
-      <td>0.8759</td>
-      <td>0.0811</td>
-      <td>0.7319</td>
-      <td>0.9984</td>
+      <td>0.876</td>
+      <td>0.0812</td>
+      <td>0.7317</td>
+      <td>0.9987</td>
       <td>0.0002</td>
       <td>0.0002</td>
-      <td>107396.9356</td>
-      <td>79780.6036</td>
+      <td>110490.6543</td>
+      <td>81541.7428</td>
       <td>1.0</td>
     </tr>
     <tr>
       <th>sigma</th>
-      <td>1.4051</td>
-      <td>0.1468</td>
-      <td>1.1375</td>
-      <td>1.6809</td>
-      <td>0.0005</td>
+      <td>1.405</td>
+      <td>0.1472</td>
+      <td>1.1406</td>
+      <td>1.6837</td>
+      <td>0.0004</td>
       <td>0.0003</td>
-      <td>107681.0530</td>
-      <td>102507.0303</td>
+      <td>126117.0347</td>
+      <td>103202.6080</td>
       <td>1.0</td>
     </tr>
   </tbody>
@@ -1249,7 +1249,7 @@ is telling <code class="docutils literal notranslate"><span class="pre">numpyro<
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/ar1_bayes.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-python.myst/ar1_bayes.md" download><i data-feather="github"></i></a></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats.myst/ar1_bayes.md" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1261,7 +1261,7 @@ is telling <code class="docutils literal notranslate"><span class="pre">numpyro<
                     <p>Lecture (PDF)</p>
                 </li>
                 <li class="download-pdf-file">
-                    <a href="/_pdf/quantecon-python.pdf" download><p>Book (PDF)</p></a>
+                    <a href="/_pdf/quantecon-stats.pdf" download><p>Book (PDF)</p></a>
                 </li>
             </ul>
         </div>
@@ -1278,18 +1278,18 @@ is telling <code class="docutils literal notranslate"><span class="pre">numpyro<
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/ar1_bayes.ipynb">Colab</option>
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/ar1_bayes.ipynb">Colab</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-python.notebooks" data-urlpath="tree/lecture-python.notebooks/ar1_bayes.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/ar1_bayes.ipynb" data-branch=master>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/ar1_bayes.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/ar1_bayes.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1320,8 +1320,8 @@ is telling <code class="docutils literal notranslate"><span class="pre">numpyro<
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
                 const pageName = "ar1_bayes";
-                const repoURL = "https://github.com/QuantEcon/lecture-python.notebooks";
-                const urlPath = "tree/lecture-python.notebooks/ar1_bayes.ipynb";
+                const repoURL = "https://github.com/QuantEcon/lecture-stats.notebooks";
+                const urlPath = "tree/lecture-stats.notebooks/ar1_bayes.ipynb";
                 const branch = "master"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 

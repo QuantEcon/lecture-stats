@@ -100,6 +100,13 @@
     <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NJV5XPRDFV"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-NJV5XPRDFV');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -109,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'navy_captain';</script>
-    <link rel="canonical" href="https://python.quantecon.org/navy_captain.html" />
+    <link rel="canonical" href="https://stats.quantecon.org/navy_captain.html" />
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -132,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Opengraph tags -->
 <meta property="og:title" content="Bayesian versus Frequentist Decision Rules" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://python.quantecon.org/navy_captain.html" />
+<meta property="og:url" content="https://stats.quantecon.org/navy_captain.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a set of lectures on statistics for computational economics." />
 <meta property="og:site_name" content="Statistics for Computational Economics" />
@@ -269,16 +276,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading interpolation-2.2.1-py3-none-any.whl (56 kB)
 ?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/56.6 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">56.6/56.6 kB</span> <span class=" -Color -Color-Red">3.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">56.6/56.6 kB</span> <span class=" -Color -Color-Red">3.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: numba&gt;=0.47 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from interpolation) (0.57.1)
 Requirement already satisfied: numpy&gt;=1.18.1 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from interpolation) (1.24.3)
 Requirement already satisfied: scipy&gt;=1.4.1 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from interpolation) (1.11.1)
-Collecting tempita&gt;=0.5.2 (from interpolation)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Downloading Tempita-0.5.2-py3-none-any.whl (12 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting tempita&gt;=0.5.2 (from interpolation)
+  Downloading Tempita-0.5.2-py3-none-any.whl (12 kB)
 Requirement already satisfied: llvmlite&lt;0.41,&gt;=0.40.0dev0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from numba&gt;=0.47-&gt;interpolation) (0.40.0)
 </pre></div>
 </div>
@@ -565,7 +570,7 @@ generates data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6c61882910012f69326f84c1eaed5721864bd52583e58a6750c0350950c7e99c.png" src="_images/6c61882910012f69326f84c1eaed5721864bd52583e58a6750c0350950c7e99c.png" />
+<img alt="_images/1e651eb8b86d3a4ecb87a44d80a8dda39464b9f9174a1e7c9fb7061c80218efe.png" src="_images/1e651eb8b86d3a4ecb87a44d80a8dda39464b9f9174a1e7c9fb7061c80218efe.png" />
 </div>
 </div>
 <p>We can compute sequences of likelihood ratios using simulated samples.</p>
@@ -614,7 +619,7 @@ generates data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/94dcc25ed38940f6ff55d5c48c16cce471615db3cd50715b613a2540796aca72.png" src="_images/94dcc25ed38940f6ff55d5c48c16cce471615db3cd50715b613a2540796aca72.png" />
+<img alt="_images/15bb7693c76a70fb7e3a90b31d48544fd7999c9dec765354d3b1e5ed09e81c54.png" src="_images/15bb7693c76a70fb7e3a90b31d48544fd7999c9dec765354d3b1e5ed09e81c54.png" />
 </div>
 </div>
 <p>Our frequentist minimizes the expected total loss presented in equation
@@ -698,7 +703,7 @@ consequently the minimal <span class="math notranslate nohighlight">\(\bar{V}_{f
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1dd7c113806320e4ec71a102f6774a7540f9606e8f533e1d7b770b38e3f449d6.png" src="_images/1dd7c113806320e4ec71a102f6774a7540f9606e8f533e1d7b770b38e3f449d6.png" />
+<img alt="_images/3e9eb85aa02e1ca6bf85343c0f9531afebdb4a3b350d7279d7611a6b590554e1.png" src="_images/3e9eb85aa02e1ca6bf85343c0f9531afebdb4a3b350d7279d7611a6b590554e1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -716,7 +721,7 @@ consequently the minimal <span class="math notranslate nohighlight">\(\bar{V}_{f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The above graph indicates that minimizing over t tells the frequentist to draw 8 observations and then decide.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The above graph indicates that minimizing over t tells the frequentist to draw 9 observations and then decide.
 </pre></div>
 </div>
 </div>
@@ -756,7 +761,7 @@ rule changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8f7b8531b8ff1836177ddec752b3063ebecab3244c674d0280d85aeb5ccdcb70.png" src="_images/8f7b8531b8ff1836177ddec752b3063ebecab3244c674d0280d85aeb5ccdcb70.png" />
+<img alt="_images/8d749104382fabe939bc7f6dd4b8c8aa8f5473253a966a715a972409a2297ffa.png" src="_images/8d749104382fabe939bc7f6dd4b8c8aa8f5473253a966a715a972409a2297ffa.png" />
 </div>
 </div>
 <p>The following shows how optimal sample size <span class="math notranslate nohighlight">\(t\)</span> and targeted
@@ -780,7 +785,7 @@ rule changes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4d074024e1ecf0ae5b2e3221e0e476af565d3d6559daea9bc8b6a41db0811735.png" src="_images/4d074024e1ecf0ae5b2e3221e0e476af565d3d6559daea9bc8b6a41db0811735.png" />
+<img alt="_images/a2e295ecc8522d6e88322b6bd1d806c8ee5d2e9505ff1c4f124a8e255617bd12.png" src="_images/a2e295ecc8522d6e88322b6bd1d806c8ee5d2e9505ff1c4f124a8e255617bd12.png" />
 </div>
 </div>
 </section>
@@ -927,7 +932,7 @@ that computes <span class="math notranslate nohighlight">\(\alpha\)</span> and <
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/33262682125e6748f34af7b45a99a20fcfdbe1411c8415d6ceeaa68a8077309d.png" src="_images/33262682125e6748f34af7b45a99a20fcfdbe1411c8415d6ceeaa68a8077309d.png" />
+<img alt="_images/d7ec9cfb1091db8301f36647e0208b08813dc1ddde7003047238f1fa34a8366b.png" src="_images/d7ec9cfb1091db8301f36647e0208b08813dc1ddde7003047238f1fa34a8366b.png" />
 </div>
 </div>
 <p>The above figure portrays the value function plotted against the decision
@@ -1033,7 +1038,7 @@ numerically.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8cf1fb34af8a213fac64b8e7cbdbae8ba7c8164607b212703196bf216e52d78.png" src="_images/a8cf1fb34af8a213fac64b8e7cbdbae8ba7c8164607b212703196bf216e52d78.png" />
+<img alt="_images/45905d0b0591c013ddba18372b0bc9b417277b64fe7c923a993260c03b050d6d.png" src="_images/45905d0b0591c013ddba18372b0bc9b417277b64fe7c923a993260c03b050d6d.png" />
 </div>
 </div>
 <p>Given an assumed value for
@@ -1085,7 +1090,7 @@ minimizes this objective concept of expected loss.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a83ccd6c5f660e886da8a363ddbb93f042014b463fa4d235210e7b3d54906fe7.png" src="_images/a83ccd6c5f660e886da8a363ddbb93f042014b463fa4d235210e7b3d54906fe7.png" />
+<img alt="_images/609e6246048a613f51f2226b5e84b1b547b8bd7e863f8bb9c37d0cead9d1dab1.png" src="_images/609e6246048a613f51f2226b5e84b1b547b8bd7e863f8bb9c37d0cead9d1dab1.png" />
 </div>
 </div>
 <p>This pattern of outcomes holds more generally.</p>
@@ -1124,7 +1129,7 @@ for all <span class="math notranslate nohighlight">\(\pi^{*}\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/21ad38bacd3934c7799a202c61291067fa2697a7dff37bcadecb452f8fc7d842.png" src="_images/21ad38bacd3934c7799a202c61291067fa2697a7dff37bcadecb452f8fc7d842.png" />
+<img alt="_images/388188bbcfd9bf2c180c3166ca136c170e42874c2f13488f13a6068caa3fdf53.png" src="_images/388188bbcfd9bf2c180c3166ca136c170e42874c2f13488f13a6068caa3fdf53.png" />
 </div>
 </div>
 </section>
@@ -1165,7 +1170,7 @@ frequentist and Bayesian decision rules.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4933256cc54ec3ac3c8d364fbe2ef29269c4589cca55ace758ce9d56ed365ff8.png" src="_images/4933256cc54ec3ac3c8d364fbe2ef29269c4589cca55ace758ce9d56ed365ff8.png" />
+<img alt="_images/dfa35e565470664b413bcdcf16131563d0c916b310f7b13096a05d64b74be892.png" src="_images/dfa35e565470664b413bcdcf16131563d0c916b310f7b13096a05d64b74be892.png" />
 </div>
 </div>
 <p>Evidently, there is no sample size <span class="math notranslate nohighlight">\(t\)</span> at which the frequentist
@@ -1190,7 +1195,7 @@ rule does better on average for all values of <span class="math notranslate nohi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b067cbfc623e5797fd131a3d090eb94d804f231139b5ba13bd2c5545f555dfe4.png" src="_images/b067cbfc623e5797fd131a3d090eb94d804f231139b5ba13bd2c5545f555dfe4.png" />
+<img alt="_images/ada85517786485a48494f49c6a204c72ee529f92b143fe78b2a95c6d63ed5390.png" src="_images/ada85517786485a48494f49c6a204c72ee529f92b143fe78b2a95c6d63ed5390.png" />
 </div>
 </div>
 <p>The right panel of the above graph plots the difference
@@ -1218,7 +1223,7 @@ sample size <code class="docutils literal notranslate"><span class="pre">t_optim
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9
 </pre></div>
 </div>
 </div>
@@ -1303,7 +1308,7 @@ rule when <span class="math notranslate nohighlight">\(q= f_0\)</span> and <stro
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2a1745c52172b905bae7d0acb1a33d0ce2c49978d28bd5d2b64567e476c393a.png" src="_images/e2a1745c52172b905bae7d0acb1a33d0ce2c49978d28bd5d2b64567e476c393a.png" />
+<img alt="_images/36d87949300fc07fc08cf884790e4000f984d7f4e6031266e5759c2a7bfb0cf3.png" src="_images/36d87949300fc07fc08cf884790e4000f984d7f4e6031266e5759c2a7bfb0cf3.png" />
 </div>
 </div>
 <p>Later we’ll figure out how these distributions ultimately affect
@@ -1343,7 +1348,7 @@ the one-to-one mapping from <span class="math notranslate nohighlight">\(L_{t}\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eeaaf795250f4049b9f3a1e89fe193dcdec72e0be40c5ad92d6aa227b69880e9.png" src="_images/eeaaf795250f4049b9f3a1e89fe193dcdec72e0be40c5ad92d6aa227b69880e9.png" />
+<img alt="_images/1da1d81f33bca4ae30245f56eded5d252e97ae65d743e1702241ba3f6734756c.png" src="_images/1da1d81f33bca4ae30245f56eded5d252e97ae65d743e1702241ba3f6734756c.png" />
 </div>
 </div>
 <p>The above figures compare averages and variances of updated Bayesian
@@ -1379,7 +1384,7 @@ confirm the Navy Captain’s hunch.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1c6a69c820c08a93ab715f134f205b43c1e55b10470f5fe42696e783298c78a0.png" src="_images/1c6a69c820c08a93ab715f134f205b43c1e55b10470f5fe42696e783298c78a0.png" />
+<img alt="_images/b45b89cc8eb2b5a9de36240dc8072dc3ebfc1ad8ead912178a8a86da5b6cf924.png" src="_images/b45b89cc8eb2b5a9de36240dc8072dc3ebfc1ad8ead912178a8a86da5b6cf924.png" />
 </div>
 </div>
 </section>
@@ -1425,7 +1430,7 @@ with the conditional probabilities that the Bayesian rule decides before
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/86c14e714114a7afa6dd6d334e36a7dd524c46cac14bbf581959d05baf18b863.png" src="_images/86c14e714114a7afa6dd6d334e36a7dd524c46cac14bbf581959d05baf18b863.png" />
+<img alt="_images/f901b3b076215b87b06bf3974165897906ce54079f8b6e1f6402a308fc9e6450.png" src="_images/f901b3b076215b87b06bf3974165897906ce54079f8b6e1f6402a308fc9e6450.png" />
 </div>
 </div>
 <p>By averaging using <span class="math notranslate nohighlight">\(\pi^{*}\)</span>, we also plot the unconditional
@@ -1450,7 +1455,7 @@ distribution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e34b3b7093236096f6d2af4f7c4a52e617b0749ab8a035b6517a2f3cd9c26551.png" src="_images/e34b3b7093236096f6d2af4f7c4a52e617b0749ab8a035b6517a2f3cd9c26551.png" />
+<img alt="_images/29b95573cad9e466cce3114cf34979650705db401afea221b43abd4fb3b4be9f.png" src="_images/29b95573cad9e466cce3114cf34979650705db401afea221b43abd4fb3b4be9f.png" />
 </div>
 </div>
 </section>
@@ -1494,7 +1499,7 @@ generating the data.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/57ae017bd23d33e50ef34216d611c191fba1210fb828d381bb780d9fd9ab7cab.png" src="_images/57ae017bd23d33e50ef34216d611c191fba1210fb828d381bb780d9fd9ab7cab.png" />
+<img alt="_images/902c73471f69af849ab7db6c6125dfc9893aa8fea66d6cd8637ac9b9cfbde560.png" src="_images/902c73471f69af849ab7db6c6125dfc9893aa8fea66d6cd8637ac9b9cfbde560.png" />
 </div>
 </div>
 <p>The next graph plots the unconditional distribution of Bayesian times to
@@ -1517,7 +1522,7 @@ distributions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f537ec9b1ff1e20e4d23d3de4e73aeaaef15c9287e0bc6b7e448d77a4db6cddf.png" src="_images/f537ec9b1ff1e20e4d23d3de4e73aeaaef15c9287e0bc6b7e448d77a4db6cddf.png" />
+<img alt="_images/a05939d3d17605d3c4b0efe9fddf348bbaf6511b0fa41ab4597eb58fa8c493d4.png" src="_images/a05939d3d17605d3c4b0efe9fddf348bbaf6511b0fa41ab4597eb58fa8c493d4.png" />
 </div>
 </div>
 </section>
@@ -1760,7 +1765,7 @@ distributions.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/navy_captain.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-python.myst/navy_captain.md" download><i data-feather="github"></i></a></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats.myst/navy_captain.md" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1772,7 +1777,7 @@ distributions.</p>
                     <p>Lecture (PDF)</p>
                 </li>
                 <li class="download-pdf-file">
-                    <a href="/_pdf/quantecon-python.pdf" download><p>Book (PDF)</p></a>
+                    <a href="/_pdf/quantecon-stats.pdf" download><p>Book (PDF)</p></a>
                 </li>
             </ul>
         </div>
@@ -1789,18 +1794,18 @@ distributions.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/navy_captain.ipynb">Colab</option>
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/navy_captain.ipynb">Colab</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-python.notebooks" data-urlpath="tree/lecture-python.notebooks/navy_captain.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/navy_captain.ipynb" data-branch=master>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/navy_captain.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/navy_captain.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1831,8 +1836,8 @@ distributions.</p>
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
                 const pageName = "navy_captain";
-                const repoURL = "https://github.com/QuantEcon/lecture-python.notebooks";
-                const urlPath = "tree/lecture-python.notebooks/navy_captain.ipynb";
+                const repoURL = "https://github.com/QuantEcon/lecture-stats.notebooks";
+                const urlPath = "tree/lecture-stats.notebooks/navy_captain.ipynb";
                 const branch = "master"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 

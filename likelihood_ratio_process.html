@@ -100,6 +100,13 @@
     <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NJV5XPRDFV"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-NJV5XPRDFV');
+            </script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -109,7 +116,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'likelihood_ratio_process';</script>
-    <link rel="canonical" href="https://python.quantecon.org/likelihood_ratio_process.html" />
+    <link rel="canonical" href="https://stats.quantecon.org/likelihood_ratio_process.html" />
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -132,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
 <!-- Opengraph tags -->
 <meta property="og:title" content="Likelihood Ratio Processes" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://python.quantecon.org/likelihood_ratio_process.html" />
+<meta property="og:url" content="https://stats.quantecon.org/likelihood_ratio_process.html" />
 <meta property="og:image" content="https://assets.quantecon.org/img/qe-og-logo.png" />
 <meta property="og:description" content="This website presents a set of lectures on statistics for computational economics." />
 <meta property="og:site_name" content="Statistics for Computational Economics" />
@@ -392,7 +399,7 @@ draws from <span class="math notranslate nohighlight">\(g\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/37bb995f6737bbab94edbe4a068064027d776bc63960b9a1490a7224f08c4ef8.png" src="_images/37bb995f6737bbab94edbe4a068064027d776bc63960b9a1490a7224f08c4ef8.png" />
+<img alt="_images/9417afee8bec5d94d075c3cfce2b7cbb943dce28d5cc0bed9812dda7f484b5df.png" src="_images/9417afee8bec5d94d075c3cfce2b7cbb943dce28d5cc0bed9812dda7f484b5df.png" />
 </div>
 </div>
 <p>Evidently, as sample length <span class="math notranslate nohighlight">\(T\)</span> grows, most probability mass
@@ -407,10 +414,10 @@ paths <span class="math notranslate nohighlight">\(L\left(w^{t}\right)\)</span> 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f82edbe3e90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fef87031b90&gt;]
 </pre></div>
 </div>
-<img alt="_images/fe0b5b520f0424e7a74bec171826bc7b4d6603795326daa6a38702ec85100bb6.png" src="_images/fe0b5b520f0424e7a74bec171826bc7b4d6603795326daa6a38702ec85100bb6.png" />
+<img alt="_images/0d0fb8c36fc8cdc042c9d3e5e25c0566f805b81679136ad44190d44afc2bed1b.png" src="_images/0d0fb8c36fc8cdc042c9d3e5e25c0566f805b81679136ad44190d44afc2bed1b.png" />
 </div>
 </div>
 <p>Despite the evident convergence of most probability mass to a
@@ -519,10 +526,10 @@ diverges toward <span class="math notranslate nohighlight">\(+ \infty\)</span>.<
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f82ede6b410&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fef87b88d50&gt;]
 </pre></div>
 </div>
-<img alt="_images/9de7cb0ff00260fa82ba2244eeada6831941d089854836c257aa442809df4348.png" src="_images/9de7cb0ff00260fa82ba2244eeada6831941d089854836c257aa442809df4348.png" />
+<img alt="_images/0d56d980f32eb68362482f62d72951fe0bef44c5fc56f73e5b4daa706d9e078e.png" src="_images/0d56d980f32eb68362482f62d72951fe0bef44c5fc56f73e5b4daa706d9e078e.png" />
 </div>
 </div>
 <p>We also plot the probability that <span class="math notranslate nohighlight">\(L\left(w^t\right)\)</span> falls into
@@ -535,10 +542,10 @@ fast probability mass diverges  to <span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f82ede79510&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fef87b89b90&gt;]
 </pre></div>
 </div>
-<img alt="_images/bb3b8ab76440743979c018df395a9f07b7deaeb61105a879f9831088939089e8.png" src="_images/bb3b8ab76440743979c018df395a9f07b7deaeb61105a879f9831088939089e8.png" />
+<img alt="_images/ddfacf03a06b36923bbd891e0945adc856863095383cf741c35289ff71fc9ca1.png" src="_images/ddfacf03a06b36923bbd891e0945adc856863095383cf741c35289ff71fc9ca1.png" />
 </div>
 </div>
 </section>
@@ -657,7 +664,7 @@ is what makes it possible to distinguish
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9cf0f79380f694c59f83068a5c703de5aa57c5ed49964d477cacab714257b632.png" src="_images/9cf0f79380f694c59f83068a5c703de5aa57c5ed49964d477cacab714257b632.png" />
+<img alt="_images/cc38a4944b33093b19dfafb013b330ca9878b3dfacb61d7bb62e939554a7eafe.png" src="_images/cc38a4944b33093b19dfafb013b330ca9878b3dfacb61d7bb62e939554a7eafe.png" />
 </div>
 </div>
 <p>The graph below shows more clearly that, when we hold the threshold
@@ -682,7 +689,7 @@ is what makes it possible to distinguish
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a4139710999224acc00d731d59aff15ececfed6379ef49b1820ae94a3bcf0003.png" src="_images/a4139710999224acc00d731d59aff15ececfed6379ef49b1820ae94a3bcf0003.png" />
+<img alt="_images/5681f087275847db01e2daa6175f12e4bccf4434edc22240c819f8f85c782bee.png" src="_images/5681f087275847db01e2daa6175f12e4bccf4434edc22240c819f8f85c782bee.png" />
 </div>
 </div>
 <p>For a given sample size <span class="math notranslate nohighlight">\(t\)</span>,  the threshold <span class="math notranslate nohighlight">\(c\)</span> uniquely pins down  probabilities
@@ -717,7 +724,7 @@ sample sizes <span class="math notranslate nohighlight">\(t\)</span>.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6f9f86237eb22afa7ef3be68ba30e60c27452e537c6ac3a159695cf7e2b5ec63.png" src="_images/6f9f86237eb22afa7ef3be68ba30e60c27452e537c6ac3a159695cf7e2b5ec63.png" />
+<img alt="_images/8a513294ac3f717610262849fdcb82e5d808249569838875e2ca4501d4c98987.png" src="_images/8a513294ac3f717610262849fdcb82e5d808249569838875e2ca4501d4c98987.png" />
 </div>
 </div>
 <p>Notice that as <span class="math notranslate nohighlight">\(t\)</span> increases, we are assured a larger probability
@@ -758,7 +765,7 @@ target probability of detection, for example, <span class="math notranslate nohi
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/97d30d64c83bd5ebd30f87cab017696f8912bc12fb96e40f4c74efb60ee7fe52.png" src="_images/97d30d64c83bd5ebd30f87cab017696f8912bc12fb96e40f4c74efb60ee7fe52.png" />
+<img alt="_images/e2d2c60d13b1d5f890a7b16e9cfa3caa4a80a65394853935bda30257681936dd.png" src="_images/e2d2c60d13b1d5f890a7b16e9cfa3caa4a80a65394853935bda30257681936dd.png" />
 </div>
 </div>
 <p>The United States Navy evidently used a procedure like this to select a sample size <span class="math notranslate nohighlight">\(t\)</span> for doing quality
@@ -896,10 +903,10 @@ simulation.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f82ed976390&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fef87956a50&gt;]
 </pre></div>
 </div>
-<img alt="_images/5a69cd29bde74089fcc28ad7ad3ad1e682e014da5cc0dc4cbe8d2b76e2952587.png" src="_images/5a69cd29bde74089fcc28ad7ad3ad1e682e014da5cc0dc4cbe8d2b76e2952587.png" />
+<img alt="_images/d3e2f48c2c6b8fc147f1e979c8f246c45d4220e4f0d6d39943f74042307dd2f5.png" src="_images/d3e2f48c2c6b8fc147f1e979c8f246c45d4220e4f0d6d39943f74042307dd2f5.png" />
 </div>
 </div>
 <p>We can also try an <span class="math notranslate nohighlight">\(h\)</span> that is closer to <span class="math notranslate nohighlight">\(f\)</span> than is
@@ -943,10 +950,10 @@ simulation.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f82ed9b6390&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fef87913590&gt;]
 </pre></div>
 </div>
-<img alt="_images/ef4f2e094da8d1ac10c128bb7654467834c68f167bc6ea43ca8cd8a9b002b0e3.png" src="_images/ef4f2e094da8d1ac10c128bb7654467834c68f167bc6ea43ca8cd8a9b002b0e3.png" />
+<img alt="_images/87642f0ef7fd91738f8a8721499511f55f08881af8202c3202c2517eed9b77a1.png" src="_images/87642f0ef7fd91738f8a8721499511f55f08881af8202c3202c2517eed9b77a1.png" />
 </div>
 </div>
 </section>
@@ -1196,7 +1203,7 @@ of the <strong>peculiar property</strong> of likelihood ratio processes describe
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/likelihood_ratio_process.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-python.myst/likelihood_ratio_process.md" download><i data-feather="github"></i></a></li>
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats.myst/likelihood_ratio_process.md" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1208,7 +1215,7 @@ of the <strong>peculiar property</strong> of likelihood ratio processes describe
                     <p>Lecture (PDF)</p>
                 </li>
                 <li class="download-pdf-file">
-                    <a href="/_pdf/quantecon-python.pdf" download><p>Book (PDF)</p></a>
+                    <a href="/_pdf/quantecon-stats.pdf" download><p>Book (PDF)</p></a>
                 </li>
             </ul>
         </div>
@@ -1225,18 +1232,18 @@ of the <strong>peculiar property</strong> of likelihood ratio processes describe
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/likelihood_ratio_process.ipynb">Colab</option>
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/likelihood_ratio_process.ipynb">Colab</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-python.notebooks" data-urlpath="tree/lecture-python.notebooks/likelihood_ratio_process.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/likelihood_ratio_process.ipynb" data-branch=master>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-python.notebooks/blob/master/likelihood_ratio_process.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/likelihood_ratio_process.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1267,8 +1274,8 @@ of the <strong>peculiar property</strong> of likelihood ratio processes describe
                 const launcherPublic = document.getElementById('launcher-public-input');
                 const launcherPrivate = document.getElementById('launcher-private-input');
                 const pageName = "likelihood_ratio_process";
-                const repoURL = "https://github.com/QuantEcon/lecture-python.notebooks";
-                const urlPath = "tree/lecture-python.notebooks/likelihood_ratio_process.ipynb";
+                const repoURL = "https://github.com/QuantEcon/lecture-stats.notebooks";
+                const urlPath = "tree/lecture-stats.notebooks/likelihood_ratio_process.ipynb";
                 const branch = "master"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
