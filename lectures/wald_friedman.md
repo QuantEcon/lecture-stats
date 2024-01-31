@@ -140,7 +140,7 @@ random variables is also independently and identically distributed (IID).
 
 But the observer does not know which of the two distributions generated the sequence.
 
-For reasons explained in  [Exchangeability and Bayesian Updating](https://python.quantecon.org/exchangeable.html), this means that the sequence is not
+For reasons explained in  {doc}`Exchangeability and Bayesian Updating <stats:exchangeable>`, this means that the sequence is not
 IID.
 
 The observer has something to learn, namely, whether the observations are drawn from  $f_0$ or from $f_1$.
@@ -937,7 +937,7 @@ Here is how Wald introduces the notion of a sequential test
 > observations.
 
 [^f1]: The decision maker acts as if he believes that the sequence of random variables
-$[z_{0}, z_{1}, \ldots]$ is *exchangeable*.  See [Exchangeability and Bayesian Updating](https://python.quantecon.org/exchangeable.html) and
+$[z_{0}, z_{1}, \ldots]$ is *exchangeable*.  See {doc}`Exchangeability and Bayesian Updating <stats:exchangeable>` and
 {cite}`Kreps88` chapter 11, for  discussions of exchangeability.
 
 ## Sequels
