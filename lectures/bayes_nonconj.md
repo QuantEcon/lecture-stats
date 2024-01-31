@@ -48,7 +48,7 @@ As usual, we begin by importing some Python code.
 :tags: [hide-output]
 
 # install dependencies
-!pip install numpyro pyro-ppl torch jax
+!pip install numpyro pyro-ppl torch
 ```
 
 ```{code-cell} ipython3
