@@ -19,7 +19,7 @@ We'll begin with some Python imports.
 ```{code-cell} ipython3
 :tags: [hide-output]
 
-!pip install arviz pymc numpyro
+!pip install arviz pymc
 ```
 
 ```{code-cell} ipython3
