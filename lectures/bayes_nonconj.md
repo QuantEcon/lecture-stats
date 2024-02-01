@@ -43,7 +43,9 @@ The two Python modules are
 
 As usual, we begin by importing some Python code.
 
-CODE-CELL
+```{code-cell} ipython3
+!conda install pytorch torchvision -c pytorch
+```
 
 ```{code-cell} ipython3
 import numpy as np
