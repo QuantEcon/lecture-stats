@@ -44,7 +44,7 @@ The two Python modules are
 As usual, we begin by importing some Python code.
 
 ```{code-cell} ipython3
-!conda install --yes pytorch torchvision -c pytorch
+!pip install torch torchvision
 ```
 
 ```{code-cell} ipython3
