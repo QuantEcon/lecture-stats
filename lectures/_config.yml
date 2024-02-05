@@ -76,7 +76,7 @@ sphinx:
           url: https://johnstachurski.net/
       header_organisation_url: https://quantecon.org
       header_organisation: QuantEcon
-      repository_url: https://github.com/QuantEcon/lecture-stats.myst
+      repository_url: https://github.com/QuantEcon/lecture-stats
       nb_repository_url: https://github.com/QuantEcon/lecture-stats.notebooks
       twitter: quantecon
       twitter_logo_url: https://assets.quantecon.org/img/qe-twitter-logo.png
