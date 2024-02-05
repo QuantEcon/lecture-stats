@@ -41,14 +41,6 @@ The two Python modules are
 
 As usual, we begin by importing some Python code.
 
-
-```{code-cell} ipython3
-:tags: [hide-output]
-
-# install dependencies
-!pip install numpyro pyro-ppl torch jax
-```
-
 ```{code-cell} ipython3
 import numpy as np
 import seaborn as sns
