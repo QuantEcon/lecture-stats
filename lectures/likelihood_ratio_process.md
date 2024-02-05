@@ -691,5 +691,5 @@ plt.plot(range(T), np.sum(l_seq_h > 10000, axis=0) / N)
 Likelihood processes play an important role in Bayesian learning, as described in {doc}`this lecture <likelihood_bayes>`
 and as applied in {doc}`this lecture <dynam:odu>`.
 
-Likelihood ratio processes appear again in [this lecture](https://python-advanced.quantecon.org/additive_functionals.html), which contains another illustration
+Likelihood ratio processes appear again in {doc}`this lecture <tools:additive_functionals>`, which contains another illustration
 of the **peculiar property** of likelihood ratio processes described above.

@@ -33,8 +33,8 @@ We'll use the following concepts and tools:
 * a hierarchical probability model for describing uncertain probabilities
 * Fourier transforms and inverse Fourier tranforms as efficient ways of computing convolutions of sequences
 
-For more about Fourier transforms see this quantecon lecture [Circulant Matrices](https://python.quantecon.org/eig_circulant.html)
-as well as these  lecture  [Covariance Stationary Processes](https://python-advanced.quantecon.org/arma.html) and [Estimation of Spectra](https://python-advanced.quantecon.org/estspec.html).
+For more about Fourier transforms see this quantecon lecture {doc}`Circulant Matrices <tools:eig_circulant>`
+as well as these  lecture  {doc}`Covariance Stationary Processes <tools:arma>` and {doc}`Estimation of Spectra <tools:estspec>`.
 
 
 

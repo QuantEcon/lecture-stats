@@ -549,7 +549,7 @@ assumptions about nature's choice of distribution, namely
 - that nature permanently draws from $G$
 
 Outcomes depend on a peculiar property of likelihood ratio processes  discussed in
-[this lecture](https://python-advanced.quantecon.org/additive_functionals.html).
+{doc}`this lecture <tools:additive_functionals>`.
 
 To proceed, we create some Python code.
 
