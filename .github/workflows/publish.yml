@@ -22,13 +22,13 @@ jobs:
               --cloud-region=us-west-2 \
               --cloud-type=p3.2xlarge \
               --labels=cml-gpu \
-              --cloud-hdd-size=40
+              --cloud-hdd-size=100
   publish:
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     needs: deploy-runner
     runs-on: [self-hosted, cml-gpu]
     container:
-      image: docker://mmcky/quantecon-lecture-python:cuda-12.3.1-anaconda-2023-09-py311
+      image: docker://mmcky/quantecon-lecture-python:cuda-11.8.0-anaconda-2023-09-py311
       options: --gpus all
     steps:
       - name: Checkout
