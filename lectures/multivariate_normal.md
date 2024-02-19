@@ -2137,7 +2137,7 @@ $\Lambda I^{-1} f = \Lambda f$.
 
 ## PCA and Factor Analysis
 
-To learn about Principal Components Analysis (PCA), please see this lecture {doc}`Singular Value Decompositions <svd_intro>`.
+To learn about Principal Components Analysis (PCA), please see this lecture {doc}`Singular Value Decompositions <tools:svd_intro>`.
 
 For fun, let’s apply a PCA decomposition
 to a covariance matrix $\Sigma_y$ that in fact is governed by our factor-analytic
