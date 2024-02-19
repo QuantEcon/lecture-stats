@@ -1971,7 +1971,7 @@ iterate(x0_hat, Σ0, A, C, G, R, [2.3, 1.2, 3.2])
 
 The iterative algorithm just described is a version of the celebrated **Kalman filter**.
 
-We describe the Kalman filter  and some applications of it in {doc}`A First Look at the Kalman Filter <kalman>`
+We describe the Kalman filter  and some applications of it in {doc}`A First Look at the Kalman Filter <dle:kalman>`
 
 
 ## Classic Factor Analysis Model
