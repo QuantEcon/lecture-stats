@@ -22,7 +22,7 @@ jobs:
               --cloud-region=us-west-2 \
               --cloud-type=p3.2xlarge \
               --labels=cml-gpu \
-              --cloud-hdd-size=100
+              --cloud-hdd-size=50
   publish:
     if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     needs: deploy-runner
