@@ -4,8 +4,8 @@ parts:
 - caption: Elementary Statistics
   numbered: true
   chapters:
-  - file: pandas_panel
   - file: ols
+  - file: pandas_panel
   - file: mle
   - file: prob_matrix
   - file: lln_clt
