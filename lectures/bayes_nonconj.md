@@ -24,7 +24,7 @@ Having a likelihood and prior that  are conjugate can simplify calculation of a 
 
 But in many situations  the likelihood and prior need not form a conjugate pair.
 
- - after all, a person's prior is his or her own business and would take a form conjugate to a likelihood only by remote coincidence
+- after all, a person's prior is his or her own business and would take a form conjugate to a likelihood only by remote coincidence
 
 In these situations, computing a posterior can become very challenging.
 
@@ -78,7 +78,7 @@ We use `numpyro` with assistance from  `jax` to approximate a  posterior distrib
 
 We use several alternative prior distributions.
 
-We  compare computed posteriors  with ones associated with a conjugate prior as described in  {doc}`the quantecon lecture <prob_meaning>`.
+We compare computed posteriors  with ones associated with a conjugate prior as described in  {doc}`the quantecon lecture <prob_meaning>`.
 
 
 ### Analytical Posterior
@@ -118,8 +118,6 @@ $$
 $$
 =\frac{(1 -\theta)^{\beta+N-k-1} \theta^{\alpha+k-1}}{\int_0^1 (1 - \theta)^{\beta+N-k-1} \theta^{\alpha+k-1} d\theta} .
 $$
-
-
 
 Thus,
 
@@ -191,7 +189,7 @@ By paying the cost of restricting the putative posterior to have a restricted fu
 the problem of approximating a posteriors is transformed to a well-posed optimization problem that seeks parameters of the putative posterior  that minimize
 a Kullback-Leibler (KL) divergence between true posterior and the putatitive posterior  distribution.
 
-  - minimizing the KL divergence is  equivalent with  maximizing a criterion called  the **Evidence Lower Bound** (ELBO), as we shall verify soon.
+- minimizing the KL divergence is  equivalent with  maximizing a criterion called  the **Evidence Lower Bound** (ELBO), as we shall verify soon.
 
 ## Prior Distributions
 
@@ -277,14 +275,14 @@ $$
 p\left(Y\right)=\int d\theta p\left(Y\mid\theta\right)p\left(Y\right).
 $$ (eq:intchallenge)
 
-The integral on the right side of {eq}`eq:intchallenge`  is typically difficult to compute.
+The integral on the right side of {eq}`eq:intchallenge` is typically difficult to compute.
 
 Consider a  **guide distribution** $q_{\phi}(\theta)$ parameterized by $\phi$ that we'll use to approximate the posterior.
 
 We choose  parameters $\phi$ of the guide distribution to minimize a Kullback-Leibler (KL)  divergence between the approximate posterior $q_{\phi}(\theta)$ and  the posterior:
 
 $$
- D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) \equiv -\int d\theta q(\theta;\phi)\log\frac{p(\theta\mid Y)}{q(\theta;\phi)}
+D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) \equiv -\int d\theta q(\theta;\phi)\log\frac{p(\theta\mid Y)}{q(\theta;\phi)}
 $$
 
 Thus, we want a **variational distribution** $q$ that solves
@@ -296,7 +294,8 @@ $$
 Note that
 
 $$
-\begin{aligned}D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) & =-\int d\theta q(\theta;\phi)\log\frac{P(\theta\mid Y)}{q(\theta;\phi)}\\
+\begin{aligned}
+D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) & =-\int d\theta q(\theta;\phi)\log\frac{P(\theta\mid Y)}{q(\theta;\phi)}\\
  & =-\int d\theta q(\theta)\log\frac{\frac{p(\theta,Y)}{p(Y)}}{q(\theta)}\\
  & =-\int d\theta q(\theta)\log\frac{p(\theta,Y)}{p(\theta)q(Y)}\\
  & =-\int d\theta q(\theta)\left[\log\frac{p(\theta,Y)}{q(\theta)}-\log p(Y)\right]\\
