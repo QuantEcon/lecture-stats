@@ -66,6 +66,11 @@ jobs:
           jb build lectures --builder pdflatex --path-output ./ -n -W --keep-going
           mkdir -p _build/html/_pdf
           cp -u _build/latex/*.pdf _build/html/_pdf
+      - name: Upload build folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-folder
+          path: _build
       - name: Upload Execution Reports (LaTeX)
         uses: actions/upload-artifact@v4
         if: failure()
