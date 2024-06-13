@@ -19,10 +19,6 @@ kernelspec:
 
 # Maximum Likelihood Estimation
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 In a {doc}`previous lecture <ols>`, we estimated the relationship between
