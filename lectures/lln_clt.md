@@ -26,10 +26,6 @@ kernelspec:
 ```{index} single: Central Limit Theorem
 ```
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 This lecture illustrates two of the most important theorems of probability and statistics: The

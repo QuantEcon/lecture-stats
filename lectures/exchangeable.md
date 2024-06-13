@@ -20,10 +20,6 @@ kernelspec:
 
 # Exchangeability and Bayesian Updating
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 This lecture studies  learning

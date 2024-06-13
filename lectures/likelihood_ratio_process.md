@@ -20,11 +20,6 @@ kernelspec:
 
 # Likelihood Ratio Processes
 
-```{contents} Contents
-:depth: 2
-```
-
-
 ## Overview
 
 This lecture describes likelihood ratio processes and some of their uses.

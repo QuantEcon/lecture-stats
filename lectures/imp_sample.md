@@ -13,10 +13,6 @@ kernelspec:
 
 # Computing Mean of a Likelihood Ratio Process
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 In  {doc}`this lecture <likelihood_ratio_process>` we described a peculiar property of a likelihood ratio process, namely, that it's mean equals one for all $t \geq 0$ despite it's converging to zero almost surely.
