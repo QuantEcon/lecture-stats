@@ -1320,8 +1320,6 @@ x_mesh, y_mesh = np.meshgrid(x, y, indexing="ij")
 Let's  plot the **population** joint density.
 
 ```{code-cell} ipython3
-# %matplotlib notebook
-
 fig = plt.figure()
 ax = plt.axes(projection='3d')
 
@@ -1330,8 +1328,6 @@ plt.show()
 ```
 
 ```{code-cell} ipython3
-# %matplotlib notebook
-
 fig = plt.figure()
 ax = plt.axes(projection='3d')
 

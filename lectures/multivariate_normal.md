@@ -20,10 +20,6 @@ kernelspec:
 
 # Multivariate Normal Distribution
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 This lecture describes a workhorse in probability theory, statistics, and economics, namely,

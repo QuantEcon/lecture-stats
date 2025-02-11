@@ -20,10 +20,6 @@ kernelspec:
 
 # Multivariate Hypergeometric Distribution
 
-```{contents} Contents
-:depth: 2
-```
-
 ## Overview
 
 This lecture describes how an  administrator deployed a **multivariate hypergeometric distribution** in order to access the fairness of a procedure for awarding research grants.

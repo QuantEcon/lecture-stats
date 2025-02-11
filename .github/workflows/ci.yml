@@ -4,7 +4,7 @@ jobs:
   deploy-runner:
     runs-on: ubuntu-latest
     steps:
-      - uses: iterative/setup-cml@v2
+      - uses: iterative/setup-cml@v3
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -41,7 +41,7 @@ jobs:
         shell: bash -l {0}
         run: pip list
       - name: Download "build" folder (cache)
-        uses: dawidd6/action-download-artifact@v2
+        uses: dawidd6/action-download-artifact@v8
         with:
           workflow: cache.yml
           branch: main
@@ -89,7 +89,7 @@ jobs:
           name: execution-reports
           path: _build/html/reports
       - name: Preview Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2
+        uses: nwtgck/actions-netlify@v3
         with:
           publish-dir: '_build/html/'
           production-branch: main
