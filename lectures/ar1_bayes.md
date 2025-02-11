@@ -13,11 +13,14 @@ kernelspec:
 
 # Posterior Distributions for  AR(1) Parameters
 
-```{code-cell} ipython3
-!pip install pymc
-```
-
 We'll begin with some Python imports.
+
+
+```{code-cell} ipython3
+:tags: [hide-output]
+
+!pip install arviz pymc numpyro jax
+```
 
 ```{code-cell} ipython3
 
