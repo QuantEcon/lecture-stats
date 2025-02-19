@@ -16,7 +16,7 @@ dependencies:
     - ghp-import==2.1.0
     - sphinxcontrib-youtube==1.2.0
     - sphinx-togglebutton==0.3.2
-    - arviz==0.13.0
+    - arviz
     - kaleido
     # Docker Requirements
     - pytz
