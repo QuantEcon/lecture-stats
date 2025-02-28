@@ -315,16 +315,16 @@ Formula {eq}`eq:ELBO` is called  the evidence lower bound (ELBO).
 
 A standard optimization routine can used to search for the optimal $\phi$ in our parametrized distribution $q_{\phi}(\theta)$.
 
-The parameterized  distribution $q_{\phi}(\theta)$ is called the **variational distribution**.
+The parameterized distribution $q_{\phi}(\theta)$ is called the **variational distribution**.
 
 We can implement Stochastic Variational Inference (SVI) Numpyro using the `Adam` gradient descent algorithm to approximate posterior.
 
 We use  two sets of variational distributions: Beta and TruncatedNormal with support $[0,1]$
 
-  - Learnable parameters for the Beta distribution are (alpha, beta), both of which are positive.
-  - Learnable parameters for the Truncated Normal distribution are (loc, scale).
+- Learnable parameters for the Beta distribution are (alpha, beta), both of which are positive.
+- Learnable parameters for the Truncated Normal distribution are (loc, scale).
 
-<u> We restrict the truncated Normal paramter 'loc' to be in the interval $[0,1]$</u>.
+We restrict the truncated Normal parameter 'loc' to be in the interval $[0,1]$
 
 
 ## Implementation
@@ -335,30 +335,24 @@ We have constructed a Python class `BaysianInference` that requires the followin
 - `name_dist`: a string that specifies distribution names
 
 The (`param`, `name_dist`) pair includes:
+
 - ('beta', alpha, beta)
-
 - ('uniform', upper_bound, lower_bound)
-
 - ('lognormal', loc, scale)
    - Note: This is the truncated log normal.
-
 - ('vonMises', kappa), where kappa denotes concentration parameter, and center location is set to $0.5$.
    - Note: When using `Numpyro`, this is the **shifted** distribution.
-
 - ('laplace', loc, scale)
    - Note: This is the truncated Laplace
 
 The class `BaysianInference` has several key methods :
 - `sample_prior`:
    - This can be used to draw a single sample from the given prior distribution.
-
 - `show_prior`:
    - Plots the approximate prior distribution by repeatedly drawing samples and fitting a kernal density curve.
-
 - `MCMC_sampling`:
    - INPUT: (data, num_samples, num_warmup=1000)
    - Take a `np.array` data and generate MCMC sampling of posterior of size `num_samples`.
-
 - `SVI_run`:
   - INPUT: (data, guide_dist, n_steps=10000)
   - guide_dist = 'normal' - use a **truncated** normal distribution as the parametrized guide
