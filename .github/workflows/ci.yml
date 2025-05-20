@@ -19,6 +19,8 @@ jobs:
       - name: Install JAX, Numpyro
         shell: bash -l {0}
         run: |
+          pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+          pip install pyro-ppl
           pip install --upgrade "jax[cuda12-local]"
           pip install numpyro  
           python scripts/test-jax-install.py
