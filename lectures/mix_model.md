@@ -14,6 +14,15 @@ kernelspec:
 (likelihood-ratio-process)=
 # Incorrect Models
 
+```{include} _admonition/gpu.md
+```
+
+```{code-cell} ipython
+:tags: [hide-output]
+
+!pip install numpyro jax
+```
+
 ## Overview
 
 This  is a sequel to {doc}`this  quantecon lecture <likelihood_bayes>`.
@@ -117,7 +126,7 @@ As usual, we'll start by importing some Python tools.
 import matplotlib.pyplot as plt
 plt.rcParams["figure.figsize"] = (11, 5)  #set default figure size
 import numpy as np
-from numba import vectorize, njit
+from numba import vectorize, jit
 from math import gamma
 import pandas as pd
 import scipy.stats as sp
@@ -135,7 +144,7 @@ from jax import random
 
 np.random.seed(142857)
 
-@njit
+@jit
 def set_seed():
     np.random.seed(142857)
 set_seed()
@@ -156,14 +165,14 @@ def p(x, a, b):
     return r * x** (a-1) * (1 - x) ** (b-1)
 
 # The two density functions.
-f = njit(lambda x: p(x, F_a, F_b))
-g = njit(lambda x: p(x, G_a, G_b))
+f = jit(lambda x: p(x, F_a, F_b))
+g = jit(lambda x: p(x, G_a, G_b))
 ```
 
 ```{code-cell} ipython3
 :hide-output: false
 
-@njit
+@jit
 def simulate(a, b, T=50, N=500):
     '''
     Generate N sets of T observations of the likelihood ratio,
@@ -242,7 +251,7 @@ from our target mixture distribution.
 
 
 ```{code-cell} ipython3
-@njit
+@jit
 def draw_lottery(p, N):
     "Draw from the compound lottery directly."
 
@@ -331,7 +340,7 @@ likelihood ratio $ \ell $ according to  recursion {eq}`equation-eq-recur1`
 ```{code-cell} ipython3
 :hide-output: false
 
-@njit
+@jit
 def update(π, l):
     "Update π using likelihood l"
 
@@ -447,7 +456,7 @@ def plot_π_seq(α, π1=0.2, π2=0.8, T=200):
     # plot
     fig, ax1 = plt.subplots()
     for i in range(2):
-        ax1.plot(range(T+1), π_seq_mixed[i, :], label=f"$\pi_0$={π_seq_mixed[i, 0]}")
+        ax1.plot(range(T+1), π_seq_mixed[i, :], label=rf"$\pi_0$={π_seq_mixed[i, 0]}")
 
     ax1.plot(np.nan, np.nan,  '--', color='b', label='Log likelihood ratio process')
     ax1.set_ylabel("$\pi_t$")
@@ -622,7 +631,7 @@ ax.set_xlabel(r'$\alpha$')
 # plot KL
 ax2 = ax.twinx()
 # plot limit point
-ax2.scatter(α_arr_x, π_lim_arr, facecolors='none', edgecolors='tab:blue', label='$\pi$ lim')
+ax2.scatter(α_arr_x, π_lim_arr, facecolors='none', edgecolors='tab:blue', label=r'$\pi$ lim')
 ax2.set_ylabel('π lim')
 
 ax.legend(loc=[0.85, 0.8])
@@ -710,9 +719,9 @@ for i in range(len(sizes)):
         data=sample, kde=True, stat='density', alpha=0.2, ax=ax,
         color=colors[i], binwidth=0.02, linewidth=0.05, label=f't={sizes[i]}'
     )
-ax.set_title('$\pi_t(\\alpha)$ as $t$ increases')
+ax.set_title(r'$\pi_t(\alpha)$ as $t$ increases')
 ax.legend()
-ax.set_xlabel('$\\alpha$')
+ax.set_xlabel(r'$\alpha$')
 plt.show()
 ```
 
