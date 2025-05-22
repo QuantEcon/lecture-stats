@@ -4,7 +4,7 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.16.1
+    jupytext_version: 1.16.4
 kernelspec:
   display_name: Python 3 (ipykernel)
   language: python
@@ -12,6 +12,15 @@ kernelspec:
 ---
 
 # Non-Conjugate Priors
+
+```{include} _admonition/gpu.md
+```
+
+```{code-cell} ipython3
+:tags: [hide-output]
+
+!pip install numpyro pyro-ppl torch jax
+```
 
 This lecture is a sequel to the {doc}`quantecon lecture <prob_meaning>`.
 
@@ -24,7 +33,7 @@ Having a likelihood and prior that  are conjugate can simplify calculation of a 
 
 But in many situations  the likelihood and prior need not form a conjugate pair.
 
-- after all, a person's prior is his or her own business and would take a form conjugate to a likelihood only by remote coincidence
+ - after all, a person's prior is his or her own business and would take a form conjugate to a likelihood only by remote coincidence
 
 In these situations, computing a posterior can become very challenging.
 
@@ -33,8 +42,13 @@ In this lecture, we illustrate how modern Bayesians confront non-conjugate prior
 - first  cleverly forming a Markov chain whose invariant distribution is the posterior distribution we want
 - simulating the Markov chain until it has converged and then sampling from the invariant distribution to approximate the posterior
 
-We shall illustrate the approach by deploying powerful Python module `numpyro` that implement this approach as well as another closely related one to
+We shall illustrate the approach by deploying two powerful Python modules that implement this approach as well as another closely related one to
 be described below.
+
+The two Python modules are
+
+- `numpyro`
+- `pymc4`
 
 As usual, we begin by importing some Python code.
 
@@ -44,10 +58,18 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from scipy.stats import binom
 import scipy.stats as st
+import torch
 
 # jax
 import jax.numpy as jnp
 from jax import lax, random
+
+# pyro
+import pyro
+from pyro import distributions as dist
+import pyro.distributions.constraints as constraints
+from pyro.infer import MCMC, NUTS, SVI, ELBO, Trace_ELBO
+from pyro.optim import Adam
 
 # numpyro
 import numpyro
@@ -74,11 +96,11 @@ This lecture instead computes posteriors
 - numerically by sampling from the posterior distribution through MCMC methods, and
 - using a variational inference (VI) approximation.
 
-We use `numpyro` with assistance from  `jax` to approximate a  posterior distribution.
+We use both the packages `pyro` and `numpyro` with assistance from  `jax` to approximate a  posterior distribution
 
-We use several alternative prior distributions.
+We use several alternative prior distributions
 
-We compare computed posteriors  with ones associated with a conjugate prior as described in  {doc}`the quantecon lecture <prob_meaning>`.
+We  compare computed posteriors  with ones associated with a conjugate prior as described in  {doc}`the quantecon lecture <prob_meaning>`
 
 
 ### Analytical Posterior
@@ -118,6 +140,8 @@ $$
 $$
 =\frac{(1 -\theta)^{\beta+N-k-1} \theta^{\alpha+k-1}}{\int_0^1 (1 - \theta)^{\beta+N-k-1} \theta^{\alpha+k-1} d\theta} .
 $$
+
+
 
 Thus,
 
@@ -165,17 +189,17 @@ Suppose that we don't have a conjugate prior.
 
 Then  we  can't compute posteriors analytically.
 
-Instead,  we use computational tools to approximate the posterior distribution for a set of alternative prior distributions using `numpyro`.
+Instead,  we use computational tools to approximate the posterior distribution for a set of alternative prior distributions using both `Pyro` and `Numpyro` packages in Python.
 
 We first use the **Markov Chain Monte Carlo** (MCMC) algorithm .
 
 We implement the NUTS sampler to sample from the posterior.
 
-In that way we construct a sampling distribution that approximates the posterior.
+In that way we construct a sampling distribution that approximates the  posterior.
 
 After doing that we deply another procedure called  **Variational Inference** (VI).
 
-In particular, we implement Stochastic Variational Inference (SVI) machinery.
+In particular, we implement Stochastic Variational Inference (SVI) machinery in both `Pyro` and `Numpyro`.
 
 The MCMC algorithm  supposedly generates a more accurate approximation since in principle it directly samples from the posterior distribution.
 
@@ -189,11 +213,11 @@ By paying the cost of restricting the putative posterior to have a restricted fu
 the problem of approximating a posteriors is transformed to a well-posed optimization problem that seeks parameters of the putative posterior  that minimize
 a Kullback-Leibler (KL) divergence between true posterior and the putatitive posterior  distribution.
 
-- minimizing the KL divergence is  equivalent with  maximizing a criterion called  the **Evidence Lower Bound** (ELBO), as we shall verify soon.
+  - minimizing the KL divergence is  equivalent with  maximizing a criterion called  the **Evidence Lower Bound** (ELBO), as we shall verify soon.
 
 ## Prior Distributions
 
-In order to be able to apply MCMC sampling or VI, `numpyro` require  that a prior distribution satisfy special properties:
+In order to be able to apply MCMC sampling or VI, `Pyro` and `Numpyro` require  that a prior distribution satisfy special properties:
 
 - we must be able sample from it;
 - we must be able to  compute the log pdf  pointwise;
@@ -207,17 +231,25 @@ We  will use the following priors:
 
 - a truncated log-normal distribution with support on $[0,1]$ with parameters $(\mu,\sigma)$.
 
-    - To implement this, let $Z\sim Normal(\mu,\sigma)$ and $\tilde{Z}$ be truncated normal with support $[\log(0),\log(1)]$, then $\exp(Z)$ has a log normal distribution with bounded support $[0,1]$. This can be easily coded since `numpyro` has a built-in truncated normal distribution.
+    - To implement this, let $Z\sim Normal(\mu,\sigma)$ and $\tilde{Z}$ be truncated normal with support $[\log(0),\log(1)]$, then $\exp(Z)$ has a log normal distribution with bounded support $[0,1]$. This can be easily coded since `Numpyro` has a built-in truncated normal distribution, and `Torch` provides a `TransformedDistribution` class that includes an exponential transformation.
+
+    - Alternatively, we can use a rejection sampling strategy by assigning the probability rate to $0$ outside the bounds and rescaling accepted samples, i.e., realizations that are within the bounds, by the total probability computed via CDF of the original distribution. This can be implemented by defining a truncated distribution class with `pyro`'s `dist.Rejector` class.
+
+    - We implement both methods in the below section and verify that they  produce the same result.
 
 - a shifted von Mises distribution that has support confined to $[0,1]$ with parameter $(\mu,\kappa)$.
 
     - Let $X\sim vonMises(0,\kappa)$. We know that $X$ has bounded support $[-\pi, \pi]$. We can define a shifted von Mises random variable $\tilde{X}=a+bX$ where $a=0.5, b=1/(2 \pi)$ so that $\tilde{X}$ is supported on $[0,1]$.
 
+    - This can be implemented using `Torch`'s `TransformedDistribution` class  with its `AffineTransform` method.
+
+    - If instead, we want the prior to be von-Mises distributed with center $\mu=0.5$, we can choose a high concentration level $\kappa$ so that most mass is located between $0$ and $1$. Then we can truncate the distribution using the above strategy. This can be implemented using  `pyro`'s `dist.Rejector` class. We choose $\kappa > 40$ in this case.
+
 - a truncated Laplace distribution.
 
     - We also considered a truncated Laplace distribution because its density comes in a piece-wise non-smooth form and has a distinctive spiked shape.
 
-    - The truncated Laplace can be created using `numpyro`'s `TruncatedDistribution` class.
+    - The truncated Laplace can be created using `Numpyro`'s `TruncatedDistribution` class.
 
 ```{code-cell} ipython3
 # used by Numpyro
@@ -247,6 +279,48 @@ def TruncatedLaplace(loc, scale):
     return ndist.TruncatedDistribution(
         base_dist, low=0.0, high=1.0
     )
+
+# used by Pyro
+class TruncatedLogNormal(dist.Rejector):
+    """
+    Define a TruncatedLogNormal distribution through rejection sampling in Pyro
+    """
+    def __init__(self, loc, scale_0, upp=1):
+        self.upp = upp
+        propose = dist.LogNormal(loc, scale_0)
+
+        def log_prob_accept(x):
+            return (x < upp).type_as(x).log()
+
+        log_scale = dist.LogNormal(loc, scale_0).cdf(torch.as_tensor(upp)).log()
+        super(TruncatedLogNormal, self).__init__(propose, log_prob_accept, log_scale)
+
+    @constraints.dependent_property
+    def support(self):
+        return constraints.interval(0, self.upp)
+
+
+class TruncatedvonMises(dist.Rejector):
+    """
+    Define a TruncatedvonMises distribution through rejection sampling in Pyro
+    """
+    def __init__(self, kappa, mu=0.5, low=0.0, upp=1.0):
+        self.low, self.upp = low, upp
+        propose = dist.VonMises(mu, kappa)
+
+        def log_prob_accept(x):
+            return ((x > low) & (x < upp)).type_as(x).log()
+
+        log_scale = torch.log(
+            torch.tensor(
+                st.vonmises(kappa=kappa, loc=mu).cdf(upp)
+                - st.vonmises(kappa=kappa, loc=mu).cdf(low))
+        )
+        super(TruncatedvonMises, self).__init__(propose, log_prob_accept, log_scale)
+
+    @constraints.dependent_property
+    def support(self):
+        return constraints.interval(self.low, self.upp)
 ```
 
 ### Variational Inference
@@ -275,14 +349,14 @@ $$
 p\left(Y\right)=\int d\theta p\left(Y\mid\theta\right)p\left(Y\right).
 $$ (eq:intchallenge)
 
-The integral on the right side of {eq}`eq:intchallenge` is typically difficult to compute.
+The integral on the right side of {eq}`eq:intchallenge`  is typically difficult to compute.
 
 Consider a  **guide distribution** $q_{\phi}(\theta)$ parameterized by $\phi$ that we'll use to approximate the posterior.
 
 We choose  parameters $\phi$ of the guide distribution to minimize a Kullback-Leibler (KL)  divergence between the approximate posterior $q_{\phi}(\theta)$ and  the posterior:
 
 $$
-D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) \equiv -\int d\theta q(\theta;\phi)\log\frac{p(\theta\mid Y)}{q(\theta;\phi)}
+ D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) \equiv -\int d\theta q(\theta;\phi)\log\frac{p(\theta\mid Y)}{q(\theta;\phi)}
 $$
 
 Thus, we want a **variational distribution** $q$ that solves
@@ -294,8 +368,7 @@ $$
 Note that
 
 $$
-\begin{aligned}
-D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) & =-\int d\theta q(\theta;\phi)\log\frac{P(\theta\mid Y)}{q(\theta;\phi)}\\
+\begin{aligned}D_{KL}(q(\theta;\phi)\;\|\;p(\theta\mid Y)) & =-\int d\theta q(\theta;\phi)\log\frac{P(\theta\mid Y)}{q(\theta;\phi)}\\
  & =-\int d\theta q(\theta)\log\frac{\frac{p(\theta,Y)}{p(Y)}}{q(\theta)}\\
  & =-\int d\theta q(\theta)\log\frac{p(\theta,Y)}{p(\theta)q(Y)}\\
  & =-\int d\theta q(\theta)\left[\log\frac{p(\theta,Y)}{q(\theta)}-\log p(Y)\right]\\
@@ -317,15 +390,16 @@ A standard optimization routine can used to search for the optimal $\phi$ in our
 
 The parameterized  distribution $q_{\phi}(\theta)$ is called the **variational distribution**.
 
-We can implement Stochastic Variational Inference (SVI) Numpyro using the `Adam` gradient descent algorithm to approximate posterior.
+We can implement Stochastic Variational Inference (SVI) in Pyro and Numpyro using the `Adam` gradient descent algorithm to approximate posterior.
 
 We use  two sets of variational distributions: Beta and TruncatedNormal with support $[0,1]$
 
   - Learnable parameters for the Beta distribution are (alpha, beta), both of which are positive.
   - Learnable parameters for the Truncated Normal distribution are (loc, scale).
 
-<u> We restrict the truncated Normal paramter 'loc' to be in the interval $[0,1]$</u>.
-
+```{note}
+We restrict the truncated Normal parameter 'loc' to be in the interval $[0,1]$
+```
 
 ## Implementation
 
@@ -343,6 +417,7 @@ The (`param`, `name_dist`) pair includes:
    - Note: This is the truncated log normal.
 
 - ('vonMises', kappa), where kappa denotes concentration parameter, and center location is set to $0.5$.
+   - Note: When using `Pyro`, this is the truncated version of the original vonMises distribution;
    - Note: When using `Numpyro`, this is the **shifted** distribution.
 
 - ('laplace', loc, scale)
@@ -367,7 +442,7 @@ The class `BaysianInference` has several key methods :
 
 ```{code-cell} ipython3
 class BayesianInference:
-    def __init__(self, param, name_dist):
+    def __init__(self, param, name_dist, solver):
         """
         Parameters
         ---------
@@ -375,9 +450,12 @@ class BayesianInference:
             a tuple object that contains all relevant parameters for the distribution
         dist : str.
             name of the distribution - 'beta', 'uniform', 'lognormal', 'vonMises', 'tent'
+        solver : str.
+            either pyro or numpyro
         """
         self.param = param
         self.name_dist = name_dist
+        self.solver = solver
 
         # jax requires explicit PRNG state to be passed
         self.rng_key = random.PRNGKey(0)
@@ -390,28 +468,43 @@ class BayesianInference:
         if self.name_dist=='beta':
             # unpack parameters
             alpha0, beta0 = self.param
-            sample = numpyro.sample('theta', ndist.Beta(alpha0, beta0), rng_key=self.rng_key)
+            if self.solver=='pyro':
+                sample = pyro.sample('theta', dist.Beta(alpha0, beta0))
+            else:
+                sample = numpyro.sample('theta', ndist.Beta(alpha0, beta0), rng_key=self.rng_key)
 
         elif self.name_dist=='uniform':
             # unpack parameters
             lb, ub = self.param
-            sample = numpyro.sample('theta', ndist.Uniform(lb, ub), rng_key=self.rng_key)
+            if self.solver=='pyro':
+                sample = pyro.sample('theta', dist.Uniform(lb, ub))
+            else:
+                sample = numpyro.sample('theta', ndist.Uniform(lb, ub), rng_key=self.rng_key)
 
         elif self.name_dist=='lognormal':
             # unpack parameters
             loc, scale = self.param
-            sample = numpyro.sample('theta', TruncatedLogNormal_trans(loc, scale),
-                                    rng_key=self.rng_key)
+            if self.solver=='pyro':
+                sample = pyro.sample('theta', TruncatedLogNormal(loc, scale))
+            else:
+                sample = numpyro.sample('theta', TruncatedLogNormal_trans(loc, scale), rng_key=self.rng_key)
 
         elif self.name_dist=='vonMises':
             # unpack parameters
             kappa = self.param
-            sample = numpyro.sample('theta', ShiftedVonMises(kappa), rng_key=self.rng_key)
+            if self.solver=='pyro':
+                sample = pyro.sample('theta', TruncatedvonMises(kappa))
+            else:
+                sample = numpyro.sample('theta', ShiftedVonMises(kappa), rng_key=self.rng_key)
 
         elif self.name_dist=='laplace':
             # unpack parameters
             loc, scale = self.param
-            sample = numpyro.sample('theta', TruncatedLaplace(loc, scale), rng_key=self.rng_key)
+            if self.solver=='pyro':
+                print("WARNING: Please use Numpyro for truncated Laplace.")
+                sample = None
+            else:
+                sample = numpyro.sample('theta', TruncatedLaplace(loc, scale), rng_key=self.rng_key)
 
         return sample
 
@@ -421,9 +514,18 @@ class BayesianInference:
         Visualizes prior distribution by sampling from prior and plots the approximated sampling distribution
         """
         self.bins = bins
-        with numpyro.plate('show_prior', size=size):
-            sample = self.sample_prior()
-        sample_array = jnp.asarray(sample)
+
+        if self.solver=='pyro':
+            with pyro.plate('show_prior', size=size):
+                sample = self.sample_prior()
+            # to numpy
+            sample_array = sample.numpy()
+
+        elif self.solver=='numpyro':
+            with numpyro.plate('show_prior', size=size):
+                sample = self.sample_prior()
+            # to numpy
+            sample_array=jnp.asarray(sample)
 
         # plot histogram and kernel density
         if disp_plot==1:
@@ -438,13 +540,17 @@ class BayesianInference:
         """
         Define the probabilistic model by specifying prior, conditional likelihood, and data conditioning
         """
-        data = jnp.asarray(data)
+        if not torch.is_tensor(data):
+            data = torch.tensor(data)
         # set prior
         theta = self.sample_prior()
 
-        # Note: numpyro.sample() requires obs=np.ndarray
-        output = numpyro.sample('obs', ndist.Binomial(len(data), theta),
-                                obs=jnp.sum(data))
+        # sample from conditional likelihood
+        if self.solver=='pyro':
+            output = pyro.sample('obs', dist.Binomial(len(data), theta), obs=torch.sum(data))
+        else:
+            # Note: numpyro.sample() requires obs=np.ndarray
+            output = numpyro.sample('obs', ndist.Binomial(len(data), theta), obs=torch.sum(data).numpy())
         return output
 
 
@@ -453,11 +559,20 @@ class BayesianInference:
         Computes numerically the posterior distribution with beta prior parametrized by (alpha0, beta0)
         given data using MCMC
         """
-        data = jnp.asarray(data)
-        nuts_kernel = nNUTS(self.model)
-        mcmc = nMCMC(nuts_kernel, num_samples=num_samples, num_warmup=num_warmup,
-                     progress_bar=False)
-        mcmc.run(self.rng_key, data=data)
+        # use pyro
+        if self.solver=='pyro':
+            # tensorize
+            data = torch.tensor(data)
+            nuts_kernel = NUTS(self.model)
+            mcmc = MCMC(nuts_kernel, num_samples=num_samples, warmup_steps=num_warmup, disable_progbar=True)
+            mcmc.run(data)
+
+        # use numpyro
+        elif self.solver=='numpyro':
+            data = np.array(data, dtype=float)
+            nuts_kernel = nNUTS(self.model)
+            mcmc = nMCMC(nuts_kernel, num_samples=num_samples, num_warmup=num_warmup, progress_bar=False)
+            mcmc.run(self.rng_key, data=data)
 
         # collect samples
         samples = mcmc.get_samples()['theta']
@@ -466,21 +581,29 @@ class BayesianInference:
 
     def beta_guide(self, data):
         """
-        Defines the candidate parametrized variational distribution that we train to approximate
-        posterior with Numpyro. Here we use parameterized beta
+        Defines the candidate parametrized variational distribution that we train to approximate posterior with Pyro/Numpyro
+        Here we use parameterized beta
         """
-        alpha_q = numpyro.param('alpha_q', 10,
-                                constraint=nconstraints.positive)
-        beta_q = numpyro.param('beta_q', 10,
-                               constraint=nconstraints.positive)
+        if self.solver=='pyro':
+            alpha_q = pyro.param('alpha_q', torch.tensor(0.5),
+                            constraint=constraints.positive)
+            beta_q = pyro.param('beta_q', torch.tensor(0.5),
+                            constraint=constraints.positive)
+            pyro.sample('theta', dist.Beta(alpha_q, beta_q))
 
-        numpyro.sample('theta', ndist.Beta(alpha_q, beta_q))
+        else:
+            alpha_q = numpyro.param('alpha_q', 10,
+                            constraint=nconstraints.positive)
+            beta_q = numpyro.param('beta_q', 10,
+                            constraint=nconstraints.positive)
+
+            numpyro.sample('theta', ndist.Beta(alpha_q, beta_q))
 
 
     def truncnormal_guide(self, data):
         """
-        Defines the candidate parametrized variational distribution that we train to approximate
-        posterior with Numpyro. Here we use truncated normal on [0,1]
+        Defines the candidate parametrized variational distribution that we train to approximate posterior with Pyro/Numpyro
+        Here we use truncated normal on [0,1]
         """
         loc = numpyro.param('loc', 0.5,
                         constraint=nconstraints.interval(0.0, 1.0))
@@ -492,16 +615,28 @@ class BayesianInference:
     def SVI_init(self, guide_dist, lr=0.0005):
         """
         Initiate SVI training mode with Adam optimizer
+        NOTE: truncnormal_guide can only be used with numpyro solver
         """
         adam_params = {"lr": lr}
 
         if guide_dist=='beta':
-            optimizer = nAdam(step_size=lr)
-            svi = nSVI(self.model, self.beta_guide, optimizer, loss=nTrace_ELBO())
+            if self.solver=='pyro':
+                optimizer = Adam(adam_params)
+                svi = SVI(self.model, self.beta_guide, optimizer, loss=Trace_ELBO())
+
+            elif self.solver=='numpyro':
+                optimizer = nAdam(step_size=lr)
+                svi = nSVI(self.model, self.beta_guide, optimizer, loss=nTrace_ELBO())
 
         elif guide_dist=='normal':
-            optimizer = nAdam(step_size=lr)
-            svi = nSVI(self.model, self.truncnormal_guide, optimizer, loss=nTrace_ELBO())
+            # only allow numpyro
+            if self.solver=='pyro':
+                print("WARNING: Please use Numpyro with TruncatedNormal guide")
+                svi = None
+
+            elif self.solver=='numpyro':
+                optimizer = nAdam(step_size=lr)
+                svi = nSVI(self.model, self.truncnormal_guide, optimizer, loss=nTrace_ELBO())
         else:
             print("WARNING: Please input either 'beta' or 'normal'")
             svi = None
@@ -517,15 +652,33 @@ class BayesianInference:
         params : the learned parameters for guide
         losses : a vector of loss at each step
         """
-        data = jnp.asarray(data)
 
         # initiate SVI
         svi = self.SVI_init(guide_dist=guide_dist)
-        result = svi.run(self.rng_key, n_steps, data, progress_bar=False)
-        params = dict(
-            (key, np.asarray(value)) for key, value in result.params.items()
-            )
-        losses = np.asarray(result.losses)
+
+        # do gradient steps
+        if self.solver=='pyro':
+             # tensorize data
+            if not torch.is_tensor(data):
+                data = torch.tensor(data)
+            # store loss vector
+            losses = np.zeros(n_steps)
+            for step in range(n_steps):
+                losses[step] = svi.step(data)
+
+            # pyro only supports beta VI distribution
+            params = {
+                'alpha_q': pyro.param('alpha_q').item(),
+                'beta_q': pyro.param('beta_q').item()
+                }
+
+        elif self.solver=='numpyro':
+            data = np.array(data, dtype=float)
+            result = svi.run(self.rng_key, n_steps, data, progress_bar=False)
+            params = dict(
+                (key, np.asarray(value)) for key, value in result.params.items()
+                )
+            losses = np.asarray(result.losses)
 
         return params, losses
 ```
@@ -539,15 +692,15 @@ Let's see how well our sampling algorithm does in approximating
 
 To examine our alternative  prior distributions, we'll plot  approximate prior distributions below by calling the `show_prior` method.
 
-We verify the rejection sampling strategy.
+We verify that the rejection sampling strategy under `Pyro` produces the same log normal distribution as the truncated normal transformation under `Numpyro`.
 
 ```{code-cell} ipython3
 # truncated log normal
-exampleLN = BayesianInference(param=(0,2), name_dist='lognormal')
+exampleLN = BayesianInference(param=(0,2), name_dist='lognormal', solver='numpyro')
 exampleLN.show_prior(size=100000,bins=20)
 
 # truncated uniform
-exampleUN = BayesianInference(param=(0.1,0.8), name_dist='uniform')
+exampleUN = BayesianInference(param=(0.1,0.8), name_dist='uniform', solver='numpyro')
 exampleUN.show_prior(size=100000,bins=20)
 ```
 
@@ -558,8 +711,12 @@ Now let's see how well things work with a couple of von Mises distributions.
 
 ```{code-cell} ipython3
 # shifted von Mises
-exampleVM = BayesianInference(param=10, name_dist='vonMises')
+exampleVM = BayesianInference(param=10, name_dist='vonMises', solver='numpyro')
 exampleVM.show_prior(size=100000,bins=20)
+
+# truncated von Mises
+exampleVM_trunc = BayesianInference(param=20, name_dist='vonMises', solver='pyro')
+exampleVM_trunc.show_prior(size=100000,bins=20)
 ```
 
 These graphs look good too.
@@ -568,7 +725,7 @@ Now let's try with a Laplace distribution.
 
 ```{code-cell} ipython3
 # truncated Laplace
-exampleLP = BayesianInference(param=(0.5,0.05), name_dist='laplace')
+exampleLP = BayesianInference(param=(0.5,0.05), name_dist='laplace', solver='numpyro')
 exampleLP.show_prior(size=100000,bins=40)
 ```
 
@@ -661,6 +818,7 @@ class BayesianInferencePlot:
     def SVI_fitting(self, guide_dist, params):
         """
         Fit the beta/truncnormal curve using parameters trained by SVI.
+        I create plot using PDF given by scipy.stats distributions since torch.dist do not have embedded PDF methods.
         """
         # create x axis
         xaxis = np.linspace(0,1,1000)
@@ -668,7 +826,8 @@ class BayesianInferencePlot:
             y = st.beta.pdf(xaxis, a=params['alpha_q'], b=params['beta_q'])
 
         elif guide_dist=='normal':
-            # rescale upper/lower bound. See scipy's truncnorm doc
+
+            # rescale upper/lower bound. See Scipy's truncnorm doc
             lower, upper = (0, 1)
             loc, scale = params['loc'], params['scale']
             a, b = (lower - loc) / scale, (upper - loc) / scale
@@ -697,8 +856,7 @@ class BayesianInferencePlot:
 
         # plot posteriors
         for id, n in enumerate(self.N_list):
-            (params, losses) = self.BayesianInferenceClass.SVI_run(self.data[:n],
-                                                                   guide_dist, n_steps)
+            (params, losses) = self.BayesianInferenceClass.SVI_run(self.data[:n], guide_dist, n_steps)
             x, y = self.SVI_fitting(guide_dist, params)
             ax.plot(x, y,
                 alpha=1,
@@ -706,8 +864,7 @@ class BayesianInferencePlot:
                 label=f'Posterior with $n={n}$'
                 )
         ax.legend()
-        ax.set_title(f'SVI density of Posterior Distributions with {guide_dist} guide',
-                     fontsize=15)
+        ax.set_title(f'SVI density of Posterior Distributions with {guide_dist} guide', fontsize=15)
         plt.xlim(0, 1)
         plt.show()
 ```
@@ -719,7 +876,7 @@ To save computer time at first, notice that  we'll set `MCMC_num_samples = 2000`
 (Later, to increase accuracy of approximations, we'll want to increase these.)
 
 ```{code-cell} ipython3
-num_list = [5, 10, 50, 100, 1000]
+num_list = [5,10,50,100,1000]
 MCMC_num_samples = 2000
 SVI_num_steps = 5000
 
@@ -734,34 +891,35 @@ Let's compare outcomes when we use a Beta prior.
 For the same Beta prior, we shall
 
 * compute posteriors analytically
-* compute posteriors using MCMC  via  `Numpyro`.
-* compute posteriors using  VI via `Numpyro`.
+* compute posteriors using MCMC  via  `Pyro` and `Numpyro`.
+* compute posteriors using  VI via  `Pyro` and `Numpyro`.
 
 Let's start with the analytical method that we described in this quantecon lecture <https://python.quantecon.org/prob_meaning.html>
 
 ```{code-cell} ipython3
 # First examine Beta priors
-BETA = BayesianInference(param=(5, 5), name_dist='beta')
-BETA_plot = BayesianInferencePlot(true_theta, num_list, BETA)
+BETA_pyro = BayesianInference(param=(5,5), name_dist='beta', solver='pyro')
+BETA_numpyro = BayesianInference(param=(5,5), name_dist='beta', solver='numpyro')
+
+BETA_pyro_plot = BayesianInferencePlot(true_theta, num_list, BETA_pyro)
+BETA_numpyro_plot = BayesianInferencePlot(true_theta, num_list, BETA_numpyro)
 
 
 # plot analytical Beta prior and posteriors
-xaxis = np.linspace(0, 1, 1000)
+xaxis = np.linspace(0,1,1000)
 y_prior = st.beta.pdf(xaxis, 5, 5)
 
 fig, ax = plt.subplots(figsize=(10, 6))
 # plot analytical beta prior
 ax.plot(xaxis, y_prior, label='Analytical Beta Prior', color='#4C4E52')
 
-data, colorlist, N_list = BETA_plot.data, BETA_plot.colorlist, BETA_plot.N_list
+data, colorlist, N_list = BETA_pyro_plot.data, BETA_pyro_plot.colorlist, BETA_pyro_plot.N_list
 # plot analytical beta posteriors
 for id, n in enumerate(N_list):
     func = analytical_beta_posterior(data[:n], alpha0=5, beta0=5)
     y_posterior = func.pdf(xaxis)
     ax.plot(
-        xaxis, y_posterior, color=colorlist[id-1],
-        label=f'Analytical Beta Posterior with $n={n}$')
-
+        xaxis, y_posterior, color=colorlist[id-1], label=f'Analytical Beta Posterior with $n={n}$')
 ax.legend()
 ax.set_title('Analytical Beta Prior and Posterior', fontsize=15)
 plt.xlim(0, 1)
@@ -773,8 +931,8 @@ Now let's use MCMC while still using a beta prior.
 We'll do this for both MCMC and VI.
 
 ```{code-cell} ipython3
-BayesianInferencePlot(true_theta, num_list, BETA).SVI_plot(guide_dist='beta',
-                                                           n_steps=SVI_num_steps)
+BayesianInferencePlot(true_theta, num_list, BETA_pyro).MCMC_plot(num_samples=MCMC_num_samples)
+BayesianInferencePlot(true_theta, num_list, BETA_numpyro).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
 ```
 
 Here the MCMC approximation looks good.
@@ -792,7 +950,7 @@ will be  more accurate, as we shall see next.
 (Increasing the step size increases computational time though).
 
 ```{code-cell} ipython3
-BayesianInferencePlot(true_theta, num_list, BETA).SVI_plot(guide_dist='beta', n_steps=100000)
+BayesianInferencePlot(true_theta, num_list, BETA_numpyro).SVI_plot(guide_dist='beta', n_steps=100000)
 ```
 
 ## Non-conjugate Prior Distributions
@@ -811,41 +969,32 @@ We first initialize the `BayesianInference` classes and then can directly call `
 ```{code-cell} ipython3
 # Initialize BayesianInference classes
 # try uniform
-STD_UNIFORM_numpyro = BayesianInference(param=(0, 1), name_dist='uniform')
-UNIFORM_numpyro = BayesianInference(param=(0.2,0.7), name_dist='uniform')
+STD_UNIFORM_pyro = BayesianInference(param=(0,1), name_dist='uniform', solver='pyro')
+UNIFORM_numpyro = BayesianInference(param=(0.2,0.7), name_dist='uniform', solver='numpyro')
 
 # try truncated lognormal
-LOGNORMAL_numpyro = BayesianInference(param=(0,2), name_dist='lognormal')
+LOGNORMAL_numpyro = BayesianInference(param=(0,2), name_dist='lognormal', solver='numpyro')
+LOGNORMAL_pyro = BayesianInference(param=(0,2), name_dist='lognormal', solver='pyro')
 
 # try von Mises
 # shifted von Mises
-VONMISES_numpyro = BayesianInference(param=10, name_dist='vonMises')
+VONMISES_numpyro = BayesianInference(param=10, name_dist='vonMises', solver='numpyro')
 # truncated von Mises
+VONMISES_pyro = BayesianInference(param=40, name_dist='vonMises', solver='pyro')
 
 # try laplace
-LAPLACE_numpyro = BayesianInference(param=(0.5, 0.07), name_dist='laplace')
-```
-
-```{code-cell} ipython3
-def display(example_CLASS):
-    print(f'=======INFO=======\nParameters: {example_CLASS.param}' + 
-            f'\nPrior Dist: {example_CLASS.name_dist}')
+LAPLACE_numpyro = BayesianInference(param=(0.5, 0.07), name_dist='laplace', solver='numpyro')
 ```
 
 ```{code-cell} ipython3
 # Uniform
-example_CLASS = STD_UNIFORM_numpyro
-display(example_CLASS)
-BayesianInferencePlot(true_theta, num_list,
-                      example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
-```
+example_CLASS = STD_UNIFORM_pyro
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
+BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
 
-```{code-cell} ipython3
-# Uniform
 example_CLASS = UNIFORM_numpyro
-display(example_CLASS)
-BayesianInferencePlot(true_theta, num_list,
-                      example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
+BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
 ```
 
 In the situation depicted above, we have assumed a  $Uniform(\underline{\theta}, \overline{\theta})$ prior that puts zero probability   outside a bounded support that excludes the true value.
@@ -857,22 +1006,31 @@ Note how when  the true data-generating $\theta$ is located at $0.8$ as it is he
 ```{code-cell} ipython3
 # Log Normal
 example_CLASS = LOGNORMAL_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
+BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
+
+example_CLASS = LOGNORMAL_pyro
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
 ```
 
 ```{code-cell} ipython3
 # Von Mises
 example_CLASS = VONMISES_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 print('\nNOTE: Shifted von Mises')
+BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
+
+example_CLASS = VONMISES_pyro
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
+print('\nNOTE: Truncated von Mises')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
 ```
 
 ```{code-cell} ipython3
 # Laplace
 example_CLASS = LAPLACE_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).MCMC_plot(num_samples=MCMC_num_samples)
 ```
 
@@ -886,22 +1044,22 @@ SVI_num_steps = 50000
 
 ```{code-cell} ipython3
 # Uniform
-example_CLASS = BayesianInference(param=(0,1), name_dist='uniform')
-display(example_CLASS)
+example_CLASS = BayesianInference(param=(0,1), name_dist='uniform', solver='numpyro')
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='normal', n_steps=SVI_num_steps)
 ```
 
 ```{code-cell} ipython3
 # Log Normal
 example_CLASS = LOGNORMAL_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='normal', n_steps=SVI_num_steps)
 ```
 
 ```{code-cell} ipython3
 # Von Mises
 example_CLASS = VONMISES_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 print('\nNB: Shifted von Mises')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='normal', n_steps=SVI_num_steps)
 ```
@@ -909,7 +1067,7 @@ BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='
 ```{code-cell} ipython3
 # Laplace
 example_CLASS = LAPLACE_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='normal', n_steps=SVI_num_steps)
 ```
 
@@ -917,29 +1075,38 @@ BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='
 
 ```{code-cell} ipython3
 # Uniform
-example_CLASS = STD_UNIFORM_numpyro
-display(example_CLASS)
+example_CLASS = STD_UNIFORM_pyro
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
 ```
 
 ```{code-cell} ipython3
 # Log Normal
 example_CLASS = LOGNORMAL_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
+BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
+
+example_CLASS = LOGNORMAL_pyro
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
 ```
 
 ```{code-cell} ipython3
 # Von Mises
 example_CLASS = VONMISES_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 print('\nNB: Shifted von Mises')
+BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
+
+example_CLASS = VONMISES_pyro
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
+print('\nNB: Truncated von Mises')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
 ```
 
 ```{code-cell} ipython3
 # Laplace
 example_CLASS = LAPLACE_numpyro
-display(example_CLASS)
+print(f'=======INFO=======\nParameters: {example_CLASS.param}\nPrior Dist: {example_CLASS.name_dist}\nSolver: {example_CLASS.solver}')
 BayesianInferencePlot(true_theta, num_list, example_CLASS).SVI_plot(guide_dist='beta', n_steps=SVI_num_steps)
 ```
