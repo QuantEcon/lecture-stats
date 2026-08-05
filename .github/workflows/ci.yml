@@ -38,9 +38,14 @@ jobs:
           # 0.60.0, which caps at numpy<2.1 and is imported by 9 lectures.
           # The constraints file is derived from the env rather than hardcoded so that
           # bumping anaconda in environment.yml does not silently invalidate it.
+          # prettytable<3.18 is a real fix, not hygiene: prettytable declares a bare
+          # "wcwidth" with no floor, so pip accepts conda's wcwidth 0.2.x as satisfying
+          # it, but 3.18.0 calls wcwidth.width(), which only exists from wcwidth 0.3.0.
+          # That AttributeError is what broke prob_matrix.md in run 30975106893.
+          # 3.17.0 still uses wcswidth(), which conda's wcwidth has.
           python -c "import importlib.metadata as md; d={x.metadata['Name'].lower():x.version for x in md.distributions()}; print('\n'.join(f'{p}=={d[p]}' for p in ('numpy','pandas','scipy') if p in d))" > /tmp/conda-pins.txt
           cat /tmp/conda-pins.txt
-          pip install --only-binary=:all: -c /tmp/conda-pins.txt "arviz<1" "pymc<6" "kaleido<1"
+          pip install --only-binary=:all: -c /tmp/conda-pins.txt "arviz<1" "pymc<6" "kaleido<1" "prettytable<3.18"
           python -c "import numpy, numba; assert numpy.__version__.startswith('1.'), numpy.__version__"
           python scripts/test-jax-install.py
         # Check nvidia drivers
