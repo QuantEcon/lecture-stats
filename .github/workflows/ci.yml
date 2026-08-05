@@ -29,12 +29,18 @@ jobs:
           pip install pyro-ppl
           pip install "jax[cuda12]==0.7.1"
           pip install numpyro
-          # numpy<2 is load-bearing. anaconda=2024.10 brings numba 0.60.0, which caps
-          # at numpy<2.1, and 9 lectures import numba. "pymc<6" on its own resolves to
-          # pymc 5.28.5 -> pytensor>=2.38.2 -> numpy>=2.0, i.e. numpy 2.4.x. Pinning
-          # numpy<2 makes pip backtrack to pymc 5.25.1 / pytensor 2.31.7 instead.
-          # These also make the notebooks' own unpinned `!pip install` cells no-ops.
-          pip install "numpy<2" "arviz<1" "pymc<6" "kaleido<1"
+          # arviz and pymc are pre-installed at versions the conda stack can carry, so
+          # the notebooks' own unpinned `!pip install arviz pymc` cells become no-ops.
+          # They must not be allowed to move the conda-provided scientific stack: left
+          # free, xarray drags pandas forward, pandas 3.x requires numpy>=2, and pip
+          # backtracks through pandas until it reaches an sdist that fails to build
+          # (the numpy Cython headers need Cython>=3). numpy>=2 would also break numba
+          # 0.60.0, which caps at numpy<2.1 and is imported by 9 lectures.
+          # The constraints file is derived from the env rather than hardcoded so that
+          # bumping anaconda in environment.yml does not silently invalidate it.
+          python -c "import importlib.metadata as md; d={x.metadata['Name'].lower():x.version for x in md.distributions()}; print('\n'.join(f'{p}=={d[p]}' for p in ('numpy','pandas','scipy') if p in d))" > /tmp/conda-pins.txt
+          cat /tmp/conda-pins.txt
+          pip install --only-binary=:all: -c /tmp/conda-pins.txt "arviz<1" "pymc<6" "kaleido<1"
           python -c "import numpy, numba; assert numpy.__version__.startswith('1.'), numpy.__version__"
           python scripts/test-jax-install.py
         # Check nvidia drivers

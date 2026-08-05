@@ -31,8 +31,10 @@ jobs:
           pip install pyro-ppl
           pip install "jax[cuda12]==0.7.1"
           pip install numpyro
-          # See the equivalent block in ci.yml for why numpy<2 is load-bearing.
-          pip install "numpy<2" "arviz<1" "pymc<6" "kaleido<1"
+          # See the equivalent block in ci.yml for why the conda stack must be held.
+          python -c "import importlib.metadata as md; d={x.metadata['Name'].lower():x.version for x in md.distributions()}; print('\n'.join(f'{p}=={d[p]}' for p in ('numpy','pandas','scipy') if p in d))" > /tmp/conda-pins.txt
+          cat /tmp/conda-pins.txt
+          pip install --only-binary=:all: -c /tmp/conda-pins.txt "arviz<1" "pymc<6" "kaleido<1"
           python -c "import numpy, numba; assert numpy.__version__.startswith('1.'), numpy.__version__"
           python scripts/test-jax-install.py
       - name: Check nvidia drivers
