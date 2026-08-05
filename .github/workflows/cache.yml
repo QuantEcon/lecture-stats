@@ -23,8 +23,17 @@ jobs:
       - name: Install JAX, Numpyro
         shell: bash -l {0}
         run: |
-          pip install --upgrade "jax[cuda12-local]"
-          pip install numpyro  
+          # CUDA 12 stack. .github/runs-on.yml pins ami-09baf66e396fa7cfd, a CUDA 12
+          # AMI, so do not move to cu130 / jax[cuda13] without bumping the AMI first.
+          # torch and pyro-ppl were never installed here even though bayes_nonconj.md
+          # imports both -- this workflow has never produced a successful build.
+          pip install torch --index-url https://download.pytorch.org/whl/cu128
+          pip install pyro-ppl
+          pip install "jax[cuda12]==0.7.1"
+          pip install numpyro
+          # See the equivalent block in ci.yml for why numpy<2 is load-bearing.
+          pip install "numpy<2" "arviz<1" "pymc<6" "kaleido<1"
+          python -c "import numpy, numba; assert numpy.__version__.startswith('1.'), numpy.__version__"
           python scripts/test-jax-install.py
       - name: Check nvidia drivers
         shell: bash -l {0}
@@ -45,3 +54,7 @@ jobs:
         with:
           name: build-cache
           path: _build
+          # _config.yml sets execute_notebooks: "cache", so the execution cache
+          # lives in _build/.jupyter_cache. upload-artifact excludes hidden files
+          # by default, which would ship a "cache" containing no cache.
+          include-hidden-files: true

@@ -23,10 +23,19 @@ jobs:
       - name: Install JAX, Numpyro
         shell: bash -l {0}
         run: |
-          pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+          # CUDA 12 stack. .github/runs-on.yml pins ami-09baf66e396fa7cfd, a CUDA 12
+          # AMI, so do not move to cu130 / jax[cuda13] without bumping the AMI first.
+          pip install torch --index-url https://download.pytorch.org/whl/cu128
           pip install pyro-ppl
-          pip install --upgrade "jax[cuda12-local]"
-          pip install numpyro  
+          pip install "jax[cuda12]==0.7.1"
+          pip install numpyro
+          # numpy<2 is load-bearing. anaconda=2024.10 brings numba 0.60.0, which caps
+          # at numpy<2.1, and 9 lectures import numba. "pymc<6" on its own resolves to
+          # pymc 5.28.5 -> pytensor>=2.38.2 -> numpy>=2.0, i.e. numpy 2.4.x. Pinning
+          # numpy<2 makes pip backtrack to pymc 5.25.1 / pytensor 2.31.7 instead.
+          # These also make the notebooks' own unpinned `!pip install` cells no-ops.
+          pip install "numpy<2" "arviz<1" "pymc<6" "kaleido<1"
+          python -c "import numpy, numba; assert numpy.__version__.startswith('1.'), numpy.__version__"
           python scripts/test-jax-install.py
         # Check nvidia drivers
       - name: nvidia Drivers
@@ -56,7 +65,7 @@ jobs:
         uses: actions/upload-artifact@v6
         if: failure()
         with:
-          name: execution-reports
+          name: execution-reports-notebooks
           path: _build/jupyter/reports
       - name: Build PDF from LaTeX
         shell: bash -l {0}
@@ -68,7 +77,7 @@ jobs:
         uses: actions/upload-artifact@v6
         if: failure()
         with:
-          name: execution-reports
+          name: execution-reports-latex
           path: _build/latex/reports
       # Final Build of HTML
       - name: Build HTML
@@ -79,7 +88,7 @@ jobs:
         uses: actions/upload-artifact@v6
         if: failure()
         with:
-          name: execution-reports
+          name: execution-reports-html
           path: _build/html/reports
       - name: Preview Deploy to Netlify
         uses: nwtgck/actions-netlify@v3
