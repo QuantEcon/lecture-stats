@@ -37,6 +37,11 @@ jobs:
         shell: bash -l {0}
         run: |
           pip install jupyter-book==1.0.3 quantecon-book-theme==0.8.2 sphinx-tojupyter==0.3.0 sphinxext-rediraffe==0.2.7 sphinxcontrib-youtube==1.3.0 sphinx-togglebutton==0.3.2 arviz sphinx-proof sphinx-exercise sphinx-reredirects
+          # The Colab image ships plotly 5.24.1 and no kaleido, so back_prop.md's
+          # `!pip install kaleido` cell pulls kaleido 1.x, which is incompatible.
+          # Pinning here makes that cell a no-op. Unlike the conda workflows, this
+          # container is a coherent numpy 2.0.2 stack, so it needs no numpy pin.
+          pip install "kaleido<1"
       # Build of HTML (Execution Testing)
       - name: Build HTML
         shell: bash -l {0}

@@ -23,10 +23,30 @@ jobs:
       - name: Install JAX, Numpyro
         shell: bash -l {0}
         run: |
-          pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128
+          # CUDA 12 stack. .github/runs-on.yml pins ami-09baf66e396fa7cfd, a CUDA 12
+          # AMI, so do not move to cu130 / jax[cuda13] without bumping the AMI first.
+          pip install torch --index-url https://download.pytorch.org/whl/cu128
           pip install pyro-ppl
-          pip install --upgrade "jax[cuda12-local]"
-          pip install numpyro  
+          pip install "jax[cuda12]==0.7.1"
+          pip install numpyro
+          # arviz and pymc are pre-installed at versions the conda stack can carry, so
+          # the notebooks' own unpinned `!pip install arviz pymc` cells become no-ops.
+          # They must not be allowed to move the conda-provided scientific stack: left
+          # free, xarray drags pandas forward, pandas 3.x requires numpy>=2, and pip
+          # backtracks through pandas until it reaches an sdist that fails to build
+          # (the numpy Cython headers need Cython>=3). numpy>=2 would also break numba
+          # 0.60.0, which caps at numpy<2.1 and is imported by 9 lectures.
+          # The constraints file is derived from the env rather than hardcoded so that
+          # bumping anaconda in environment.yml does not silently invalidate it.
+          # prettytable<3.18 is a real fix, not hygiene: prettytable declares a bare
+          # "wcwidth" with no floor, so pip accepts conda's wcwidth 0.2.x as satisfying
+          # it, but 3.18.0 calls wcwidth.width(), which only exists from wcwidth 0.3.0.
+          # That AttributeError is what broke prob_matrix.md in run 30975106893.
+          # 3.17.0 still uses wcswidth(), which conda's wcwidth has.
+          python -c "import importlib.metadata as md; d={x.metadata['Name'].lower():x.version for x in md.distributions()}; print('\n'.join(f'{p}=={d[p]}' for p in ('numpy','pandas','scipy') if p in d))" > /tmp/conda-pins.txt
+          cat /tmp/conda-pins.txt
+          pip install --only-binary=:all: -c /tmp/conda-pins.txt "arviz<1" "pymc<6" "kaleido<1" "prettytable<3.18"
+          python -c "import numpy, numba; assert numpy.__version__.startswith('1.'), numpy.__version__"
           python scripts/test-jax-install.py
         # Check nvidia drivers
       - name: nvidia Drivers
@@ -56,7 +76,7 @@ jobs:
         uses: actions/upload-artifact@v6
         if: failure()
         with:
-          name: execution-reports
+          name: execution-reports-notebooks
           path: _build/jupyter/reports
       - name: Build PDF from LaTeX
         shell: bash -l {0}
@@ -68,7 +88,7 @@ jobs:
         uses: actions/upload-artifact@v6
         if: failure()
         with:
-          name: execution-reports
+          name: execution-reports-latex
           path: _build/latex/reports
       # Final Build of HTML
       - name: Build HTML
@@ -79,7 +99,7 @@ jobs:
         uses: actions/upload-artifact@v6
         if: failure()
         with:
-          name: execution-reports
+          name: execution-reports-html
           path: _build/html/reports
       - name: Preview Deploy to Netlify
         uses: nwtgck/actions-netlify@v3
