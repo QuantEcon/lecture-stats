@@ -9,6 +9,9 @@ jobs:
   link-check-linux:
     name: Link Checking (${{ matrix.python-version }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
+    permissions:
+      contents: read
+      actions: read     # dawidd6/action-download-artifact reads the cache.yml build artifact
     strategy:
       fail-fast: false
       matrix:
