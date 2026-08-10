@@ -8,7 +8,7 @@ jobs:
       pull-requests: write
       actions: read     # dawidd6/action-download-artifact reads the cache.yml build artifact
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Anaconda
