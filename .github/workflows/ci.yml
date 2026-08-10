@@ -102,7 +102,7 @@ jobs:
           name: execution-reports-html
           path: _build/html/reports
       - name: Preview Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3
+        uses: nwtgck/actions-netlify@v4
         with:
           publish-dir: '_build/html/'
           production-branch: main
