@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>20. Introduction to Artificial Neural Networks &#8212; Statistics for Computational Economics</title>
+    <title>19. Introduction to Artificial Neural Networks &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -56,33 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=b09b2da44b9015b4fa76ea072fa2d8f7faee5492" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -90,14 +90,15 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=d6d86bce9979111653c4c495e33499e1796e172a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NJV5XPRDFV"></script>
@@ -107,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-NJV5XPRDFV');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -120,8 +117,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="21. Randomized Response Surveys" href="rand_resp.html" />
-    <link rel="prev" title="19. Fault Tree Uncertainties" href="hoist_failure.html" />
+    <link rel="next" title="20. Randomized Response Surveys" href="rand_resp.html" />
+    <link rel="prev" title="18. Fault Tree Uncertainties" href="hoist_failure.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -169,14 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">20.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-deep-but-not-wide-artificial-neural-network">20.2. A Deep (but not Wide) Artificial Neural Network</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibrating-parameters">20.3. Calibrating  Parameters</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-and-the-chain-rule">20.4. Back Propagation and the Chain Rule</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-set">20.5. Training Set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">20.6. Example 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep">20.7. How Deep?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">20.8. Example 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">19.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-deep-but-not-wide-artificial-neural-network">19.2. A Deep (but not Wide) Artificial Neural Network</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calibrating-parameters">19.3. Calibrating  Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#back-propagation-and-the-chain-rule">19.4. Back Propagation and the Chain Rule</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-set">19.5. Training Set</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">19.6. Example 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-deep">19.7. How Deep?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">19.8. Example 2</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -234,38 +231,67 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-artificial-neural-networks">
-<h1><span class="section-number">20. </span>Introduction to Artificial Neural Networks<a class="headerlink" href="#introduction-to-artificial-neural-networks" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">19. </span>Introduction to Artificial Neural Networks<a class="headerlink" href="#introduction-to-artificial-neural-networks" title="Permalink to this heading">#</a></h1>
+<div class="warning admonition">
+<p class="admonition-title">GPU</p>
+<p>This lecture was built using a machine with access to a GPU — although it will also run without one.</p>
+<p><a class="reference external" href="https://colab.research.google.com/">Google Colab</a> has a free tier with GPUs
+that you can access as follows:</p>
+<ol class="arabic simple">
+<li><p>Click on the “play” icon top right</p></li>
+<li><p>Select Colab</p></li>
+<li><p>Set the runtime environment to include a GPU</p></li>
+</ol>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>jax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">jax</span>
+<span class="c1">## to check that gpu is activated in environment</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;JAX backend: </span><span class="si">{</span><span class="n">jax</span><span class="o">.</span><span class="n">devices</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">platform</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JAX backend: gpu
+</pre></div>
+</div>
+</div>
+</div>
+<p>In addition to what’s included in base Anaconda, we need to install the following packages</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input above-output-prompt docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>jax<span class="w"> </span>jaxlib
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>kaleido
 <span class="o">!</span>conda<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>-c<span class="w"> </span>plotly<span class="w"> </span>plotly<span class="w"> </span>plotly-orca<span class="w"> </span>retrying
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
+<details class="admonition hide below-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jax in /opt/conda/envs/quantecon/lib/python3.11/site-packages (0.4.23)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/miniconda3/envs/quantecon/lib/python3.12/pty.py:95: RuntimeWarning: os.fork() was called. os.fork() is incompatible with multithreaded code, and JAX is multithreaded, so this will likely lead to a deadlock.
+  pid, fd = os.forkpty()
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: jaxlib in /opt/conda/envs/quantecon/lib/python3.11/site-packages (0.4.23+cuda12.cudnn89)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: kaleido in /home/runner/miniconda3/envs/quantecon/lib/python3.12/site-packages (0.2.1)
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ml-dtypes&gt;=0.2.0 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from jax) (0.3.1)
-Requirement already satisfied: numpy&gt;=1.22 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from jax) (1.24.3)
-Requirement already satisfied: opt-einsum in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from jax) (3.3.0)
-Requirement already satisfied: scipy&gt;=1.9 in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from jax) (1.11.1)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Bold -Color-Bold-Yellow">CI detected...</span>
+<span class=" -Color -Color-Bold -Color-Bold-Green">2 channel Terms of Service accepted</span>
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Channels:
  - plotly
+ - default
  - defaults
 Platform: linux-64
 Collecting package metadata (repodata.json): - 
@@ -379,11 +405,164 @@ Collecting package metadata (repodata.json): -
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Solving environment: | 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+Solving environment: - 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
@@ -391,7 +570,7 @@ Solving environment: |
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>## Package Plan ##
 
-  environment location: /opt/conda
+  environment location: /home/runner/miniconda3/envs/quantecon
 
   added / updated specs:
     - plotly
@@ -403,74 +582,126 @@ The following packages will be downloaded:
 
     package                    |            build
     ---------------------------|-----------------
-    ca-certificates-2023.12.12 |       h06a4308_0         126 KB
-    plotly-5.18.0              |             py_0         7.2 MB  plotly
     plotly-orca-1.3.1          |                1        56.6 MB  plotly
     retrying-1.3.3             |     pyhd3eb1b0_2          14 KB
     ------------------------------------------------------------
-                                           Total:        63.9 MB
+                                           Total:        56.6 MB
 
 The following NEW packages will be INSTALLED:
 
-  plotly             plotly/noarch::plotly-5.18.0-py_0 
   plotly-orca        plotly/linux-64::plotly-orca-1.3.1-1 
   retrying           pkgs/main/noarch::retrying-1.3.3-pyhd3eb1b0_2 
-  six                pkgs/main/noarch::six-1.16.0-pyhd3eb1b0_1 
-  tenacity           pkgs/main/linux-64::tenacity-8.2.2-py311h06a4308_0 
-
-The following packages will be UPDATED:
-
-  ca-certificates                     2023.08.22-h06a4308_0 --&gt; 2023.12.12-h06a4308_0 
 
 
 
 Downloading and Extracting Packages:
 
-plotly-orca-1.3.1    | 56.6 MB   |                                       |   0% 
+plotly-orca-1.3.1    | 56.6 MB   |                                      |   0% 
 
-plotly-5.18.0        | 7.2 MB    |                                       |   0% 
-
-
-ca-certificates-2023 | 126 KB    |                                       |   0% 
-
-
-
-retrying-1.3.3       | 14 KB     |                                       |   0% 
+retrying-1.3.3       | 14 KB     |                                      |   0% 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ca-certificates-2023 | 126 KB    | ####7                                 |  13% 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>retrying-1.3.3       | 14 KB     | #################################### | 100% 
 
+retrying-1.3.3       | 14 KB     | #################################### | 100% 
 
-ca-certificates-2023 | 126 KB    | ##################################### | 100% 
+retrying-1.3.3       | 14 KB     | #################################### | 100% 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>retrying-1.3.3       | 14 KB     | ##################################### | 100% 
-
-
-
-retrying-1.3.3       | 14 KB     | ##################################### | 100% 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly-orca-1.3.1    | 56.6 MB   | #################################### | 100% 
+plotly-orca-1.3.1    | 56.6 MB   | #################################### | 100% 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly-5.18.0        | 7.2 MB    | ##################################### | 100% 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly-orca-1.3.1    | 56.6 MB   | #################################### | 100% 
+                                                                               
 
-plotly-5.18.0        | 7.2 MB    | ##################################### | 100% 
+
+                                                                               
+
+Preparing transaction: - 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>plotly-orca-1.3.1    | 56.6 MB   | ##################################### | 100% 
-plotly-orca-1.3.1    | 56.6 MB   | ##################################### | 100% 
-                                                                                
-
-
-                                                                                
-
-
-                                                                                
-
-
-
-                                                                                
-
-Preparing transaction: \ 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+Verifying transaction: | 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+Executing transaction: \ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
@@ -492,329 +723,12 @@ Preparing transaction: \
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Verifying transaction: \ 
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
-Executing transaction: - 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>\ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>| 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/ 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>- 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>WARNING conda.conda_pypi.main:notify_externally_managed_future(156): 
+  Did you know? You can install many PyPI packages with conda
+  using the conda-pypi beta. Get started:
+    https://docs.conda.io/projects/conda/en/stable/new-features.html
 </pre></div>
 </div>
 </div>
@@ -828,7 +742,7 @@ the Python packages. However this lecture will still execute as Google Colab
 has <code class="docutils literal notranslate"><span class="pre">plotly</span></code> installed.</p>
 </div>
 <section id="overview">
-<h2><span class="section-number">20.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>Substantial parts of <strong>machine learning</strong> and <strong>artificial intelligence</strong> are about</p>
 <ul class="simple">
 <li><p>approximating an unknown function with a known function</p></li>
@@ -847,7 +761,7 @@ approximate a function <span class="math notranslate nohighlight">\(f\)</span> t
 </ul>
 </section>
 <section id="a-deep-but-not-wide-artificial-neural-network">
-<h2><span class="section-number">20.2. </span>A Deep (but not Wide) Artificial Neural Network<a class="headerlink" href="#a-deep-but-not-wide-artificial-neural-network" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.2. </span>A Deep (but not Wide) Artificial Neural Network<a class="headerlink" href="#a-deep-but-not-wide-artificial-neural-network" title="Permalink to this heading">#</a></h2>
 <p>We describe a  “deep” neural network of “width” one.</p>
 <p><strong>Deep</strong> means that the network composes a large number of functions organized into nodes of a graph.</p>
 <p><strong>Width</strong> refers to the number of right hand  side variables on the right hand side of the function being approximated.</p>
@@ -897,7 +811,7 @@ f(x)\approx\hat{f}(x)=h_{N}\circ l_{N}\circ h_{N-1}\circ l_{1}\circ\cdots\circ h
 <p>Evidently,  if we know  the parameters <span class="math notranslate nohighlight">\(\{w_i, b_i\}_{i=1}^N\)</span>, then we can compute
 <span class="math notranslate nohighlight">\(\hat f(x)\)</span> for a given <span class="math notranslate nohighlight">\(x = \tilde x\)</span> by iterating on the recursion</p>
 <div class="math notranslate nohighlight" id="equation-eq-recursion">
-<span class="eqno">(20.1)<a class="headerlink" href="#equation-eq-recursion" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(19.1)<a class="headerlink" href="#equation-eq-recursion" title="Permalink to this equation">#</a></span>\[
 x_{i+1} = h_i \circ l_i(x_i) , \quad, i = 1, \ldots N
 \]</div>
 <p>starting from <span class="math notranslate nohighlight">\(x_1 = \tilde x\)</span>.</p>
@@ -905,7 +819,7 @@ x_{i+1} = h_i \circ l_i(x_i) , \quad, i = 1, \ldots N
 equals <span class="math notranslate nohighlight">\(\hat f(\tilde x)\)</span>.</p>
 </section>
 <section id="calibrating-parameters">
-<h2><span class="section-number">20.3. </span>Calibrating  Parameters<a class="headerlink" href="#calibrating-parameters" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.3. </span>Calibrating  Parameters<a class="headerlink" href="#calibrating-parameters" title="Permalink to this heading">#</a></h2>
 <p>We now consider a  neural network like the one describe above  with width 1, depth <span class="math notranslate nohighlight">\(N\)</span>,  and activation functions <span class="math notranslate nohighlight">\(h_{i}\)</span> for <span class="math notranslate nohighlight">\(1\leqslant i\leqslant N\)</span> that map <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> into itself.</p>
 <p>Let <span class="math notranslate nohighlight">\(\left\{ \left(w_{i},b_{i}\right)\right\} _{i=1}^{N}\)</span> denote a sequence of weights and biases.</p>
 <p>As mentioned above, for a given input <span class="math notranslate nohighlight">\(x_{1}\)</span>, our approximating function <span class="math notranslate nohighlight">\(\hat f\)</span> evaluated
@@ -938,7 +852,7 @@ p = \begin{bmatrix}
 \]</div>
 <p>Applying a “poor man’s version” of a <strong>stochastic gradient descent</strong> algorithm for finding a zero of a function leads to the following update rule for parameters:</p>
 <div class="math notranslate nohighlight" id="equation-eq-sgd">
-<span class="eqno">(20.2)<a class="headerlink" href="#equation-eq-sgd" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(19.2)<a class="headerlink" href="#equation-eq-sgd" title="Permalink to this equation">#</a></span>\[
 p_{k+1}=p_k-\alpha\frac{d \mathcal{L}}{dx_{N+1}}\frac{dx_{N+1}}{dp_k}
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\frac{d {\mathcal L}}{dx_{N+1}}=-\left(x_{N+1}-y\right)\)</span> and <span class="math notranslate nohighlight">\(\alpha &gt; 0 \)</span> is a step size.</p>
@@ -948,7 +862,7 @@ relates to Newton’s method.)</p>
 <p>In the neural network literature, this step is accomplished by what is known as <strong>back propagation</strong>.</p>
 </section>
 <section id="back-propagation-and-the-chain-rule">
-<h2><span class="section-number">20.4. </span>Back Propagation and the Chain Rule<a class="headerlink" href="#back-propagation-and-the-chain-rule" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.4. </span>Back Propagation and the Chain Rule<a class="headerlink" href="#back-propagation-and-the-chain-rule" title="Permalink to this heading">#</a></h2>
 <p>Thanks to  properties of</p>
 <ul class="simple">
 <li><p>the chain and product rules for differentiation from differential calculus, and</p></li>
@@ -973,7 +887,7 @@ relates to Newton’s method.)</p>
 \[
 \delta_{i}=h'\left(w_{i}x_{i}+b_{i}\right). 
 \]</div>
-<p>Repeated application of the chain rule and product rule to our recursion <a class="reference internal" href="#equation-eq-recursion">(20.1)</a> allows us to obtain:</p>
+<p>Repeated application of the chain rule and product rule to our recursion <a class="reference internal" href="#equation-eq-recursion">(19.1)</a> allows us to obtain:</p>
 <div class="math notranslate nohighlight">
 \[
 dx_{i+1}=\delta_{i}\left(dw_{i}x_{i}+w_{i}dx_{i}+b_{i}\right)
@@ -1030,7 +944,7 @@ dx_{N+1}/db_{N}
 <p>We can then solve the above problem by applying our update for <span class="math notranslate nohighlight">\(p\)</span> multiple times for a collection of input-output pairs <span class="math notranslate nohighlight">\(\left\{ \left(x_{1}^{i},y^{i}\right)\right\} _{i=1}^{M}\)</span> that we’ll call our “training set”.</p>
 </section>
 <section id="training-set">
-<h2><span class="section-number">20.5. </span>Training Set<a class="headerlink" href="#training-set" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.5. </span>Training Set<a class="headerlink" href="#training-set" title="Permalink to this heading">#</a></h2>
 <p>Choosing a  training set amounts to a choice of measure <span class="math notranslate nohighlight">\(\mu\)</span> in the above  formulation of our  function approximation problem as a minimization problem.</p>
 <p>In this spirit,  we shall use a uniform grid of, say, 50 or 200 points.</p>
 <p>There are many possible approaches to the minimization  problem posed above:</p>
@@ -1039,7 +953,7 @@ dx_{N+1}/db_{N}
 <li><p>stochastic gradient descent in which you sample points randomly and use individual gradients</p></li>
 <li><p>something in-between (so-called “mini-batch gradient descent”)</p></li>
 </ul>
-<p>The update rule <a class="reference internal" href="#equation-eq-sgd">(20.2)</a> described above  amounts  to a stochastic gradient descent algorithm.</p>
+<p>The update rule <a class="reference internal" href="#equation-eq-sgd">(19.2)</a> described above  amounts  to a stochastic gradient descent algorithm.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
@@ -1147,8 +1061,8 @@ dx_{N+1}/db_{N}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([[8.5726520e-03, 4.0850643e-04, 6.1021703e-01],
-       [1.7145304e-03, 2.3785220e-01, 1.0000000e+00]], dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array([[1.0165801 , 0.06087969, 0.09382247],
+       [0.20331602, 0.08501981, 1.        ]], dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1194,7 +1108,7 @@ dx_{N+1}/db_{N}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(1.4901161e-08, dtype=float32)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Array(5.9604645e-08, dtype=float32)
 </pre></div>
 </div>
 </div>
@@ -1235,9 +1149,9 @@ dx_{N+1}/db_{N}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(Array([[-1.3489482]], dtype=float32), Array([0.37956238], dtype=float32)),
- (Array([[-0.00782906]], dtype=float32), Array([0.44972023], dtype=float32)),
- (Array([[0.22937916]], dtype=float32), Array([-0.04793657], dtype=float32))]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(Array([[-0.00826643]], dtype=float32), Array([0.94700736], dtype=float32)),
+ (Array([[-2.0638916]], dtype=float32), Array([-0.7872697], dtype=float32)),
+ (Array([[1.6248171]], dtype=float32), Array([1.5765371], dtype=float32))]
 </pre></div>
 </div>
 </div>
@@ -1249,16 +1163,16 @@ dx_{N+1}/db_{N}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(Array([[-1.3489482]], dtype=float32), Array([0.37956238], dtype=float32)),
- (Array([[-0.00782906]], dtype=float32), Array([0.44972023], dtype=float32)),
- (Array([[0.22937916]], dtype=float32), Array([-0.04793657], dtype=float32))]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(Array([[-0.00826644]], dtype=float32), Array([0.94700736], dtype=float32)),
+ (Array([[-2.0638916]], dtype=float32), Array([-0.7872697], dtype=float32)),
+ (Array([[1.6248171]], dtype=float32), Array([1.5765371], dtype=float32))]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="example-1">
-<h2><span class="section-number">20.6. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.6. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">#</a></h2>
 <p>Consider the function</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1315,8 +1229,8 @@ f\left(x\right)=-3x+2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 41.9 s, sys: 4.8 s, total: 46.7 s
-Wall time: 29.8 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: user 18.9 s, sys: 3.88 s, total: 22.7 s
+Wall time: 16.6 s
 </pre></div>
 </div>
 </div>
@@ -1342,12 +1256,12 @@ Wall time: 29.8 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9a26a4bd2cc88146ceb0d7ede8e6246f32fdbdbf2a935f1f411f096e34730a40.png" src="_images/9a26a4bd2cc88146ceb0d7ede8e6246f32fdbdbf2a935f1f411f096e34730a40.png" />
+<img alt="_images/b34154f214c38ed18046a1569778c0b2509d03dd245a22f4b2d0ed6186e4def5.png" src="_images/b34154f214c38ed18046a1569778c0b2509d03dd245a22f4b2d0ed6186e4def5.png" />
 </div>
 </div>
 </section>
 <section id="how-deep">
-<h2><span class="section-number">20.7. </span>How Deep?<a class="headerlink" href="#how-deep" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.7. </span>How Deep?<a class="headerlink" href="#how-deep" title="Permalink to this heading">#</a></h2>
 <p>It  is  fun to think about how deepening the neural net for the above example affects the quality of  approximation</p>
 <ul class="simple">
 <li><p>If the network is too deep, you’ll run into the <a class="reference external" href="http://neuralnetworksanddeeplearning.com/chap5.html">vanishing gradient problem</a></p></li>
@@ -1356,7 +1270,7 @@ Wall time: 29.8 s
 </ul>
 </section>
 <section id="example-2">
-<h2><span class="section-number">20.8. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">19.8. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h2>
 <p>We use the same setup as for the previous example with</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1449,29 +1363,8 @@ f\left(x\right)=\log\left(x\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/325a669ee684f98a73a6a1c1b9cceb50eb1f730994603c41baecf932b79866c7.png" src="_images/325a669ee684f98a73a6a1c1b9cceb50eb1f730994603c41baecf932b79866c7.png" />
+<img alt="_images/d33077bf392713eab66f3e336bcaa9e4b04ea016ba23bdbc6e148ae8fca52bf4.png" src="_images/d33077bf392713eab66f3e336bcaa9e4b04ea016ba23bdbc6e148ae8fca52bf4.png" />
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## to check that gpu is activated in environment</span>
-
-<span class="kn">from</span> <span class="nn">jax.lib</span> <span class="kn">import</span> <span class="n">xla_bridge</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">xla_bridge</span><span class="o">.</span><span class="n">get_backend</span><span class="p">()</span><span class="o">.</span><span class="n">platform</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gpu
-</pre></div>
-</div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><strong>Cloud Environment:</strong> This lecture site is built in a server environment that doesn’t have access to a <code class="docutils literal notranslate"><span class="pre">gpu</span></code>
-If you run this lecture locally this lets you know where your code is being executed, either
-via the <code class="docutils literal notranslate"><span class="pre">cpu</span></code> or the <code class="docutils literal notranslate"><span class="pre">gpu</span></code></p>
 </div>
 </section>
 </section>
@@ -1532,33 +1425,28 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
 </p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="pandas_panel.html">
-   1. Pandas for Panel Data
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ols.html">
-   2. Linear Regression in Python
+   1. Linear Regression in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mle.html">
-   3. Maximum Likelihood Estimation
+   2. Maximum Likelihood Estimation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="prob_matrix.html">
-   4. Elementary Probability with Matrices
+   3. Elementary Probability with Matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lln_clt.html">
-   5. LLN and CLT
+   4. LLN and CLT
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multivariate_normal.html">
-   6. Multivariate Normal Distribution
+   5. Multivariate Normal Distribution
   </a>
  </li>
 </ul>
@@ -1570,57 +1458,57 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="prob_meaning.html">
-   7. Two Meanings of Probability
+   6. Two Meanings of Probability
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bayes_nonconj.html">
-   8. Non-Conjugate Priors
+   7. Non-Conjugate Priors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   9. Posterior Distributions for  AR(1) Parameters
+   8. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   10. Forecasting  an AR(1) Process
+   9. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   11. Likelihood Ratio Processes
+   10. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   12. Computing Mean of a Likelihood Ratio Process
+   11. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   13. A Problem that Stumped Milton Friedman
+   12. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   14. Exchangeability and Bayesian Updating
+   13. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   15. Likelihood Ratio Processes and Bayesian Learning
+   14. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   16. Incorrect Models
+   15. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="navy_captain.html">
-   17. Bayesian versus Frequentist Decision Rules
+   16. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -1632,27 +1520,27 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="multi_hyper.html">
-   18. Multivariate Hypergeometric Distribution
+   17. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hoist_failure.html">
-   19. Fault Tree Uncertainties
+   18. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   20. Introduction to Artificial Neural Networks
+   19. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rand_resp.html">
-   21. Randomized Response Surveys
+   20. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   22. Expected Utilities of Random Responses
+   21. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -1664,17 +1552,17 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   23. Troubleshooting
+   22. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   24. References
+   23. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   25. Execution Statistics
+   24. Execution Statistics
   </a>
  </li>
 </ul>
@@ -1713,7 +1601,11 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/back_prop.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats.myst/back_prop.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats/blob/main/lectures/back_prop.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1742,18 +1634,18 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/back_prop.ipynb">Colab</option>
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/main/back_prop.ipynb">Colab</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/back_prop.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/back_prop.ipynb" data-branch=main>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/back_prop.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/main/back_prop.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1786,7 +1678,7 @@ via the <code class="docutils literal notranslate"><span class="pre">cpu</span><
                 const pageName = "back_prop";
                 const repoURL = "https://github.com/QuantEcon/lecture-stats.notebooks";
                 const urlPath = "tree/lecture-stats.notebooks/back_prop.ipynb";
-                const branch = "master"
+                const branch = "main"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
                 // Highlight public server option if previous selection exists

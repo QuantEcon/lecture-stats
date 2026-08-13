@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Two Meanings of Probability &#8212; Statistics for Computational Economics</title>
+    <title>6. Two Meanings of Probability &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -56,33 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=b09b2da44b9015b4fa76ea072fa2d8f7faee5492" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -90,14 +90,15 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=d6d86bce9979111653c4c495e33499e1796e172a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NJV5XPRDFV"></script>
@@ -107,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-NJV5XPRDFV');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -120,8 +117,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="8. Non-Conjugate Priors" href="bayes_nonconj.html" />
-    <link rel="prev" title="6. Multivariate Normal Distribution" href="multivariate_normal.html" />
+    <link rel="next" title="7. Non-Conjugate Priors" href="bayes_nonconj.html" />
+    <link rel="prev" title="5. Multivariate Normal Distribution" href="multivariate_normal.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -169,10 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">7.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-interpretation">7.2. Frequentist Interpretation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-interpretation">7.3. Bayesian Interpretation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-a-conjugate-prior">7.4. Role of a Conjugate Prior</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">6.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-interpretation">6.2. Frequentist Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-interpretation">6.3. Bayesian Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#role-of-a-conjugate-prior">6.4. Role of a Conjugate Prior</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -230,9 +227,9 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="two-meanings-of-probability">
-<h1><span class="section-number">7. </span>Two Meanings of Probability<a class="headerlink" href="#two-meanings-of-probability" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">6. </span>Two Meanings of Probability<a class="headerlink" href="#two-meanings-of-probability" title="Permalink to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">7.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This lecture  illustrates two distinct interpretations of a  <strong>probability distribution</strong></p>
 <ul class="simple">
 <li><p>A frequentist interpretation as <strong>relative frequencies</strong> anticipated to occur in a large i.i.d. sample</p></li>
@@ -261,20 +258,14 @@ proceeding to read the rest of the lecture.</p>
 </pre></div>
 </div>
 </div>
-<details class="hide below-input">
+<details class="admonition hide below-input">
 <summary aria-label="Toggle hidden content">
-<span class="collapsed">Show code cell output</span>
-<span class="expanded">Hide code cell output</span>
+<p class="collapsed admonition-title">Show code cell output</p>
+<p class="expanded admonition-title">Hide code cell output</p>
 </summary>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: prettytable in /opt/conda/envs/quantecon/lib/python3.11/site-packages (3.9.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: wcwidth in /opt/conda/envs/quantecon/lib/python3.11/site-packages (from prettytable) (0.2.5)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: prettytable in /home/runner/miniconda3/envs/quantecon/lib/python3.12/site-packages (3.17.0)
+Requirement already satisfied: wcwidth in /home/runner/miniconda3/envs/quantecon/lib/python3.12/site-packages (from prettytable) (0.2.5)
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
@@ -299,7 +290,7 @@ proceeding to read the rest of the lecture.</p>
 <p>Empowered with these Python tools, we’ll now  explore the two meanings described above.</p>
 </section>
 <section id="frequentist-interpretation">
-<h2><span class="section-number">7.2. </span>Frequentist Interpretation<a class="headerlink" href="#frequentist-interpretation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.2. </span>Frequentist Interpretation<a class="headerlink" href="#frequentist-interpretation" title="Permalink to this heading">#</a></h2>
 <p>Consider the following classic example.</p>
 <p>The random variable  <span class="math notranslate nohighlight">\(X \)</span> takes on possible values <span class="math notranslate nohighlight">\(k = 0, 1, 2, \ldots, n\)</span>  with probabilties</p>
 <div class="math notranslate nohighlight">
@@ -338,7 +329,7 @@ f_k^I = \frac{\textrm{number of samples of length n for which } \sum_{h=1}^n y_h
 <p>As usual, a law of large numbers justifies this answer.</p>
 <div class="exercise admonition" id="pm_ex1">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7.1 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.1 </span></p>
 <section id="exercise-content">
 <ol class="arabic simple">
 <li><p>Please write a Python class to compute <span class="math notranslate nohighlight">\(f_k^I\)</span></p></li>
@@ -350,7 +341,7 @@ f_k^I = \frac{\textrm{number of samples of length n for which } \sum_{h=1}^n y_h
 </div>
 <div class="solution dropdown admonition" id="prob_meaning-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#pm_ex1"> Exercise 7.1</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#pm_ex1"> Exercise 6.1</a></p>
 <section id="solution-content">
 <p>Here is one solution:</p>
 <div class="cell docutils container">
@@ -431,24 +422,24 @@ f_k^I = \frac{\textrm{number of samples of length n for which } \sum_{h=1}^n y_h
 +----+------------------------+-------------+
 | 1  | 1.6271660538000033e-09 |     0.0     |
 | 2  | 3.606884752589999e-08  |     0.0     |
-| 3  |  5.04963865362601e-07  |     0.0     |
-| 4  | 5.007558331512455e-06  |    7e-06    |
-| 5  | 3.7389768875293014e-05 |   3.9e-05   |
-| 6  | 0.00021810698510587546 |   0.000207  |
-| 7  |  0.001017832597160754  |   0.000996  |
-| 8  |  0.003859281930901185  |   0.003853  |
-| 9  |  0.012006654896137007  |   0.012091  |
-| 10 |  0.030817080900085007  |   0.030878  |
-| 11 |  0.06536956554563476   |   0.065151  |
-| 12 |  0.11439673970486108   |   0.114262  |
-| 13 |   0.1642619852172365   |   0.164178  |
-| 14 |  0.19163898275344252   |   0.191031  |
-| 15 |  0.17886305056987967   |   0.179718  |
-| 16 |   0.1304209743738704   |   0.130461  |
-| 17 |  0.07160367220526209   |   0.071618  |
-| 18 |  0.027845872524268643  |   0.027971  |
-| 19 |  0.006839337111223895  |   0.006736  |
-| 20 | 0.0007979226629761189  |   0.000803  |
+| 3  |  5.04963865362601e-07  |    1e-06    |
+| 4  | 5.007558331512455e-06  |     0.0     |
+| 5  | 3.7389768875293014e-05 |   3.8e-05   |
+| 6  | 0.00021810698510587546 |   0.000232  |
+| 7  |  0.001017832597160754  |   0.001038  |
+| 8  |  0.003859281930901185  |   0.00381   |
+| 9  |  0.012006654896137007  |   0.012082  |
+| 10 |  0.030817080900085007  |   0.030861  |
+| 11 |  0.06536956554563476   |   0.065531  |
+| 12 |  0.11439673970486108   |   0.114432  |
+| 13 |   0.1642619852172365   |   0.164384  |
+| 14 |  0.19163898275344252   |   0.191072  |
+| 15 |  0.17886305056987967   |   0.178534  |
+| 16 |   0.1304209743738704   |   0.130933  |
+| 17 |  0.07160367220526209   |   0.071459  |
+| 18 |  0.027845872524268643  |   0.028021  |
+| 19 |  0.006839337111223895  |   0.006803  |
+| 20 | 0.0007979226629761189  |   0.000769  |
 +----+------------------------+-------------+
 </pre></div>
 </div>
@@ -498,7 +489,7 @@ n=20, k=10, I=1,000,000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2a85ff16d1179d61cb8a4b13580d00bf5a1bd2aab9494edc615bf874b7b5bc1e.png" src="_images/2a85ff16d1179d61cb8a4b13580d00bf5a1bd2aab9494edc615bf874b7b5bc1e.png" />
+<img alt="_images/22315e63cf72dd5eecd00d7e273841efdd6054723c4ffb2e4085a610fd44ede2.png" src="_images/22315e63cf72dd5eecd00d7e273841efdd6054723c4ffb2e4085a610fd44ede2.png" />
 </div>
 </div>
 <p><strong>Comparison with different <span class="math notranslate nohighlight">\(n\)</span></strong></p>
@@ -537,7 +528,7 @@ n=20, k=10, I=1,000,000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/71afd33a5f916549d74d76978ce97353807f4106f0a62441f3719f7e2f30ab2f.png" src="_images/71afd33a5f916549d74d76978ce97353807f4106f0a62441f3719f7e2f30ab2f.png" />
+<img alt="_images/6d50e70c92fddf3839f8f2825a478c9463195178547134adad19024cba227c1b.png" src="_images/6d50e70c92fddf3839f8f2825a478c9463195178547134adad19024cba227c1b.png" />
 </div>
 </div>
 <p><strong>Comparison with different <span class="math notranslate nohighlight">\(I\)</span></strong></p>
@@ -576,7 +567,7 @@ n=20, k=10, I=1,000,000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b049dd200a1b8bc95cff38bf4bec1928e6550ac9db414077b9dddb7b537bb649.png" src="_images/b049dd200a1b8bc95cff38bf4bec1928e6550ac9db414077b9dddb7b537bb649.png" />
+<img alt="_images/556ae3042831a5a743c2521e070c4584a0186804ee795ed03cb30dfcc6206d78.png" src="_images/556ae3042831a5a743c2521e070c4584a0186804ee795ed03cb30dfcc6206d78.png" />
 </div>
 </div>
 <p>From the above graphs, we can see that <strong><span class="math notranslate nohighlight">\(I\)</span>, the number of independent sequences,</strong> plays an important role.</p>
@@ -597,7 +588,7 @@ E[\rho_{k,i}] = \textrm{Prob}(X =  k | \theta) = \left(\frac{n!}{k! (n-k)!} \rig
 <p>as <span class="math notranslate nohighlight">\(I\)</span> goes to infinity.</p>
 </section>
 <section id="bayesian-interpretation">
-<h2><span class="section-number">7.3. </span>Bayesian Interpretation<a class="headerlink" href="#bayesian-interpretation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.3. </span>Bayesian Interpretation<a class="headerlink" href="#bayesian-interpretation" title="Permalink to this heading">#</a></h2>
 <p>We again use a binomial distribution.</p>
 <p>But now we don’t regard  <span class="math notranslate nohighlight">\(\theta\)</span> as being a fixed number.</p>
 <p>Instead, we think of it as a <strong>random variable</strong>.</p>
@@ -617,7 +608,7 @@ P(\theta) = \frac{\theta^{\alpha-1}(1-\theta)^{\beta -1}}{B(\alpha, \beta)}
 a <strong>beta distribution</strong> with parameters <span class="math notranslate nohighlight">\(\alpha, \beta\)</span>.</p>
 <div class="exercise admonition" id="pm_ex2">
 
-<p class="admonition-title"><span class="caption-number">Exercise 7.2 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 6.2 </span></p>
 <section id="exercise-content">
 <p><strong>a)</strong>  Please write down the <strong>likelihood function</strong> for a sample of length <span class="math notranslate nohighlight">\(n\)</span> from a binomial distribution with parameter <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p><strong>b)</strong> Please write down the <strong>posterior</strong> distribution for <span class="math notranslate nohighlight">\(\theta\)</span> after observing  one flip of the coin.</p>
@@ -631,7 +622,7 @@ a <strong>beta distribution</strong> with parameters <span class="math notransla
 </div>
 <div class="solution dropdown admonition" id="prob_meaning-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#pm_ex2"> Exercise 7.2</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#pm_ex2"> Exercise 6.2</a></p>
 <section id="solution-content">
 <p><strong>a)</strong> Please write down the <strong>likelihood function</strong> and the <strong>posterior</strong> distribution for <span class="math notranslate nohighlight">\(\theta\)</span> after observing  one flip of our coin.</p>
 <p>Suppose the outcome is <strong>Y</strong>.</p>
@@ -756,7 +747,7 @@ L(Y|\theta)= \textrm{Prob}(X =  Y | \theta) =
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/954b3263691a94de95e21f760205aafc4314a448cf004bf3e7e70795ae65ffac.png" src="_images/954b3263691a94de95e21f760205aafc4314a448cf004bf3e7e70795ae65ffac.png" />
+<img alt="_images/6f234f1cdebf7ba485f217391be0ab98eab9ff45a840eed54db2f913d417a666.png" src="_images/6f234f1cdebf7ba485f217391be0ab98eab9ff45a840eed54db2f913d417a666.png" />
 </div>
 </div>
 <p><strong>e)</strong> For various <span class="math notranslate nohighlight">\(n\)</span>’s, please describe and compute  <span class="math notranslate nohighlight">\(.05\)</span> and <span class="math notranslate nohighlight">\(.95\)</span> quantiles for  posterior probabilities.</p>
@@ -813,36 +804,36 @@ L(Y|\theta)= \textrm{Prob}(X =  Y | \theta) =
     <tr>
       <th>upper</th>
       <td>0.001543</td>
-      <td>0.000868</td>
-      <td>0.062413</td>
+      <td>0.097308</td>
+      <td>0.235534</td>
       <td>0.16528</td>
       <td>0.127776</td>
-      <td>0.117329</td>
-      <td>0.280091</td>
-      <td>0.264015</td>
-      <td>0.310582</td>
-      <td>0.307914</td>
-      <td>0.341239</td>
-      <td>0.347839</td>
-      <td>0.370342</td>
-      <td>0.362915</td>
+      <td>0.347322</td>
+      <td>0.324234</td>
+      <td>0.354342</td>
+      <td>0.256112</td>
+      <td>0.281482</td>
+      <td>0.303401</td>
+      <td>0.338126</td>
+      <td>0.346826</td>
+      <td>0.356016</td>
     </tr>
     <tr>
       <th>lower</th>
       <td>0.771480</td>
-      <td>0.569259</td>
-      <td>0.764466</td>
+      <td>0.902692</td>
+      <td>0.937587</td>
       <td>0.83472</td>
       <td>0.739366</td>
-      <td>0.558127</td>
-      <td>0.629953</td>
-      <td>0.549653</td>
-      <td>0.536089</td>
-      <td>0.498084</td>
-      <td>0.502138</td>
-      <td>0.440341</td>
-      <td>0.442460</td>
-      <td>0.413563</td>
+      <td>0.814884</td>
+      <td>0.675766</td>
+      <td>0.645658</td>
+      <td>0.475559</td>
+      <td>0.469087</td>
+      <td>0.461664</td>
+      <td>0.430196</td>
+      <td>0.418180</td>
+      <td>0.406492</td>
     </tr>
   </tbody>
 </table>
@@ -877,7 +868,7 @@ F(a)=p_1,F(b)=p_2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/b60f425043a3bb9b32260a07f123a7a6a3cd38f2cc5f5e63cd73374a1e04aadd.png" src="_images/b60f425043a3bb9b32260a07f123a7a6a3cd38f2cc5f5e63cd73374a1e04aadd.png" />
+<img alt="_images/b546c4c4736643a236ac926645b26a18941798b964d323ca008caaa5fecd2547.png" src="_images/b546c4c4736643a236ac926645b26a18941798b964d323ca008caaa5fecd2547.png" />
 </div>
 </div>
 <p>Notice that in the graph above the posterior probabililty that <span class="math notranslate nohighlight">\(\theta \in [.45, .55]\)</span> typically exhibits a hump shape as <span class="math notranslate nohighlight">\(n\)</span> increases.</p>
@@ -909,7 +900,7 @@ F(a)=p_1,F(b)=p_2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bf6414ccc64008a7b4fac2ca3f4e6a9b976ea4a7f7e1e39329b46dea81a32cfb.png" src="_images/bf6414ccc64008a7b4fac2ca3f4e6a9b976ea4a7f7e1e39329b46dea81a32cfb.png" />
+<img alt="_images/1d3f045d68197d776bec4ddd8c6d5757a344118653d882a7c3bfd39c235bf6ef.png" src="_images/1d3f045d68197d776bec4ddd8c6d5757a344118653d882a7c3bfd39c235bf6ef.png" />
 </div>
 </div>
 <p>As <span class="math notranslate nohighlight">\(n\)</span> increases, we can see that the probability density functions <em>concentrate</em> on <span class="math notranslate nohighlight">\(0.4\)</span>, the true value of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -939,7 +930,7 @@ F(a)=p_1,F(b)=p_2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/61d20e979aa5f4a22ba099aa93815df72fe401cbb94894c2c0ac7d8b690bae80.png" src="_images/61d20e979aa5f4a22ba099aa93815df72fe401cbb94894c2c0ac7d8b690bae80.png" />
+<img alt="_images/63016c747394b57bdfae05efaf72d6e2ed0eebd81935ef867a2cc5e4928ae515.png" src="_images/63016c747394b57bdfae05efaf72d6e2ed0eebd81935ef867a2cc5e4928ae515.png" />
 </div>
 </div>
 </section>
@@ -972,7 +963,7 @@ F(a)=p_1,F(b)=p_2
 </ul>
 <p>The random variables <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(N-k\)</span> are governed by Binomial Distribution with <span class="math notranslate nohighlight">\(\theta=0.4\)</span>.</p>
 <p>Call this the true data generating process.</p>
-<p>According to the Law of Large Numbers, for a large number of observations, observed frequencies of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(N-k\)</span> will be described by the true data generating process, i.e., the population probability distribution that we assumed when generating the observations on the computer. (See <a class="reference internal" href="#pm_ex1"><span class="std std-numref">Exercise 7.1</span></a>).</p>
+<p>According to the Law of Large Numbers, for a large number of observations, observed frequencies of <span class="math notranslate nohighlight">\(k\)</span> and <span class="math notranslate nohighlight">\(N-k\)</span> will be described by the true data generating process, i.e., the population probability distribution that we assumed when generating the observations on the computer. (See <a class="reference internal" href="#pm_ex1"><span class="std std-numref">Exercise 6.1</span></a>).</p>
 <p>Consequently, the  mean of the posterior distribution converges to <span class="math notranslate nohighlight">\(0.4\)</span> and the variance withers to zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -994,7 +985,7 @@ F(a)=p_1,F(b)=p_2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/e2b3030239ad67ea957b14c4d7e371b4f6222f65e9b09f6c599df69bf6a986b7.png" src="_images/e2b3030239ad67ea957b14c4d7e371b4f6222f65e9b09f6c599df69bf6a986b7.png" />
+<img alt="_images/044b9680ff2d987dc22945e95fabcac47e07cb687932863f95728f69e0c1630c.png" src="_images/044b9680ff2d987dc22945e95fabcac47e07cb687932863f95728f69e0c1630c.png" />
 </div>
 </div>
 <p>After observing a large number of outcomes, the  posterior distribution collapses around <span class="math notranslate nohighlight">\(0.4\)</span>.</p>
@@ -1003,7 +994,7 @@ F(a)=p_1,F(b)=p_2
 <p>However, if you take a closer look, you will find that the centers of  the BCIs are not exactly <span class="math notranslate nohighlight">\(0.4\)</span>, due to the persistent influence of the prior distribution and the randomness of the simulation path.</p>
 </section>
 <section id="role-of-a-conjugate-prior">
-<h2><span class="section-number">7.4. </span>Role of a Conjugate Prior<a class="headerlink" href="#role-of-a-conjugate-prior" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">6.4. </span>Role of a Conjugate Prior<a class="headerlink" href="#role-of-a-conjugate-prior" title="Permalink to this heading">#</a></h2>
 <p>We have made  assumptions that link functional forms of  our likelihood function and our prior in a way that has eased our calculations considerably.</p>
 <p>In particular, our assumptions that the likelihood function is <strong>binomial</strong> and that the prior distribution is a <strong>beta distribution</strong> have the consequence that the posterior distribution implied by Bayes’ Law is also a <strong>beta distribution</strong>.</p>
 <p>So posterior and prior are both beta distributions, albeit ones with different parameters.</p>
@@ -1011,12 +1002,10 @@ F(a)=p_1,F(b)=p_2
 <p>In this situation, we also sometimes  say that we have <strong>conjugate prior</strong> for the likelihood function <span class="math notranslate nohighlight">\(\textrm{Prob}(X | \theta)\)</span>.</p>
 <p>Typically, the functional form of the likelihood function determines the functional form of a <strong>conjugate prior</strong>.</p>
 <p>A natural question to ask is why should a person’s personal prior about a parameter <span class="math notranslate nohighlight">\(\theta\)</span> be restricted to be described by a conjugate prior?</p>
-<p>Why not some other functional form that more sincerely describes the person’s beliefs.</p>
-<p>To be argumentative, one could ask, why should the form of the likelihood function have <em>anything</em> to say about my
-personal beliefs about <span class="math notranslate nohighlight">\(\theta\)</span>?</p>
+<p>Why not some other functional form that more sincerely describes the person’s beliefs?</p>
+<p>To be argumentative, one could ask, why should the form of the likelihood function have <em>anything</em> to say about my personal beliefs about <span class="math notranslate nohighlight">\(\theta\)</span>?</p>
 <p>A dignified response to that question is, well, it shouldn’t, but if you want to compute a posterior easily you’ll just be happier if your prior is conjugate to your likelihood.</p>
-<p>Otherwise, your posterior won’t have a convenient analytical form and you’ll be in the situation of wanting to
-apply the Markov chain Monte Carlo techniques deployed in <a class="reference internal" href="bayes_nonconj.html"><span class="doc">this quantecon lecture</span></a>.</p>
+<p>Otherwise, your posterior won’t have a convenient analytical form and you’ll be in the situation of wanting to apply the Markov chain Monte Carlo techniques deployed in <a class="reference internal" href="bayes_nonconj.html"><span class="doc">this quantecon lecture</span></a>.</p>
 <p>We also apply these powerful methods to approximating Bayesian posteriors for non-conjugate priors in
 <a class="reference internal" href="ar1_bayes.html"><span class="doc">this quantecon lecture</span></a> and <a class="reference internal" href="ar1_turningpts.html"><span class="doc">this quantecon lecture</span></a></p>
 </section>
@@ -1078,33 +1067,28 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
 </p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="pandas_panel.html">
-   1. Pandas for Panel Data
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ols.html">
-   2. Linear Regression in Python
+   1. Linear Regression in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mle.html">
-   3. Maximum Likelihood Estimation
+   2. Maximum Likelihood Estimation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="prob_matrix.html">
-   4. Elementary Probability with Matrices
+   3. Elementary Probability with Matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lln_clt.html">
-   5. LLN and CLT
+   4. LLN and CLT
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multivariate_normal.html">
-   6. Multivariate Normal Distribution
+   5. Multivariate Normal Distribution
   </a>
  </li>
 </ul>
@@ -1116,57 +1100,57 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   7. Two Meanings of Probability
+   6. Two Meanings of Probability
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bayes_nonconj.html">
-   8. Non-Conjugate Priors
+   7. Non-Conjugate Priors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   9. Posterior Distributions for  AR(1) Parameters
+   8. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   10. Forecasting  an AR(1) Process
+   9. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   11. Likelihood Ratio Processes
+   10. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   12. Computing Mean of a Likelihood Ratio Process
+   11. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   13. A Problem that Stumped Milton Friedman
+   12. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   14. Exchangeability and Bayesian Updating
+   13. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   15. Likelihood Ratio Processes and Bayesian Learning
+   14. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   16. Incorrect Models
+   15. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="navy_captain.html">
-   17. Bayesian versus Frequentist Decision Rules
+   16. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -1178,27 +1162,27 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="multi_hyper.html">
-   18. Multivariate Hypergeometric Distribution
+   17. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="hoist_failure.html">
-   19. Fault Tree Uncertainties
+   18. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="back_prop.html">
-   20. Introduction to Artificial Neural Networks
+   19. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rand_resp.html">
-   21. Randomized Response Surveys
+   20. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   22. Expected Utilities of Random Responses
+   21. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -1210,17 +1194,17 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   23. Troubleshooting
+   22. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   24. References
+   23. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   25. Execution Statistics
+   24. Execution Statistics
   </a>
  </li>
 </ul>
@@ -1259,7 +1243,11 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/prob_meaning.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats.myst/prob_meaning.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats/blob/main/lectures/prob_meaning.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1288,18 +1276,18 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/prob_meaning.ipynb">Colab</option>
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/main/prob_meaning.ipynb">Colab</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/prob_meaning.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/prob_meaning.ipynb" data-branch=main>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/prob_meaning.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/main/prob_meaning.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1332,7 +1320,7 @@ apply the Markov chain Monte Carlo techniques deployed in <a class="reference in
                 const pageName = "prob_meaning";
                 const repoURL = "https://github.com/QuantEcon/lecture-stats.notebooks";
                 const urlPath = "tree/lecture-stats.notebooks/prob_meaning.ipynb";
-                const branch = "master"
+                const branch = "main"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
                 // Highlight public server option if previous selection exists

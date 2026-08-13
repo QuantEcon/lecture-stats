@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>19. Fault Tree Uncertainties &#8212; Statistics for Computational Economics</title>
+    <title>18. Fault Tree Uncertainties &#8212; Statistics for Computational Economics</title>
     <script src="https://unpkg.com/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.1/dist/tippy-bundle.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
@@ -56,33 +56,33 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=b09b2da44b9015b4fa76ea072fa2d8f7faee5492" type="text/css" />
+    <link rel="stylesheet" href="_static/styles/quantecon-book-theme.css?digest=bd0785fbb14d8d2bd4d9ae501d79ed8d3bc089ec" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -90,14 +90,15 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script src="_static/scripts/quantecon-book-theme.js?digest=eed9c059a3ee152aae2353ec732f0a6d12e6aa07"></script>
+    <script src="_static/scripts/quantecon-book-theme.js?digest=d6d86bce9979111653c4c495e33499e1796e172a"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-NJV5XPRDFV"></script>
@@ -107,11 +108,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-NJV5XPRDFV');
             </script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"argmax": "arg\\,max", "argmin": "arg\\,min"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -120,8 +117,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/lectures-favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="20. Introduction to Artificial Neural Networks" href="back_prop.html" />
-    <link rel="prev" title="18. Multivariate Hypergeometric Distribution" href="multi_hyper.html" />
+    <link rel="next" title="19. Introduction to Artificial Neural Networks" href="back_prop.html" />
+    <link rel="prev" title="17. Multivariate Hypergeometric Distribution" href="multi_hyper.html" />
 
 <!-- Normal Meta Tags -->
 <meta name="author" context="Thomas J. Sargent and John Stachurski" />
@@ -169,15 +166,15 @@ const thebe_selector_output = ".output, .cell_output"
 
                         <nav id="bd-toc-nav" class="qe-page__toc-nav">
                             <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">19.1. Overview</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-normal-distribution">19.2. Log normal distribution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-convolution-property">19.3. The Convolution Property</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-distributions">19.4. Approximating Distributions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolving-probability-mass-functions">19.5. Convolving Probability Mass Functions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-tree-analysis">19.6. Failure Tree Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application">19.7. Application</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-rates-unknown">19.8. Failure Rates Unknown</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waste-hoist-failure-rate">19.9. Waste Hoist Failure Rate</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">18.1. Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#log-normal-distribution">18.2. Log normal distribution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-convolution-property">18.3. The Convolution Property</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#approximating-distributions">18.4. Approximating Distributions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convolving-probability-mass-functions">18.5. Convolving Probability Mass Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-tree-analysis">18.6. Failure Tree Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#application">18.7. Application</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#failure-rates-unknown">18.8. Failure Rates Unknown</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#waste-hoist-failure-rate">18.9. Waste Hoist Failure Rate</a></li>
 </ul>
                             <p class="logo">
                                 
@@ -235,9 +232,9 @@ const thebe_selector_output = ".output, .cell_output"
                     <div>
                         
   <section class="tex2jax_ignore mathjax_ignore" id="fault-tree-uncertainties">
-<h1><span class="section-number">19. </span>Fault Tree Uncertainties<a class="headerlink" href="#fault-tree-uncertainties" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">18. </span>Fault Tree Uncertainties<a class="headerlink" href="#fault-tree-uncertainties" title="Permalink to this heading">#</a></h1>
 <section id="overview">
-<h2><span class="section-number">19.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>This lecture puts elementary tools to work to approximate probability distributions of the annual failure rates of a system consisting of
 a number of critical parts.</p>
 <p>We’ll use log normal distributions to approximate probability distributions of critical  component parts.</p>
@@ -251,10 +248,10 @@ entire system, we’ll compute the convolution of those <span class="math notran
 <li><p>a hierarchical probability model for describing uncertain probabilities</p></li>
 <li><p>Fourier transforms and inverse Fourier tranforms as efficient ways of computing convolutions of sequences</p></li>
 </ul>
-<p>For more about Fourier transforms see this quantecon lecture <a class="reference external" href="https://python.quantecon.org/eig_circulant.html">Circulant Matrices</a>
-as well as these  lecture  <a class="reference external" href="https://python-advanced.quantecon.org/arma.html">Covariance Stationary Processes</a> and <a class="reference external" href="https://python-advanced.quantecon.org/estspec.html">Estimation of Spectra</a>.</p>
-<p>El-Shanawany, Ardron,  and Walker <span id="id1">[<a class="reference internal" href="zreferences.html#id261" title="Ashraf Ben El-Shanawany, Keith H Ardron, and Simon P Walker. Lognormal approximations of fault tree uncertainty distributions. Risk Analysis, 38(8):1576–1584, 2018.">ESAW18</a>]</span> and Greenfield and Sargent <span id="id2">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">GS93</a>]</span>  used some of the methods described here  to approximate probabilities of failures of safety systems in nuclear facilities.</p>
-<p>These methods respond to some of the recommendations made by Apostolakis  <span id="id3">[<a class="reference internal" href="zreferences.html#id259" title="George Apostolakis. The concept of probability in safety assessments of technological systems. Science, 250(4986):1359–1364, 1990.">Apo90</a>]</span> for constructing procedures for quantifying
+<p>For more about Fourier transforms see this quantecon lecture <a class="reference external" href="https://tools-techniques.quantecon.org/eig_circulant.html" title="(in Python)"><span class="xref std std-doc">Circulant Matrices</span></a>
+as well as these  lecture  <a class="reference external" href="https://tools-techniques.quantecon.org/arma.html" title="(in Python)"><span class="xref std std-doc">Covariance Stationary Processes</span></a> and <a class="reference external" href="https://tools-techniques.quantecon.org/estspec.html" title="(in Python)"><span class="xref std std-doc">Estimation of Spectra</span></a>.</p>
+<p>El-Shanawany, Ardron,  and Walker <span id="id1">[<a class="reference internal" href="zreferences.html#id261" title="Ashraf Ben El-Shanawany, Keith H Ardron, and Simon P Walker. Lognormal approximations of fault tree uncertainty distributions. Risk Analysis, 38(8):1576–1584, 2018.">El-Shanawany <em>et al.</em>, 2018</a>]</span> and Greenfield and Sargent <span id="id2">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">Greenfield and Sargent, 1993</a>]</span>  used some of the methods described here  to approximate probabilities of failures of safety systems in nuclear facilities.</p>
+<p>These methods respond to some of the recommendations made by Apostolakis  <span id="id3">[<a class="reference internal" href="zreferences.html#id259" title="George Apostolakis. The concept of probability in safety assessments of technological systems. Science, 250(4986):1359–1364, 1990.">Apostolakis, 1990</a>]</span> for constructing procedures for quantifying
 uncertainty about the reliability of a safety system.</p>
 <p>We’ll start by bringing in some Python machinery.</p>
 <div class="cell docutils container">
@@ -264,11 +261,7 @@ uncertainty about the reliability of a safety system.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tabulate in /opt/conda/envs/quantecon/lib/python3.11/site-packages (0.8.10)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv</span>
-
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: tabulate in /home/runner/miniconda3/envs/quantecon/lib/python3.12/site-packages (0.9.0)
 </pre></div>
 </div>
 </div>
@@ -294,7 +287,7 @@ uncertainty about the reliability of a safety system.</p>
 <!-- #region -->
 </section>
 <section id="log-normal-distribution">
-<h2><span class="section-number">19.2. </span>Log normal distribution<a class="headerlink" href="#log-normal-distribution" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.2. </span>Log normal distribution<a class="headerlink" href="#log-normal-distribution" title="Permalink to this heading">#</a></h2>
 <p>If a random variable <span class="math notranslate nohighlight">\(x\)</span> follows a normal distribution with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>,
 then the natural logarithm of <span class="math notranslate nohighlight">\(x\)</span>, say <span class="math notranslate nohighlight">\(y = \log(x)\)</span>, follows a <strong>log normal distribution</strong> with parameters <span class="math notranslate nohighlight">\(\mu, \sigma^2\)</span>.</p>
 <p>Notice that we said <strong>parameters</strong> and not <strong>mean and variance</strong> <span class="math notranslate nohighlight">\(\mu,\sigma^2\)</span>.</p>
@@ -336,7 +329,7 @@ with parameters <span class="math notranslate nohighlight">\((\mu_1 + \mu_2, \si
 <p>To compute the probability distribution of the sum of two log normal distributions, we can use the following convolution property of a probability distribution that is a sum of independent random variables.</p>
 </section>
 <section id="the-convolution-property">
-<h2><span class="section-number">19.3. </span>The Convolution Property<a class="headerlink" href="#the-convolution-property" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.3. </span>The Convolution Property<a class="headerlink" href="#the-convolution-property" title="Permalink to this heading">#</a></h2>
 <p>Let <span class="math notranslate nohighlight">\(x\)</span> be a random variable with probability density <span class="math notranslate nohighlight">\(f(x)\)</span>, where <span class="math notranslate nohighlight">\(x \in {\bf R}\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(y\)</span> be a random variable with probability density <span class="math notranslate nohighlight">\(g(y)\)</span>, where <span class="math notranslate nohighlight">\(y \in {\bf R}\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> be independent random variables and let <span class="math notranslate nohighlight">\(z = x + y \in {\bf R}\)</span>.</p>
@@ -400,7 +393,7 @@ hf =  [0.   0.45 0.15 0.3  0.1 ] ,np.sum(hf) =  1.0000000000000002
 <p>That’s why we rely on it later in this lecture.</p>
 </section>
 <section id="approximating-distributions">
-<h2><span class="section-number">19.4. </span>Approximating Distributions<a class="headerlink" href="#approximating-distributions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.4. </span>Approximating Distributions<a class="headerlink" href="#approximating-distributions" title="Permalink to this heading">#</a></h2>
 <p>We’ll construct an example to verify that  discretized distributions can do a good job of approximating  samples drawn from underlying
 continuous distributions.</p>
 <p>We’ll start by generating samples of size 25000 of three independent  log normal random variates as well as pairwise and triple-wise sums.</p>
@@ -428,7 +421,7 @@ continuous distributions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/10c1ef4e3e739547103e7447b9343bf4343a84636634530c78e109401a949220.png" src="_images/10c1ef4e3e739547103e7447b9343bf4343a84636634530c78e109401a949220.png" />
+<img alt="_images/908f4c8a556678f127f42ec5931f9dff0f2752ececee42bc815f4387aa56ba9b.png" src="_images/908f4c8a556678f127f42ec5931f9dff0f2752ececee42bc815f4387aa56ba9b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -438,7 +431,7 @@ continuous distributions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/52994fcb76047cf5e24b3ff31efc54b353592251142b546d1e150055f50ab5ec.png" src="_images/52994fcb76047cf5e24b3ff31efc54b353592251142b546d1e150055f50ab5ec.png" />
+<img alt="_images/4d4278327972c54634399cec7c8c68f5bad9a9738c1f0d241307bfb1ee9f9cc5.png" src="_images/4d4278327972c54634399cec7c8c68f5bad9a9738c1f0d241307bfb1ee9f9cc5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -448,7 +441,7 @@ continuous distributions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/262e073950d3ff42e6cddb49fccbdb952cd1c35fbddffc0231cbb9369c760b8b.png" src="_images/262e073950d3ff42e6cddb49fccbdb952cd1c35fbddffc0231cbb9369c760b8b.png" />
+<img alt="_images/ee9cb43472c593ad498c673ddfa75b640ac882f0fa10db25b0db80ff60c5387d.png" src="_images/ee9cb43472c593ad498c673ddfa75b640ac882f0fa10db25b0db80ff60c5387d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -461,7 +454,7 @@ continuous distributions.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(244.69193226422038, 243.21202968536068, 5.0, 1.0)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(244.69193226422038, 243.71686297623026, 5.0, 1.0)
 </pre></div>
 </div>
 </div>
@@ -521,7 +514,7 @@ to compute a convolution of two sequences (discrete distributions).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8730823c97bfcb58131a5ffd3584b6064429582abdf68c2da046f6a79185391c.png" src="_images/8730823c97bfcb58131a5ffd3584b6064429582abdf68c2da046f6a79185391c.png" />
+<img alt="_images/7d8caa08bd2c7aa3da39f54194f208cd86e31205880a224ed7dce13907806b98.png" src="_images/7d8caa08bd2c7aa3da39f54194f208cd86e31205880a224ed7dce13907806b98.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -535,14 +528,14 @@ to compute a convolution of two sequences (discrete distributions).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(244.69059898302908, 244.69193226422038)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(244.69059898302916, 244.69193226422038)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="convolving-probability-mass-functions">
-<h2><span class="section-number">19.5. </span>Convolving Probability Mass Functions<a class="headerlink" href="#convolving-probability-mass-functions" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.5. </span>Convolving Probability Mass Functions<a class="headerlink" href="#convolving-probability-mass-functions" title="Permalink to this heading">#</a></h2>
 <p>Now let’s use the convolution theorem to compute the probability distribution of a sum of the two log normal random variables we have parameterized above.</p>
 <p>We’ll also compute the probability of a sum of three log normal distributions constructed above.</p>
 <p>Before we do these things, we shall explain our choice of Python algorithm to compute a convolution
@@ -556,17 +549,17 @@ is much faster.</p>
 <p>The <strong>Fourier transform</strong> of a sequence <span class="math notranslate nohighlight">\(\{x_t\}_{t=0}^{T-1}\)</span> is  a sequence of complex numbers
 <span class="math notranslate nohighlight">\(\{x(\omega_j)\}_{j=0}^{T-1}\)</span> given by</p>
 <div class="math notranslate nohighlight" id="equation-eq-ft1">
-<span class="eqno">(19.1)<a class="headerlink" href="#equation-eq-ft1" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(18.1)<a class="headerlink" href="#equation-eq-ft1" title="Permalink to this equation">#</a></span>\[
  x(\omega_j) = \sum_{t=0}^{T-1} x_t \exp(- i \omega_j t)
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\omega_j = \frac{2 \pi j}{T}\)</span> for <span class="math notranslate nohighlight">\(j=0, 1, \ldots, T-1\)</span>.</p>
 <p>The <strong>inverse Fourier transform</strong> of the sequence <span class="math notranslate nohighlight">\(\{x(\omega_j)\}_{j=0}^{T-1}\)</span> is</p>
 <div class="math notranslate nohighlight" id="equation-eq-ift1">
-<span class="eqno">(19.2)<a class="headerlink" href="#equation-eq-ift1" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(18.2)<a class="headerlink" href="#equation-eq-ift1" title="Permalink to this equation">#</a></span>\[
  x_t = T^{-1} \sum_{j=0}^{T-1} x(\omega_j) \exp (i \omega_j t)
 \]</div>
 <p>The sequences <span class="math notranslate nohighlight">\(\{x_t\}_{t=0}^{T-1}\)</span> and <span class="math notranslate nohighlight">\(\{x(\omega_j)\}_{j=0}^{T-1}\)</span> contain the same information.</p>
-<p>The pair of equations <a class="reference internal" href="#equation-eq-ft1">(19.1)</a> and <a class="reference internal" href="#equation-eq-ift1">(19.2)</a> tell how to recover one series from its Fourier partner.</p>
+<p>The pair of equations <a class="reference internal" href="#equation-eq-ft1">(18.1)</a> and <a class="reference internal" href="#equation-eq-ift1">(18.2)</a> tell how to recover one series from its Fourier partner.</p>
 <p>The program <code class="docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve</span></code> deploys  the theorem that  a convolution of two sequences <span class="math notranslate nohighlight">\(\{f_k\}, \{g_k\}\)</span> can be computed in the following way:</p>
 <ul class="simple">
 <li><p>Compute Fourier transforms <span class="math notranslate nohighlight">\(F(\omega), G(\omega)\)</span> of the <span class="math notranslate nohighlight">\(\{f_k\}\)</span> and <span class="math notranslate nohighlight">\(\{g_k\}\)</span> sequences, respectively</p></li>
@@ -608,7 +601,7 @@ calculations very quickly.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time with np.convolve =  44.894253018999734 ; time with fftconvolve =  0.1635756340001535
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time with np.convolve =  31.739135597000313 ; time with fftconvolve =  0.15832063699963328
 </pre></div>
 </div>
 </div>
@@ -632,7 +625,7 @@ calculations very quickly.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eea5d96e60dc67a0b173720ff2226406f1217f4f659d0a2b3d90a4969d6cca43.png" src="_images/eea5d96e60dc67a0b173720ff2226406f1217f4f659d0a2b3d90a4969d6cca43.png" />
+<img alt="_images/f97d9050860bcc0dd7811e63d7a19375299f200c357b4a239dfe37be6bd67d47.png" src="_images/f97d9050860bcc0dd7811e63d7a19375299f200c357b4a239dfe37be6bd67d47.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -651,7 +644,7 @@ calculations very quickly.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bfbe7c43f41093f93a59585e0828ac746615972c0309169374ebc998147757eb.png" src="_images/bfbe7c43f41093f93a59585e0828ac746615972c0309169374ebc998147757eb.png" />
+<img alt="_images/b53ef5cbd17e94f44a219e5e9aa571ede8e0fe8e890dd3439952fc10de974f60.png" src="_images/b53ef5cbd17e94f44a219e5e9aa571ede8e0fe8e890dd3439952fc10de974f60.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -664,7 +657,7 @@ calculations very quickly.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(489.3810974093853, 489.38386452844077)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(489.38109740938404, 489.38386452844077)
 </pre></div>
 </div>
 </div>
@@ -679,7 +672,7 @@ calculations very quickly.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(734.0714863312277, 734.0757967926611)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(734.0714863312247, 734.0757967926611)
 </pre></div>
 </div>
 </div>
@@ -687,11 +680,11 @@ calculations very quickly.</p>
 <!-- #region -->
 </section>
 <section id="failure-tree-analysis">
-<h2><span class="section-number">19.6. </span>Failure Tree Analysis<a class="headerlink" href="#failure-tree-analysis" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.6. </span>Failure Tree Analysis<a class="headerlink" href="#failure-tree-analysis" title="Permalink to this heading">#</a></h2>
 <p>We shall soon apply the convolution theorem to compute the probability of a <strong>top event</strong> in a failure tree analysis.</p>
 <p>Before applying the convolution theorem, we first describe the model that connects constituent events to the <strong>top</strong> end whose
 failure rate we seek to quantify.</p>
-<p>The model is an example of the widely used  <strong>failure tree analysis</strong> described by  El-Shanawany, Ardron,  and Walker <span id="id4">[<a class="reference internal" href="zreferences.html#id261" title="Ashraf Ben El-Shanawany, Keith H Ardron, and Simon P Walker. Lognormal approximations of fault tree uncertainty distributions. Risk Analysis, 38(8):1576–1584, 2018.">ESAW18</a>]</span>.</p>
+<p>The model is an example of the widely used  <strong>failure tree analysis</strong> described by  El-Shanawany, Ardron,  and Walker <span id="id4">[<a class="reference internal" href="zreferences.html#id261" title="Ashraf Ben El-Shanawany, Keith H Ardron, and Simon P Walker. Lognormal approximations of fault tree uncertainty distributions. Risk Analysis, 38(8):1576–1584, 2018.">El-Shanawany <em>et al.</em>, 2018</a>]</span>.</p>
 <p>To construct the statistical model, we repeatedly use  what is called the <strong>rare event approximation</strong>.</p>
 <p>We want to compute the probabilty of an event <span class="math notranslate nohighlight">\(A \cup B\)</span>.</p>
 <ul class="simple">
@@ -712,7 +705,7 @@ the event that <span class="math notranslate nohighlight">\(A\)</span> <strong>O
 <p>This approximation is widely used in evaluating system failures.</p>
 </section>
 <section id="application">
-<h2><span class="section-number">19.7. </span>Application<a class="headerlink" href="#application" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.7. </span>Application<a class="headerlink" href="#application" title="Permalink to this heading">#</a></h2>
 <p>A system has been designed with the feature a system  failure occurs when <strong>any</strong> of  <span class="math notranslate nohighlight">\(n\)</span> critical  components  fails.</p>
 <p>The failure probability <span class="math notranslate nohighlight">\(P(A_i)\)</span>  of each event <span class="math notranslate nohighlight">\(A_i\)</span>  is small.</p>
 <p>We assume that failures of the components are statistically independent random variables.</p>
@@ -722,15 +715,15 @@ of a system failure:</p>
 \[ P(F) \approx P(A_1) + P (A_2) + \cdots + P (A_n) \]</div>
 <p>or</p>
 <div class="math notranslate nohighlight" id="equation-eq-probtop">
-<span class="eqno">(19.3)<a class="headerlink" href="#equation-eq-probtop" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(18.3)<a class="headerlink" href="#equation-eq-probtop" title="Permalink to this equation">#</a></span>\[
 P(F) \approx \sum_{i=1}^n P (A_i)
 \]</div>
 <p>Probabilities for each event are recorded as failure rates per year.</p>
 </section>
 <section id="failure-rates-unknown">
-<h2><span class="section-number">19.8. </span>Failure Rates Unknown<a class="headerlink" href="#failure-rates-unknown" title="Permalink to this heading">#</a></h2>
-<p>Now we come to the problem that really interests us, following  <span id="id5">[<a class="reference internal" href="zreferences.html#id261" title="Ashraf Ben El-Shanawany, Keith H Ardron, and Simon P Walker. Lognormal approximations of fault tree uncertainty distributions. Risk Analysis, 38(8):1576–1584, 2018.">ESAW18</a>]</span> and Greenfield and Sargent
-<span id="id6">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">GS93</a>]</span>  in the spirit of Apostolakis  <span id="id7">[<a class="reference internal" href="zreferences.html#id259" title="George Apostolakis. The concept of probability in safety assessments of technological systems. Science, 250(4986):1359–1364, 1990.">Apo90</a>]</span>.</p>
+<h2><span class="section-number">18.8. </span>Failure Rates Unknown<a class="headerlink" href="#failure-rates-unknown" title="Permalink to this heading">#</a></h2>
+<p>Now we come to the problem that really interests us, following  <span id="id5">[<a class="reference internal" href="zreferences.html#id261" title="Ashraf Ben El-Shanawany, Keith H Ardron, and Simon P Walker. Lognormal approximations of fault tree uncertainty distributions. Risk Analysis, 38(8):1576–1584, 2018.">El-Shanawany <em>et al.</em>, 2018</a>]</span> and Greenfield and Sargent
+<span id="id6">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">Greenfield and Sargent, 1993</a>]</span>  in the spirit of Apostolakis  <span id="id7">[<a class="reference internal" href="zreferences.html#id259" title="George Apostolakis. The concept of probability in safety assessments of technological systems. Science, 250(4986):1359–1364, 1990.">Apostolakis, 1990</a>]</span>.</p>
 <p>The constituent probabilities or failure rates <span class="math notranslate nohighlight">\(P(A_i)\)</span> are not known a priori and have to be estimated.</p>
 <p>We address this problem by specifying <strong>probabilities of probabilities</strong> that  capture one  notion of not knowing the constituent probabilities that are inputs into a failure tree analysis.</p>
 <p>Thus, we assume that a system analyst is uncertain about  the failure rates <span class="math notranslate nohighlight">\(P(A_i), i =1, \ldots, n\)</span> for components of a system.</p>
@@ -754,19 +747,19 @@ of the systems failure probability <span class="math notranslate nohighlight">\(
 <li><p>We say probability mass function because of how we discretize each random variable, as described earlier.</p></li>
 </ul>
 <p>The analyst calculates the probability mass function for the <strong>top event</strong> <span class="math notranslate nohighlight">\(F\)</span>, i.e., a <strong>system failure</strong>,  by repeatedly applying the convolution theorem to compute the probability distribution of a sum of independent log normal random variables, as described in equation
-<a class="reference internal" href="#equation-eq-probtop">(19.3)</a>.</p>
+<a class="reference internal" href="#equation-eq-probtop">(18.3)</a>.</p>
 <!-- #endregion -->
 </section>
 <section id="waste-hoist-failure-rate">
-<h2><span class="section-number">19.9. </span>Waste Hoist Failure Rate<a class="headerlink" href="#waste-hoist-failure-rate" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">18.9. </span>Waste Hoist Failure Rate<a class="headerlink" href="#waste-hoist-failure-rate" title="Permalink to this heading">#</a></h2>
 <p>We’ll take close to a real world example by assuming that <span class="math notranslate nohighlight">\(n = 14\)</span>.</p>
 <p>The example estimates the annual failure rate of a critical  hoist at a nuclear waste facility.</p>
 <p>A regulatory agency wants the sytem to be designed in a way that makes the failure rate of the top event small with high probability.</p>
-<p>This example is Design Option B-2 (Case I) described in Table 10 on page 27 of <span id="id8">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">GS93</a>]</span>.</p>
+<p>This example is Design Option B-2 (Case I) described in Table 10 on page 27 of <span id="id8">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">Greenfield and Sargent, 1993</a>]</span>.</p>
 <p>The table describes parameters <span class="math notranslate nohighlight">\(\mu_i, \sigma_i\)</span> for  fourteen log normal random variables that consist of  <strong>seven pairs</strong> of random variables that are identically and independently distributed.</p>
 <ul class="simple">
 <li><p>Within a pair, parameters <span class="math notranslate nohighlight">\(\mu_i, \sigma_i\)</span> are the same</p></li>
-<li><p>As described in table 10 of <span id="id9">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">GS93</a>]</span>  p. 27, parameters of log normal distributions for  the seven unique probabilities <span class="math notranslate nohighlight">\(P(A_i)\)</span> have been calibrated to be the values in the following Python code:</p></li>
+<li><p>As described in table 10 of <span id="id9">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">Greenfield and Sargent, 1993</a>]</span>  p. 27, parameters of log normal distributions for  the seven unique probabilities <span class="math notranslate nohighlight">\(P(A_i)\)</span> have been calibrated to be the values in the following Python code:</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -801,7 +794,7 @@ above parameter values actually describe <span class="math notranslate nohighlig
 <p>We compute the required thirteen convolutions in the following code.</p>
 <p>(Please feel free to try different values of the power parameter <span class="math notranslate nohighlight">\(p\)</span> that we use to set the number of points in our grid for constructing
 the probability mass functions that discretize the continuous log normal distributions.)</p>
-<p>We’ll plot a counterpart to the cumulative distribution function (CDF) in  figure 5 on page 29 of <span id="id10">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">GS93</a>]</span>
+<p>We’ll plot a counterpart to the cumulative distribution function (CDF) in  figure 5 on page 29 of <span id="id10">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">Greenfield and Sargent, 1993</a>]</span>
 and we’ll also present a counterpart to their Table 11 on page 28.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -852,7 +845,7 @@ and we’ll also present a counterpart to their Table 11 on page 28.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time for 13 convolutions =  10.217735029999858
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>time for 13 convolutions =  8.42789278500004
 </pre></div>
 </div>
 </div>
@@ -900,7 +893,7 @@ and we’ll also present a counterpart to their Table 11 on page 28.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c4f92f035ccc2cef97f68c91c1e4f593ed90b9897002e2a1c34b51698e9a6804.png" src="_images/c4f92f035ccc2cef97f68c91c1e4f593ed90b9897002e2a1c34b51698e9a6804.png" />
+<img alt="_images/d02a55f7fe3c45d606b9b9afaca7362a927519538a850a38bc8c15c576ef0a26.png" src="_images/d02a55f7fe3c45d606b9b9afaca7362a927519538a850a38bc8c15c576ef0a26.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Percentile      x * 1e-9
 ------------  ----------
 1%                 76.15
@@ -917,7 +910,7 @@ and we’ll also present a counterpart to their Table 11 on page 28.</p>
 </div>
 </div>
 </div>
-<p>The above table agrees closely with column 2 of  Table 11 on p. 28 of  of <span id="id11">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">GS93</a>]</span>.</p>
+<p>The above table agrees closely with column 2 of  Table 11 on p. 28 of  of <span id="id11">[<a class="reference internal" href="zreferences.html#id260" title="Moses A Greenfield and Thomas J Sargent. A probabilistic analysis of a catastrophic transuranic waste hoise accident at the wipp. Environmental Evaluation Group, Albuquerque, New Mexico, June 1993. URL: http://www.tomsargent.com/research/EEG-53.pdf.">Greenfield and Sargent, 1993</a>]</span>.</p>
 <p>Discrepancies are probably due to slight differences in the number of digits retained in inputting <span class="math notranslate nohighlight">\(\mu_i, \sigma_i, i = 1, \ldots, 14\)</span>
 and in the number of points deployed in the discretizations.</p>
 </section>
@@ -979,33 +972,28 @@ and in the number of points deployed in the discretizations.</p>
 </p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="pandas_panel.html">
-   1. Pandas for Panel Data
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="ols.html">
-   2. Linear Regression in Python
+   1. Linear Regression in Python
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mle.html">
-   3. Maximum Likelihood Estimation
+   2. Maximum Likelihood Estimation
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="prob_matrix.html">
-   4. Elementary Probability with Matrices
+   3. Elementary Probability with Matrices
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lln_clt.html">
-   5. LLN and CLT
+   4. LLN and CLT
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="multivariate_normal.html">
-   6. Multivariate Normal Distribution
+   5. Multivariate Normal Distribution
   </a>
  </li>
 </ul>
@@ -1017,57 +1005,57 @@ and in the number of points deployed in the discretizations.</p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="prob_meaning.html">
-   7. Two Meanings of Probability
+   6. Two Meanings of Probability
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="bayes_nonconj.html">
-   8. Non-Conjugate Priors
+   7. Non-Conjugate Priors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_bayes.html">
-   9. Posterior Distributions for  AR(1) Parameters
+   8. Posterior Distributions for  AR(1) Parameters
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="ar1_turningpts.html">
-   10. Forecasting  an AR(1) Process
+   9. Forecasting  an AR(1) Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_ratio_process.html">
-   11. Likelihood Ratio Processes
+   10. Likelihood Ratio Processes
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="imp_sample.html">
-   12. Computing Mean of a Likelihood Ratio Process
+   11. Computing Mean of a Likelihood Ratio Process
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="wald_friedman.html">
-   13. A Problem that Stumped Milton Friedman
+   12. A Problem that Stumped Milton Friedman
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="exchangeable.html">
-   14. Exchangeability and Bayesian Updating
+   13. Exchangeability and Bayesian Updating
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="likelihood_bayes.html">
-   15. Likelihood Ratio Processes and Bayesian Learning
+   14. Likelihood Ratio Processes and Bayesian Learning
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="mix_model.html">
-   16. Incorrect Models
+   15. Incorrect Models
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="navy_captain.html">
-   17. Bayesian versus Frequentist Decision Rules
+   16. Bayesian versus Frequentist Decision Rules
   </a>
  </li>
 </ul>
@@ -1079,27 +1067,27 @@ and in the number of points deployed in the discretizations.</p>
 <ul class="current nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="multi_hyper.html">
-   18. Multivariate Hypergeometric Distribution
+   17. Multivariate Hypergeometric Distribution
   </a>
  </li>
  <li class="toctree-l1 current active active">
   <a class="current reference internal" href="#">
-   19. Fault Tree Uncertainties
+   18. Fault Tree Uncertainties
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="back_prop.html">
-   20. Introduction to Artificial Neural Networks
+   19. Introduction to Artificial Neural Networks
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="rand_resp.html">
-   21. Randomized Response Surveys
+   20. Randomized Response Surveys
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="util_rand_resp.html">
-   22. Expected Utilities of Random Responses
+   21. Expected Utilities of Random Responses
   </a>
  </li>
 </ul>
@@ -1111,17 +1099,17 @@ and in the number of points deployed in the discretizations.</p>
 <ul class="nav bd-sidenav nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="troubleshooting.html">
-   23. Troubleshooting
+   22. Troubleshooting
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="zreferences.html">
-   24. References
+   23. References
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="status.html">
-   25. Execution Statistics
+   24. Execution Statistics
   </a>
  </li>
 </ul>
@@ -1160,7 +1148,11 @@ and in the number of points deployed in the discretizations.</p>
                     <li data-tippy-content="Download Notebook"><a href="/_notebooks/hoist_failure.ipynb" download><i data-feather="download-cloud"></i></a></li>
                     <li class="settings-button" id="settingsButton"><div data-tippy-content="Launch Notebook"><i data-feather="play-circle"></i></div></li>
                         <li class="download-pdf" id="downloadButton"><i data-feather="file"></i></li>
-                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats.myst/hoist_failure.md" download><i data-feather="github"></i></a></li>
+                    <!--
+                    # Enable if looking for link to specific document hosted on GitHub
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats/blob/main/lectures/hoist_failure.md" download><i data-feather="github"></i></a></li>
+                    -->
+                    <li data-tippy-content="View Source"><a target="_blank" href="https://github.com/QuantEcon/lecture-stats" download><i data-feather="github"></i></a></li>
                 </ul>
 
             </div>
@@ -1189,18 +1181,18 @@ and in the number of points deployed in the discretizations.</p>
                 <span class="label">Public</span>
                 <select id="launcher-public-input">
                 
-                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/hoist_failure.ipynb">Colab</option>
+                    <option value="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/main/hoist_failure.ipynb">Colab</option>
                 
                 </select>
                 <i class="fas fa-check-circle"></i>
             </li>
             <li class="launcher-private">
                 <span class="label">Private</span>
-                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/hoist_failure.ipynb" data-branch=master>
+                <input type="text" id="launcher-private-input" data-repourl="https://github.com/QuantEcon/lecture-stats.notebooks" data-urlpath="tree/lecture-stats.notebooks/hoist_failure.ipynb" data-branch=main>
                 <i class="fas fa-check-circle"></i>
             </li>
             </ul>
-            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/master/hoist_failure.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
+            <p class="launch"><a href="https://colab.research.google.com/github/QuantEcon/lecture-stats.notebooks/blob/main/hoist_failure.ipynb" id="advancedLaunchButton" target="_blank">Launch Notebook</a></p>
             <script>
                 // QuantEcon Notebook Launcher
                 const launcherTypeElements = document.querySelectorAll('#settingsModal .modal-servers li');
@@ -1233,7 +1225,7 @@ and in the number of points deployed in the discretizations.</p>
                 const pageName = "hoist_failure";
                 const repoURL = "https://github.com/QuantEcon/lecture-stats.notebooks";
                 const urlPath = "tree/lecture-stats.notebooks/hoist_failure.ipynb";
-                const branch = "master"
+                const branch = "main"
                 const launchNotebookLink = document.getElementById('advancedLaunchButton');
 
                 // Highlight public server option if previous selection exists

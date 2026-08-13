@@ -19,10 +19,6 @@ kernelspec:
 
 # Linear Regression in Python
 
-```{contents} Contents
-:depth: 2
-```
-
 In addition to what's in Anaconda, this lecture will need the following libraries:
 
 ```{code-cell} ipython
@@ -636,7 +632,7 @@ significant, indicating $avexpr_i$ is endogenous.
 
 The OLS parameter $\beta$ can also be estimated using matrix
 algebra and `numpy` (you may need to review the
-[numpy](https://python-programming.quantecon.org/numpy.html) lecture to
+{doc}`numpy <pyprog:numpy>` lecture to
 complete this exercise).
 
 The linear equation we want to estimate is (written in matrix form)
